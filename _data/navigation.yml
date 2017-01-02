@@ -1,0 +1,241 @@
+# main links
+main:
+  - title: "Troubleshooting"
+    url: /troubleshooting/
+  - title: "Week 1"
+    url: /week-1/
+#  - title: "Week 2"
+#    url: /week-2/
+#  - title: "Week 3"
+#    url: /week-3/
+#  - title: "Week 4"
+#    url: /week-4/
+#  - title: "Week 5"
+#    url: /week-5/
+#  - title: "Week 6"
+#    url: /week-6/
+
+#navigation for home page
+home:
+  - title: "openSAP: Extending SAP S/4HANA with SAP HANA Cloud Platform"
+    url: https://open.sap.com/courses/hcp3a1/
+    children:
+    - title: "Learnings"
+      url: https://open.sap.com/courses/hcp3a1/resume
+    - title: "Discussions"
+      url: https://open.sap.com/courses/hcp3a1/pinboard
+    - title: "Progress"
+      url: https://open.sap.com/courses/hcp3a1/progress
+    - title: "Collab Space"
+      url: https://open.sap.com/courses/hcp3a1/learning_rooms
+    - title: "Announcements"
+      url: https://open.sap.com/courses/hcp3a1/announcements
+  - title: "Troubleshooting"
+    url: /troubleshooting/
+  - title: "Tutorials"
+    children:
+    - title: "Week 1: Getting Started"
+      url: /week-1/
+#    - title: "Week 2: UX Extension"
+#      url: /week-2/
+#    - title: "Week 3: Collaborative Extension"
+#      url: /week-3/
+#    - title: "Week 4: Analytical Extension using SAP HANA on HCP and the Data Replication Pattern"
+#      url: /week-4/
+#    - title: "Week 5: IoT Extension using the Hub Pattern and IoT Services"
+#      url: /week-5/
+#    - title: "Week 6: IoT Extension with the Hub Pattern and Integration in legacy Business Processes"
+#      url: /week-6/
+
+# week-1 links
+week-1:
+  - title: "openSAP: Extending SAP S/4HANA with SAP HANA Cloud Platform"
+    url: https://open.sap.com/courses/hcp3a1/
+    children:
+    - title: "Learnings"
+      url: https://open.sap.com/courses/hcp3a1/resume
+    - title: "Discussions"
+      url: https://open.sap.com/courses/hcp3a1/pinboard
+    - title: "Progress"
+      url: https://open.sap.com/courses/hcp3a1/progress
+    - title: "Collab Space"
+      url: https://open.sap.com/courses/hcp3a1/learning_rooms
+    - title: "Announcements"
+      url: https://open.sap.com/courses/hcp3a1/announcements
+  - title: "Week 1: Getting Started"
+    url: /week-1/
+    children:
+    - title: "Unit 1: Why S/4HANA Extensions on HCP?"
+      url: /week-1/unit-1/
+    - title: "Unit 2: Business Scenario for this Course"
+      url: /week-1/unit-2/
+    - title: "Unit 3: Typical Extension Patterns"
+      url: /week-1/unit-3/
+    - title: "Unit 4: Typical Setup for Extension Projects"
+      url: /week-1/unit-4/
+    - title: "Unit 5: Getting Started: Tools Setup"
+      url: /week-1/unit-5/
+    - title: "Unit 6: Getting Started: SAP S/4HANA System Setup"
+      url: /week-1/unit-6/
+  - title: "Troubleshooting Guide"
+    url: /troubleshooting/
+
+# week-2 links
+week-2:
+  - title: "openSAP: Extending SAP S/4HANA with SAP HANA Cloud Platform"
+    url: https://open.sap.com/courses/hcp3a1/
+    children:
+    - title: "Learnings"
+      url: https://open.sap.com/courses/hcp3a1/resume
+    - title: "Discussions"
+      url: https://open.sap.com/courses/hcp3a1/pinboard
+    - title: "Progress"
+      url: https://open.sap.com/courses/hcp3a1/progress
+    - title: "Collab Space"
+      url: https://open.sap.com/courses/hcp3a1/learning_rooms
+    - title: "Announcements"
+      url: https://open.sap.com/courses/hcp3a1/announcements
+  - title: "Week 2: UX Extension"
+    url: /week-2/
+    children:
+    - title: "Unit 1: Understand the Challenge"
+      url: /week-2/unit-1/
+    - title: "Unit 2: Preparing Back-End APIs"
+      url: /week-2/unit-2/
+    - title: "Unit 3: Exposing Back-End APIs to the Cloud"
+      url: /week-2/unit-3/
+    - title: "Unit 4: Creating an SAP Fiori Launchpad in the Cloud"
+      url: /week-2/unit-4/
+    - title: "Unit 5: UX Extension: Filter, Sort, and Group by Rating"
+      url: /week-2/unit-5/
+  - title: "Troubleshooting Guide"
+    url: /troubleshooting/
+
+# week-3 links
+week-3:
+  - title: "openSAP: Extending SAP S/4HANA with SAP HANA Cloud Platform"
+    url: https://open.sap.com/courses/hcp3a1/
+    children:
+    - title: "Learnings"
+      url: https://open.sap.com/courses/hcp3a1/resume
+    - title: "Discussions"
+      url: https://open.sap.com/courses/hcp3a1/pinboard
+    - title: "Progress"
+      url: https://open.sap.com/courses/hcp3a1/progress
+    - title: "Collab Space"
+      url: https://open.sap.com/courses/hcp3a1/learning_rooms
+    - title: "Announcements"
+      url: https://open.sap.com/courses/hcp3a1/announcements
+  - title: "Week 3: Collaborative Extension"
+    url: /week-3/
+    children:
+    - title: "Unit 1: Understand the Challenge"
+      url: /week-3/unit-1/
+    - title: "Unit 2: Preparing and Exposing Back-End APIs"
+      url: /week-3/unit-2/
+    - title: "Unit 3: Preparing SAP Jam"
+      url: /week-3/unit-3/
+    - title: "Unit 4: Preparing Secured Access from SAP HANA Cloud Platform to SAP Jam"
+      url: /week-3/unit-4/
+    - title: "Unit 5: Collaboration Extension: Consuming Back-End APIs"
+      url: /week-3/unit-5/
+    - title: "Unit 6: Collaboration Extension: Creating and Accessing SAP Jam Groups"
+      url: /week-3/unit-6/
+  - title: "Troubleshooting Guide"
+    url: /troubleshooting/
+
+
+# week-4 links
+week-4:
+  - title: "openSAP: Extending SAP S/4HANA with SAP HANA Cloud Platform"
+    url: https://open.sap.com/courses/hcp3a1/
+    children:
+    - title: "Learnings"
+      url: https://open.sap.com/courses/hcp3a1/resume
+    - title: "Discussions"
+      url: https://open.sap.com/courses/hcp3a1/pinboard
+    - title: "Progress"
+      url: https://open.sap.com/courses/hcp3a1/progress
+    - title: "Collab Space"
+      url: https://open.sap.com/courses/hcp3a1/learning_rooms
+    - title: "Announcements"
+      url: https://open.sap.com/courses/hcp3a1/announcements
+  - title: "Week 4: Analytical Extension using SAP HANA on HCP and the Data Replication Pattern"
+    url: /week-4/
+    children:
+    - title: "Unit 1: Understand the Challenge"
+      url: /week-4/unit-1/
+    - title: "Unit 2: Setup HANA for Replication"
+      url: /week-4/unit-2/
+    - title: "Unit 3: Replicate Backend Data to the Cloud with SLT"
+      url: /week-4/unit-3/
+    - title: "Unit 4: Create an OData Service in SAP HANA"
+      url: /week-4/unit-4/
+    - title: "Unit 5: Create the SAP Fiori User Interface"
+      url: /week-4/unit-5/
+  - title: "Troubleshooting Guide"
+    url: /troubleshooting/
+
+
+# week-5 links
+week-5:
+  - title: "openSAP: Extending SAP S/4HANA with SAP HANA Cloud Platform"
+    url: https://open.sap.com/courses/hcp3a1/
+    children:
+    - title: "Learnings"
+      url: https://open.sap.com/courses/hcp3a1/resume
+    - title: "Discussions"
+      url: https://open.sap.com/courses/hcp3a1/pinboard
+    - title: "Progress"
+      url: https://open.sap.com/courses/hcp3a1/progress
+    - title: "Collab Space"
+      url: https://open.sap.com/courses/hcp3a1/learning_rooms
+    - title: "Announcements"
+      url: https://open.sap.com/courses/hcp3a1/announcements
+  - title: "Week 5: IoT Extension using the Hub Pattern and IoT Services"
+    url: /week-5/
+    children:
+    - title: "Unit 1: Understand the Challenge"
+      url: /week-5/unit-1/
+    - title: "Unit 2: IoT Service: Setting Up and Connecting Devices"
+      url: /week-5/unit-2/
+    - title: "Unit 3: IoT Service: Writing and Reading Data from SAP HANA"
+      url: /week-5/unit-3/
+    - title: "Unit 4: IoT Extension: Consuming Data from SAP HANA with Java"
+      url: /week-5/unit-4/
+    - title: "Unit 5: IoT Extension: Providing OData Services with Java"
+      url: /week-5/unit-5/
+    - title: "Unit 6: IoT Extension: SAP Fiori User Interfaces"
+      url: /week-5/unit-6/
+  - title: "Troubleshooting Guide"
+    url: /troubleshooting/
+
+
+# week-6 links
+week-6:
+  - title: "openSAP: Extending SAP S/4HANA with SAP HANA Cloud Platform"
+    url: https://open.sap.com/courses/hcp3a1/
+    children:
+    - title: "Learnings"
+      url: https://open.sap.com/courses/hcp3a1/resume
+    - title: "Discussions"
+      url: https://open.sap.com/courses/hcp3a1/pinboard
+    - title: "Progress"
+      url: https://open.sap.com/courses/hcp3a1/progress
+    - title: "Collab Space"
+      url: https://open.sap.com/courses/hcp3a1/learning_rooms
+    - title: "Announcements"
+      url: https://open.sap.com/courses/hcp3a1/announcements
+  - title: "Week 6: IoT Extension with the Hub Pattern and Integration in legacy Business Processes"
+    url: /week-6/
+    children:
+    - title: "Unit 1: Understand the Challenge"
+      url: /week-6/unit-1/
+    - title: "Unit 2: Prepare Backend API: Remote Function Modules"
+      url: /week-6/unit-2/
+    - title: "Unit 3: Create the IoT Extension: Consume RFC"
+      url: /week-6/unit-3/
+    - title: "Unit 4: IoT Extension: SAP Fiori User Interfaces"
+      url: /week-6/unit-4/
+  - title: "Troubleshooting Guide"
+    url: /troubleshooting/

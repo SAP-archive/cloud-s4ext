@@ -1,0 +1,32 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+	<localRepository/>
+	<proxies>
+		<!-- Example proxy settings. 
+			Update values for host, port, username, password and nonProxyHosts to your needs. 
+			 The username and password are only required if your proxy requires basic authentication. 
+		-->
+		<proxy>
+			<id>http-proxy</id>
+			<active>true</active>
+			<protocol>http</protocol>
+			<host>proxy.mycompany.com</host>
+			<port>8080</port>
+			<username>proxyuser</username>
+			<password>somepassword</password>
+			<nonProxyHosts>localhost|*.mycompany.com</nonProxyHosts>
+		</proxy>
+		<proxy>
+			<id>https-proxy</id>
+			<active>true</active>
+			<protocol>https</protocol>
+			<host>proxy.mycompany.com</host>
+			<port>8080</port>
+			<username>proxyuser</username>
+			<password>somepassword</password>
+			<nonProxyHosts>localhost|*.mycompany.com</nonProxyHosts>
+		</proxy>
+	</proxies>
+</settings>
