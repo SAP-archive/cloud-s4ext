@@ -79,15 +79,15 @@ analytics:
 author:
   name             : "Thomas Bieser"
   avatar           : "/assets/images/bieser.png"
-  bio              : "Platform as a Service Techie + Agile Guy + Open Source Enthusiast + Product Owner + Team Player = SAP HANA Cloud Product Manager"
+  bio              : "SAP HANA Cloud Product Manager"
   location         : "Walldorf, Germany"
-  email            : "thomas.bieser@sap.com"
+  email            :
   uri              :
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : "openSAPfanpage"
   foursquare       :
   github           :
   google_plus      :
@@ -100,7 +100,7 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
   steam            :
   tumblr           :
-  twitter          : "netbieser"
+  twitter          : "openSAP"
   vine             :
   weibo            :
   xing             :

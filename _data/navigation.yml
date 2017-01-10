@@ -1,7 +1,5 @@
 # main links
 main:
-  - title: "Troubleshooting"
-    url: /troubleshooting/
   - title: "Week 1"
     url: /week-1/
 #  - title: "Week 2"
@@ -14,6 +12,10 @@ main:
 #    url: /week-5/
 #  - title: "Week 6"
 #    url: /week-6/
+  - title: "Troubleshooting"
+    url: /troubleshooting/
+  - title: "Search"
+    url: /search/
 
 #navigation for home page
 home:
@@ -30,8 +32,6 @@ home:
       url: https://open.sap.com/courses/hcp3a1/learning_rooms
     - title: "Announcements"
       url: https://open.sap.com/courses/hcp3a1/announcements
-  - title: "Troubleshooting"
-    url: /troubleshooting/
   - title: "Tutorials"
     children:
     - title: "Week 1: Getting Started"
@@ -46,6 +46,10 @@ home:
 #      url: /week-5/
 #    - title: "Week 6: IoT Extension with the Hub Pattern and Integration in legacy Business Processes"
 #      url: /week-6/
+  - title: "Troubleshooting Guide"
+    url: /troubleshooting/
+  - title: "Site Search"
+    url: /search/
 
 # week-1 links
 week-1:
@@ -65,20 +69,22 @@ week-1:
   - title: "Week 1: Getting Started"
     url: /week-1/
     children:
-    - title: "Unit 1: Why S/4HANA Extensions on HCP?"
+    - title: "Unit 1: Why extend SAP S/4HANA on SAP HANA Cloud Platform?"
       url: /week-1/unit-1/
-    - title: "Unit 2: Business Scenario for this Course"
+    - title: "Unit 2: Course Business Scenario"
       url: /week-1/unit-2/
     - title: "Unit 3: Typical Extension Patterns"
       url: /week-1/unit-3/
-    - title: "Unit 4: Typical Setup for Extension Projects"
+    - title: "Unit 4: Extension Project Setup"
       url: /week-1/unit-4/
-    - title: "Unit 5: Getting Started: Tools Setup"
+    - title: "Unit 5: Tools Setup"
       url: /week-1/unit-5/
-    - title: "Unit 6: Getting Started: SAP S/4HANA System Setup"
+    - title: "Unit 6: SAP S/4HANA System Setup"
       url: /week-1/unit-6/
   - title: "Troubleshooting Guide"
     url: /troubleshooting/
+  - title: "Site Search"
+    url: /search/
 
 # week-2 links
 week-2:
@@ -110,6 +116,8 @@ week-2:
       url: /week-2/unit-5/
   - title: "Troubleshooting Guide"
     url: /troubleshooting/
+  - title: "Site Search"
+    url: /search/
 
 # week-3 links
 week-3:
@@ -143,6 +151,8 @@ week-3:
       url: /week-3/unit-6/
   - title: "Troubleshooting Guide"
     url: /troubleshooting/
+  - title: "Site Search"
+    url: /search/
 
 
 # week-4 links
@@ -175,6 +185,8 @@ week-4:
       url: /week-4/unit-5/
   - title: "Troubleshooting Guide"
     url: /troubleshooting/
+  - title: "Site Search"
+    url: /search/
 
 
 # week-5 links
@@ -209,6 +221,8 @@ week-5:
       url: /week-5/unit-6/
   - title: "Troubleshooting Guide"
     url: /troubleshooting/
+  - title: "Site Search"
+    url: /search/
 
 
 # week-6 links
@@ -239,3 +253,5 @@ week-6:
       url: /week-6/unit-4/
   - title: "Troubleshooting Guide"
     url: /troubleshooting/
+  - title: "Site Search"
+    url: /search/

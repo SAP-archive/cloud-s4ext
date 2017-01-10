@@ -36,3 +36,9 @@ td {
 tr, td, th {
   vertical-align: middle;
 }
+
+.gsc-control-cse table,
+.gsc-control-cse tr,
+.gsc-control-cse td {
+    border: 0;
+}
