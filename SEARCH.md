@@ -15,6 +15,8 @@ sidebar:
    </form>
  </div>
 
+_This search is provided using the Google Custom Search Engine. By using this search you agree to the respective [Terms of Use](https://cse.google.com/cse/docs/tos.html)._
+
  <script>
    (function() {
      var cx = '010388069096803321796:ssfchvgqlsq';
