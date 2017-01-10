@@ -1,7 +1,7 @@
 ---
 title: "Week 1: Getting Started"
 permalink: /week-1/
-excerpt: "Week 1 is the **Getting Started** week of the openSAP course **Extending SAP S/4HANA with SAP HANA Cloud Platform**. In units 1-4 you will get some general explanations about S/4 HANA Extensions on HCP, whereas in units 5 and 6 the hands-on sessions start, i.e. there you will install and setup the development tools and SAP S/4 HANA System so that you can execute the entire course and develop your own extensions"
+excerpt: "Week 1 is the **Getting Started** week of the openSAP course **Extending SAP S/4HANA with SAP HANA Cloud Platform**. In _units 1-4_ you will learn how SAP HANA Cloud Platform can help you to build state-of-the art extensions for your exising SAP system landscape. You will learn about the **business scenario** that you will work on in this openSAP course, typical extension patterns and about typical project setups with different roles. In _units 5-6_ the technical hands-on exercises begin: You will setup the **development tools**, register for a **SAP HANA Cloud Platform trial account** and install a **SAP S/4HANA system** in a Linux Virtual Machine on your computer that you will use as backend system in the consecutive course weeks."
 header:
   overlay_color: "#333"
 layout: single
@@ -10,7 +10,7 @@ sidebar:
 ---
 
 ## Units
-- Unit 1: [Why S/4HANA Extensions on HCP](./unit-1/)
+- Unit 1: [Why extend SAP S/4HANA on SAP HANA Cloud Platform?](./unit-1/)
 - Unit 2: [Business Scenario for this Course](./unit-2/)
 - Unit 3: [Typical Extension Patterns](./unit-3/)
 - Unit 4: [Typical Setup for Extension Projects](./unit-4/)

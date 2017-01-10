@@ -4,6 +4,8 @@ permalink: /week-1/unit-2/
 excerpt: "In this unit you will get an overview of a challenging S/4 HANA **Business Scenario** which is solved by several Extensions implemented on HANA Cloud Platform (HCP) during the course."
 header:
   overlay_color: "#333"
+  cta_label: "openSAP video"
+  cta_url: "https://open.sap.com/courses/hcp3a1/items/6I9M0h3b7tIoSEvqDJK5Yd"
 layout: single
 sidebar:
   nav: "week-1"
@@ -12,12 +14,11 @@ sidebar:
 
 {% include toc %}
 
-> **Note:** This unit does not contain any hands-on steps but only the presentation slides of the unit. It is recommended to listen to the corresponding video where the course instructor [Thomas explains the unit contents](https://open.sap.com/courses/hcp3a1) in detail.
-
+> **Note:** On this page you will only find the presentation slides of the unit, without any additional context or explanations. Therefore **we strongly recommend to watch the [corresponding video](https://open.sap.com/courses/hcp3a1/items/6I9M0h3b7tIoSEvqDJK5Yd)** _(openSAP log-in required)_ in which Thomas Bieser, the course instructor, explains the slides in detail. This will greatly enhance your understanding of this units content.
 
 ## Presentation Slides
 
-### Slide 1: Business Scenario
+### Slide 1: Title
 <img src="./images/Slide1.PNG" alt=""/>
 
 ### Slide 2: Agenda
@@ -46,4 +47,4 @@ sidebar:
 
 [Top](#top)
 
-[**< Previous** Unit 1](../unit-1/) | [**Up ^** Week 1](../) | [**Next >** Unit 3](../unit-3/)
+[**< Previous** Unit 1](../unit-1/) | [**Up ^** Week 1 Overview](../) | [**Next >** Unit 3](../unit-3/)

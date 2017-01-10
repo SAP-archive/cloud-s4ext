@@ -1,9 +1,11 @@
 ---
 title: "Week 1, Unit 5: Getting Started: Tools Setup"
 permalink: /week-1/unit-5/
-excerpt: "In this unit you will install and setup the required development tools to implement all the S/4HANA Extensions of the Business Scenario described in this course."
+excerpt: "In this unit you will setup your local development environment (Eclipse + SAP Plugins, Java SDK, Google Chrome + Extensions) and register for a SAP HANA Cloud Platform trial account. Finally you will verify that your development environment is set up correctly, by deploying a sample Java application to your SAP HANA Cloud Platform trial account."
 header:
   overlay_color: "#333"
+  cta_label: "openSAP video"
+  cta_url: "https://open.sap.com/courses/hcp3a1/items/4nAqh1ZzgCryJ4ctbid7mf"
 layout: single
 sidebar:
   nav: "week-1"
@@ -19,7 +21,7 @@ sidebar:
 
 **Roles:**
 
--   HCP administrator
+-   SAP HANA Cloud Platform administrator
 -   Application and Web Front-End Developer
 -   SAP HANA modeler
 
@@ -145,36 +147,35 @@ In this tutorial we will describe how to execute the entire extensions business 
 
 #### 3.1 Register for a Trial Account
 
-1.  Open [https://hanatrial.ondemand.com](https://hanatrial.ondemand.com), the SAP HANA Cloud Platform Trial entry page
+1.  Open [https://hanatrial.ondemand.com](https://hanatrial.ondemand.com), the SAP HANA Cloud Platform Trial entry page.
 
     <img src="./images/w1-u5-s3/pic01--register.png" alt="" width="640px" />
 
 2.  Click on **Register**.
 3.  On the **Registration** page.
-
-4.  Enter the mandatory data
-5.  Read and accept the Terms and Conditions
-6.  Confirm by clicking **Register**:
+    -   Enter the mandatory data
+    -   Read and accept the Terms and Conditions
+    -   Confirm by clicking **Register**:
 
     <img src="./images/w1-u5-s3/pic02--register.png" alt="" width="640px" />
 
-7.  You will get a "Thank you for registering with SAP" dialog. Just close it.
+4.  You will get a "Thank you for registering with SAP" dialog. Just close it.
 
     <img src="./images/w1-u5-s3/pic03--register.png" alt="" width="640px" />
 
-8.  You will receive a confirmation e-mail. Click on **Click here to activate your account** link to confirm your address and activate your trial account.
+5.  You will receive a confirmation e-mail. Click on **Click here to activate your account** link to confirm your address and activate your trial account.
 
     <img src="./images/w1-u5-s3/pic04--register.png" alt="" width="640px" />
 
-9.  Close the "News and Announcements" (if opens) as it is not relevant for this tutorial.
+6.  Close the "News and Announcements" (if opens) as it is not relevant for this tutorial.
 
     <img src="./images/w1-u5-s3/pic05--register.png" alt="" width="640px" />
 
-10. Click on the **p-User link** of your trial account.
+7.  Click on the **p-User link** of your trial account.
 
     <img src="./images/w1-u5-s3/pic06--register.png" alt="" width="640px" />
 
-11. The _SAP HANA Cloud Platform Cockpit_ overview page of your Trial account will open.
+8.  The _SAP HANA Cloud Platform Cockpit_ overview page of your Trial account will open.
 
     <img src="./images/w1-u5-s3/pic07--register.png" alt="" width="640px" />
 
@@ -191,7 +192,6 @@ In this tutorial we will describe how to execute the entire extensions business 
 For quickly accessing the HCP Trial Cockpit page create now a Web browser bookmark as follows:
 
 1.  Create a **bookmark** with name **HCP** for the opened HCP Trial cockpit page.
-
 2.  In Chrome click **Bookmark this page** icon
 3.  Change bookmark name to **HCP**
 4.  Folder: **Bookmarks bar**
@@ -281,12 +281,12 @@ For this course it is recommended to install the Eclipse Neon as follows:
     <img src="./images/w1-u5-s5/pic02--eclipse-install.png" alt="" width="640px" />
 
 3.  Choose the preferred download site and start the download.
-4.  Once the download has finished extract the archive to a local folder of your choice (e.g. `C:\\dev\\eclipse`).
+4.  Once the download has finished extract the archive to a local folder of your choice (e.g. `C:\dev\eclipse`).
 5.  Click on the eclipse executable file to start the Eclipse IDE.
 
     <img src="./images/w1-u5-s5/pic03--eclipse-install.png" alt="" width="640px" />
 
-6.  Eclipse will first show you a Workspace Launcher dialog to choose your workspace. Replace the suggested workspace path with c:\\dev\\eclipse_workspace.
+6.  Eclipse will first show you a Workspace Launcher dialog to choose your workspace. We suggest that you use a fresh workspace for the sake of this tutorial.  We will use the workspace path: `C:\dev\eclipse_workspace`.
 
     <img src="./images/w1-u5-s5/pic04--eclipse-install.png" alt="" width="640px" />
 
@@ -308,14 +308,12 @@ If you are accessing the Internet via a _proxy_ then you need to setup a proxy i
     > **Hint:** For Mac OSX, choose instead **Eclipse > Preferences**.
 
 2.  On the opened _Preferences_ page navigate to **General > Network Connections** and setup your proxy:
-
-3.  Choose **Manual** from **Active Provider** dropdown list.
-4.  Select the HTTP table row and click **Edit**
+    -   Choose **Manual** from **Active Provider** dropdown list.
+    -   Select the HTTP table row and click **Edit**
 
     <img src="./images/w1-u5-s5/pic06--eclipse-proxy.png" alt="" width="640px" />
 
-5.  On the opened _Edit Proxy Entry_ dialog
-
+5.  On the opened _Edit Proxy Entry_ dialog:
     -   Enter your **Host** and **Proxy** value (e.g. _proxy_ and _8080_).
     -   Click **OK** to confirm the proxy setting for HTTP schema.
 
@@ -332,23 +330,23 @@ If you are accessing the Internet via a _proxy_ then you need to setup a proxy i
 
 #### 5.3 Install _SAP Development Tools for Eclipse_
 
-Now install the SAP Tools for Eclipse into your IDE.
+Now install the SAP Development Tools for Eclipse into your IDE.
 
 1.  From the Eclipse menu, choose **Help > Install New Software...**
 
     <img src="./images/w1-u5-s5/pic09--sap-tools.png" alt="" width="640px" />
 
-2.  Copy the URL [https://tools.hana.ondemand.com/neon](https://tools.hana.ondemand.com/neon) and paste it in the **Work with** field and then press the **Enter** (or **Return**) key.
+2.  Copy the repository URL [https://tools.hana.ondemand.com/neon](https://tools.hana.ondemand.com/neon) and paste it in the **Work with** field and then press the **Enter** (or **Return**) key.
 
     <img src="./images/w1-u5-s5/pic10--sap-tools.png" alt="" width="640px" />
 
-3.  List of available software should appear.
+3.  A list of available software in this repository should appear.
 
     > **Note:** If Eclipse is not able to find the tools then please check your network settings again. Especially if you are working with a proxy you might check your proxy settings again.
 
-4.  In the List select the following tools:
-    -   **ABAP Development Tools for SAP Netweaver**.
-    -   **SAP HANA Cloud Platform Tools**,
+4.  In the list select the following tools:
+    -   **ABAP Development Tools for SAP Netweaver**
+    -   **SAP HANA Cloud Platform Tools**
     -   **SAP HANA Tools**
 5.  Press the **Next >** Button
 
@@ -376,15 +374,11 @@ Now install the SAP Tools for Eclipse into your IDE.
 
 In later weeks, you will import an _Analytical View_. Here you will run into errors if **UTF-8 Text encoding** is not set. The encoding which is preconfigured depends on various installation aspects of your Eclipse. Please check your preferences.
 
-1.  From the Eclipse menu, choose **Window > Preferences**
-
-    > **Hint:** For Mac OSX, choose instead **Eclipse > Preferences**.
-
+1.  From the Eclipse menu, choose **Window > Preferences**; on Mac OS X, choose **Eclipse > Preferences**.
 2.  On the opened _Preferences_ page navigate to **General > Workspace** and setup the _Text file encoding_:
-
-3.  Select **Other** in _Text file encoding_ section.
-4.  Select **UTF-8** from dropdown list.
-5.  Click **OK** to save this setting.
+    -   Select **Other** in _Text file encoding_ section.
+    -   Select **UTF-8** from dropdown list.
+    -   Click **OK** to save this setting.
 
     <img src="./images/w1-u5-s5/pic14b--utf8.png" alt="" width="640px" />
 
@@ -392,15 +386,13 @@ In later weeks, you will import an _Analytical View_. Here you will run into err
 
 #### 5.5 Configure _Chrome_ as default Web Browser for Eclipse
 
-As Gogole Chrome works best for our tutorial, its recommended to set _Chrome_ as default external Web browser for Eclipse.
+As Google Chrome works best for our tutorial, we recommend to set _Chrome_ as default external Web browser for Eclipse.
 
 1.  From the Eclipse menu, choose **Window > Preferences**
-2.  Choose **Java > Installed JREs**
-3.  Choose **General > Web Browser**
-
-4.  Select **Use external web browser** option
-5.  Select **Chrome** checkbox as _External web browser_
-6.  Click **OK** to save this preference setting
+2.  Choose **General > Web Browser**
+    -   Select **Use external web browser** option
+    -   Select **Chrome** checkbox as _External web browser_
+    -   Click **OK** to save this preference setting
 
     <img src="./images/w1-u5-s6/pic08--chrome-settings.png" alt="" width="640px" />
 
@@ -418,7 +410,7 @@ A first pre-condition for running a successful Maven build in Eclipse is that yo
 
 #### 6.1 Installed JRE in Eclipse - JDK8 needed
 
-1.  From the Eclipse menu, choose **Window > Preferences**
+1.  From the Eclipse menu, choose **Window > Preferences** _(On a Mac: **Eclipse > Preferences**)_
 2.  Choose **Java > Installed JREs**.
 
     <img src="./images/w1-u5-s6/pic01--installed-jre.png" alt="" width="640px" />
@@ -463,25 +455,22 @@ The next pre-condition for running a successful Maven build is the proxy setting
 
 #### 6.2 Reusing an already installed _Maven_
 
-On of the concept of _Maven_ is to held build artifacts and dependencies in a _repository_.
-When building a maven project artifacts are downloaded from repositories. The _settings.xml_ defines which repositories are known to your _maven_.
-
-If you have already a maven running on your computer and **don't want to disturb your existing maven repository** you can configure to use another _settings.xml_ for this tutorial.
+One of the concepts of _Maven_ is to store application artifacts with dependencies in a _repository_. When building a maven project, the artifacts are downloaded from these repositories. The _settings.xml_ defines which repositories are known to _Maven_.
+If you have already _Maven_ running on your computer and don't want change your existing setup, you should configure a new _settings.xml_ for this tutorial. This is described in this step.
 
 1.  Create a new directory anywhere for your new Maven repository content, for e.g. _m2-cloud-s4ext_ in your user home directory.
 2.  Download the file [settings.xml](./imports/maven/settings.xml?raw=true) and copy it to this directory.
 3.  Edit the file and replace the `<localRepository/>` tag with the path to the new directory which you created in step 1. For example: `<localRepository>${user.home}/m2-cloud-s4ext/repository</localRepository>`
-4.  In Eclipse open **Windows > Preferences> Maven> User Settings** (For Mac OSX, choose instead **Eclipse > Preferences>..**).
-5.  Select the new settings.xml file by clicking **Browse** under **User Settings**.
+4.  In Eclipse open **Windows > Preferences> Maven> User Settings** _(Mac OS X: **Eclipse > Preferences>..**)_.
+5.  Select the new _settings.xml_ file by clicking **Browse** under **User Settings**.
 6.  Click **Update Settings**. Click **Apply** and click **OK**.
 
-Find out at [https://maven.apache.org/settings.html](https://maven.apache.org/settings.html) how to use a different directory for your local maven repository using `localRepository` tag.
+Look at the [Maven Documentation](https://maven.apache.org/settings.html) how to use a different directory for your local maven repository using the `localRepository` tag.
 
 #### 6.3 Configure Proxy for Maven
 
-If you are **not** accessing the Internet **via a _proxy_** (typical for a corporate network) then you can skip this section and continue immediately with next [section 6.4](#maven-test-build).
-
-Otherwise you need to setup also a proxy for Maven as described with the following steps.
+If you are **not** accessing the Internet **via a _proxy_**, you may skip this section and continue with [section 6.4](#maven-test-build).
+Otherwise you need to setup also a proxy for Maven as described with the following steps, even though you have already configured a proxy for your Eclipse IDE.
 
 1.  Create a new folder of your choice where Maven will download and create repository artifact.
 
@@ -489,25 +478,22 @@ Otherwise you need to setup also a proxy for Maven as described with the followi
 
 2.  Download the file [settings.xml](./imports/maven/settings.xml?raw=true) and copy it to this directory.
 3.  From the Eclipse menu, choose **Window > Preferences**
-4.  In the **Preferences** dialog
-
-5.  Select **Maven > User Settings**
-6.  Click on **Open File** link next to user settings to open the before copied settings.xml file in an editor behind the _Preferences_ window.
+4.  Select **Maven > User Settings**
+5.  Click on **Open File** link next to user settings to open the before copied _settings.xml_ file in an editor behind the _Preferences_ window. (Please be advised that the file will only open in the background.)
 
     <img src="./images/w1-u5-s6/pic06--maven-settings.png" alt="" width="640px" />
 
-7.  Close the **Preference** dialog to display the entire settings.xml editor.
-8.  Edit your proxy information in the **\<proxies>** section.
-
-9.  Enter **host** and **port** of your proxy.
-10. If your proxy needs an authenticated user then enter **username** and **password**, otherwise simple remove these tags from the proxy settings.
-11. A simple unauthenticated proxy setting (with **proxy** as host and **8080** as port) is shown in the following screenshot.
+6.  Close the **Preferences** dialog by clicking on **OK** to display the _settings.xml_ file in the eclipse text editor.
+7.  Edit your proxy information in the **\<proxies>** section.
+8.  Enter **host** and **port** of your proxy.
+9.  If your proxy needs an authenticated user then enter **username** and **password**, otherwise simple remove these tags from the proxy settings.
+10. A simple unauthenticated proxy setting (with **proxy** as host and **8080** as port) is shown in the following screenshot.
 
     <img src="./images/w1-u5-s6/pic07--maven-settings.png" alt="" width="640px" />
 
-12. **Save** your changes and **close** then the settings.xml editor.s
+11. **Save** your changes and **close** the _settings.xml_ text editor.
 
-> **Info:** For more general information on proxy settings in Maven see [https://maven.apache.org/guides/mini/guide-proxies.html](https://maven.apache.org/guides/mini/guide-proxies.html).
+> **Info:** For more general information on proxy settings in Maven look at the [Maven Documentation](https://maven.apache.org/guides/mini/guide-proxies.html).
 
 [Top](#step-6-3-top)
 
@@ -515,9 +501,9 @@ Otherwise you need to setup also a proxy for Maven as described with the followi
 
 Now you are ready to test if can build and run a Java Web application project with Maven in your Eclipse IDE. For this test we prepared a Maven-based HelloWorld Java project as follows.
 
-1.  Download [helloworld.zip](./imports/java/helloworld.zip?raw=true).
-2.  Extract the downloaded helloworld.zip archive to a directory of your choice.
-3.  From the Eclipse menu, choose **File > Import...** to open _Import_ wizard.
+1.  Download the archive file [helloworld.zip](./imports/java/helloworld.zip?raw=true).
+2.  Extract the _helloworld.zip_ archive to a directory of your choice.
+3.  From the Eclipse menu, choose **File > Import...** to open the _Import_ wizard.
 
     <img src="./images/w1-u5-s6/pic09--hello-mav.png" alt="" width="640px" />
 
@@ -526,15 +512,14 @@ Now you are ready to test if can build and run a Java Web application project wi
     <img src="./images/w1-u5-s6/pic10--hello-mav.png" alt="" width="640px" />
 
 5.  In the **Import Maven Projects** dialog:
-
-6.  Click Button **Browse** and select the **helloworld** directory where you have extracted the helloworld.zip
-7.  The **helloworld/pom.xml** will be listed in the **Projects** section.
-8.  Select the checkbox of this **pom.xml**
-9.  Choose **Finish** to start importing the Maven project into your Eclipse.
+    -   Click Button **Browse** and select the **helloworld** directory where you have extracted the helloworld.zip
+    -   The **helloworld/pom.xml** will be listed in the **Projects** section.
+    -   Select the checkbox of this **pom.xml**
+    -   Choose **Finish** to start importing the Maven project into your Eclipse workspace.
 
     <img src="./images/w1-u5-s6/pic11--hello-mav.png" alt="" width="640px" />
 
-    > **Info:** **pom** stands for **Project Object Model**. It is an XML representation of a Maven project held in a file named pom.xml. For more information see: [https://maven.apache.org/pom.html](https://maven.apache.org/pom.html).
+    > **Info:** **POM** is an acronym for **Project Object Model**. It is an XML representation of a Maven project held in a file named _pom.xml_. For more information see the [Maven documentation](https://maven.apache.org/pom.html).
 
 10. In the **Project Explorer** view  of the _Java EE_ Perspective you should find now the imported **helloworld**.
 
@@ -544,8 +529,8 @@ Now you are ready to test if can build and run a Java Web application project wi
 
     <img src="./images/w1-u5-s6/pic13--hello-mav.png" alt="" width="640px" />
 
-12. Choose **Run As > Maven install** to start the Maven build for the helloworld project.
-13. The _Eclipse IDE_ will open a **Console** Tab that displays the build progress. You should see **BUILD SUCCESS**. If not please check the [troubleshooting Guide for Maven](../../troubleshooting/troubleshooting-maven)
+12. Choose **Run As > Maven install** to start the _Maven build_ for the _helloworld_ project.
+13. The _Eclipse IDE_ will open a **Console** Tab that displays the build progress. You should see **BUILD SUCCESS**. If your build was not successful, please check the [troubleshooting Guide for Maven](../../troubleshooting/troubleshooting-maven).
 
     <img src="./images/w1-u5-s6/pic14--hello-mav.png" alt="" width="640px" />
 
@@ -555,13 +540,13 @@ Now you are ready to test if can build and run a Java Web application project wi
     >
     > <img src="./images/w1-u5-s6/pic15--hello-mav.png" alt="" width="640px" />
 
-> **Result:** Maven has build successfully the _helloworld_ Java web application and created a **helloworld.war** file (see console output for the location). You can deploy this war file to Java virtual machine of you Trial HCP account and run the _helloworld_ application then in the Cloud. This you will do in the following [section 6.5](#deploy-and-run-helloworld-java-app-on-hcp-account)
+> **Result:** Maven has build successfully the _helloworld_ Java web application and created a **helloworld.war** file (see console output for the location). You can deploy this war file to your SAP HANA Cloud Platform trial account and run the _helloworld_ application then in the Cloud. You will do this in the next step.
 
 [Top](#step-6-4-top)
 
 #### 6.5 Deploy and Run HelloWorld Java App on HCP Account
 
-As you now have successfully build the helloworld Java Application with the **helloworld.war** as deployable build artifact we will show here quickly the steps how you should deploy and run such Java applications on your HCP Trial account.
+In this sub-step we will instruct you how to deploy and run Java application in your SAP HANA Cloud Platform trial account. As an example you will deploy and run the _helloworld_ application that you built in the previous sub-step.
 
 1.  Open **HCP Cockpit** bookmark in _Chrome_ Web browser (as defined in above [section 3.1](#register-for-a-trial-account)).
 2.  Log in with your HCP Trial User Id (P-user) and password (if requested).
@@ -570,42 +555,41 @@ As you now have successfully build the helloworld Java Application with the **he
 
     <img src="./images/w1-u5-s6/pic16--hello-deploy.png" alt="" width="640px" />
 
-5.  In the **Deploy Application** dialog use the following properties:
+5.  In the **Deploy Application** dialog, select the **helloworld.war** from your local file system.
 
-6.  **WAR File Location**: **helloworld.war** from your local file system. This will suggest you the **Application Name** **helloworld**, which is fine.
+> **Hint:** How to find the path of the _helloworld.war_? In Eclipse open the **Context Menu of helloworld.war > Properties**. In the upcoming properties dialog you can find the full path:
+>
+>  <img src="./images/w1-u5-s6/pic16b--hellowarproperties.png" alt="" with="640px" />
 
-    > **Hint:** How to get the path of the war? In Eclipse open the **Context Menu of helloworld.war > Properties**. In the upcoming properties dialog you can find the full path.
-    >
-    >  <img src="./images/w1-u5-s6/pic16b--hellowarproperties.png" alt="" with="640px" />
-    >
-    > -   **Runtime Name**: **Java Web Tomcat 8**.
-    >     **Warning:** Don't use other properties for the applications of this course.
-    > -   Click on **Deploy** to start the upload of the helloworld.war file to your HCP account.
+6.  Set the following properties:
+      - Runtime Name: **Java Web Tomcat 8**
+      - JVM Version: **JRE 8**
 
     <img src="./images/w1-u5-s6/pic17--hello-deploy.png" alt="" width="640px" />
 
-7.  On the **successfully deployed** dialog click on **Start** to start the deployed Java application.
+7.  Click on **Deploy** to start the upload of the _helloworld.war_ file to your HCP trial account.
+8.  In the **successfully deployed** dialog click on **Start** to start the deployed Java application.
 
     <img src="./images/w1-u5-s6/pic18--hello-deploy.png" alt="" width="640px" />
 
-8.  Once the Java application is started, click on the  **helloworld** application.
+9.  Once the Java application is started, click on the **helloworld** application link.
 
     <img src="./images/w1-u5-s6/pic19--hello-deploy.png" alt="" width="640px" />
 
-9.  Click on the link under **Application URLs**. It opens the application in a new browser window.
+10. Click on the link under **Application URLs**. It opens the application in a new browser window.
 
     <img src="./images/w1-u5-s6/pic20--hello-deploy.png" alt="" width="640px" />
 
-10. Click on the link in **Open HelloWorldServlet**.
+11. You can now see the output that the _helloworld_ application created. Click on the link in **Open HelloWorldServlet**.
 
     <img src="./images/w1-u5-s6/pic21--hello-deploy.png" alt="" width="640px" />
 
-11. A message **Hello World!** is displayed.
+12. A message **Hello World!** is displayed.
 
     <img src="./images/w1-u5-s6/pic22--hello-deploy.png" alt="" width="640px" />
 
-> **Result:** You have successfully deployed and started the _helloworld_ application in your **SAP HANA Cloud Platform Trial Account**. Later in this course in week 5 and 6 you will deploy and run other Java applications to your HCP Trial account in the same way as you tested here with the _helloworld_.
+> **Result:** You have successfully deployed and started the _helloworld_ application in your **SAP HANA Cloud Platform Trial Account**. Later in this course (week 5 and 6) you will deploy and run other Java applications to your HCP Trial account in the same way.
 
 [Top](#step-6-5-top)
 
-[**&lt; Previous** Unit 4](../unit-4/) | [**Up ^** Week 1](../) | [**Next >** Unit 6](../unit-6/)
+[**&lt; Previous** Unit 4](../unit-4/) | [**Up ^** Week 1 Overview](../) | [**Next >** Unit 6](../unit-6/)
