@@ -47,7 +47,9 @@ sidebar:
 
 # Browser bookmarks
 
-- **HCP** [see Week 1, Unit 5, Step 3]({{base_path}}/week-1/unit-5#step-3-prepare-sap-hana-cloud-platform-trial-account)
-- **SAP Web IDE** [see Week 1, Unit 5, Step 4]({{base_path}}/week-1/unit-5#step-4-prepare-sap-web-ide)
-- **IOT Service Cockpit** [see Week5, Unit 2, Step 1]({{base_path}}/week-5/unit-2#step-1-enable-iot-service-in-hcp-trial-account)
-- **Message Management Service Cockpit**  [see Week 5, Unit 2, Step 2]({{base_path}}/week-5/unit-2#step-2-deploy-iot-message-management-service-mms)
+As some of the URLs are individualized based on your SAP HANA Cloud Platform user ID, we advise you to create different browser bookmarks, which allow you to reliably and quickly find your services again. Here you can see an overview on the different browser bookmarks you should create over the course of the tutorial:
+
+| Bookmark            | Description | Location   |
+|---------------------|-------------|------------|
+| **HCP**             | SAP HANA Cloud Platform Cockpit | [see Week 1, Unit 5, Step 3]({{base_path}}/week-1/unit-5#step-3-prepare-sap-hana-cloud-platform-trial-account)
+| **SAP Web IDE**     | SAP Web IDE in your HCP account | [see Week 1, Unit 5, Step 4]({{base_path}}/week-1/unit-5#step-4-prepare-sap-web-ide)
