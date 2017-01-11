@@ -402,7 +402,8 @@ As Google Chrome works best for our tutorial, we recommend to set _Chrome_ as de
 
 ## Step 6: Build and Run Maven-based Project in Eclipse
 
-In this last section of the unit 5 you will ensure that your Eclipse IDE can successfully build a Maven-based _HelloWorld_ Java project.
+Apache _Maven_ is a software project management tool, that can manage a project's build, reporting and documentation from a central piece of information - called _project object model (POM)_.
+In this step you will ensure that your Eclipse IDE can successfully build a Maven-based _HelloWorld_ Java project.
 
 > **Note:** Building successfully a Maven-based Java project in your Eclipse is a prerequisite for executing the tutorial course. In weeks 5 and 6 you will build and deploy the so-called Java Hub applications in the same way as you test now for the HelloWorld.
 
@@ -453,9 +454,10 @@ The next pre-condition for running a successful Maven build is the proxy setting
 
 [Top](#step-6-1-top)
 
-#### 6.2 Reusing an already installed _Maven_
+#### 6.2 Reusing an already installed Maven (optional)
 
-One of the concepts of _Maven_ is to store application artifacts with dependencies in a _repository_. When building a maven project, the artifacts are downloaded from these repositories. The _settings.xml_ defines which repositories are known to _Maven_.
+In case you are using _Maven_ for the first time on your computer, you may skip this step and continue with [Step 6.3](#configure-proxy-for-maven).
+
 If you have already _Maven_ running on your computer and don't want change your existing setup, you should configure a new _settings.xml_ for this tutorial. This is described in this step.
 
 1.  Create a new directory anywhere for your new Maven repository content, for e.g. _m2-cloud-s4ext_ in your user home directory.

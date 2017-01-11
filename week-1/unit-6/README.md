@@ -173,7 +173,7 @@ As the some of the installation files are very large (> several GB) we recommend
 
     <img src="./images/w1-u6-s2/pic13--install-linux.png" alt="" width="640px" />
 
-  > **Note:** If you have never worked with a Virtual Machine before, you have to imagine that a VM acts like a computer inside of your operating system. The window that now opened acts like a computer monitor for this emulated machine.
+    > **Note:** If you have never worked with a Virtual Machine before, you have to imagine that a VM acts like a computer inside of your operating system. The window that now opened acts like a computer monitor for this emulated machine.
 
 2.  Quickly use your keyboard **DOWN key** to select the **Installation** menu item, otherwise it will automaticall select the first menu item.
 
@@ -215,7 +215,7 @@ As the some of the installation files are very large (> several GB) we recommend
 13. Click on **Next**.
 14. Provide User's Full Name, Username and Master Password and click **Next**.
 
-  > **Note:** Regarding the _Master Password_ we assume that you might want to use the same password throughout the tutorial, because it might be easier to remember. The SAP NetWeaver requires a certain password complexity. Therefore, it makes sense that you use at least 8 characters, one number and one capital letter to form your password, e.g. _Appl1ance_.
+    > **Note:** Regarding the _Master Password_ we assume that you might want to use the same password throughout the tutorial, because it might be easier to remember. The SAP NetWeaver requires a certain password complexity. Therefore, it makes sense that you use at least 8 characters, one number and one capital letter to form your password, e.g. _Appl1ance_.
 
     <img src="./images/w1-u6-s2/pic22--install-linux.png" alt="" width="640px" />
 
@@ -784,9 +784,7 @@ In your host OS (Windows or Mac OS) navigate to the location where you extracted
 
     <img src="./images/w1-u6-s6/pic13c--gui-sys.png" alt="" width="640px" />
 
-> **Hint (optional):** The _Favorites_ links like **Launchpad** as you can see in the before opened _SAP Easy Access_ page will only work, if you add the following entry to the `hosts` file in your **host operating system** (Windows: open the file **C:\\Windows\\System32\\drivers\\etc\\hosts** in a text editor with administrator privileges):
->
-> `127.0.0.1 vhcalnplci vhcalnplci.dummy.nodomain`
+> **Hint (optional):** The _Favorites_ links like **Launchpad** as you can see in the before opened _SAP Easy Access_ page will only work, if you add the following entry to the `hosts` file in your **host operating system** (Windows: open the file **C:\\Windows\\System32\\drivers\\etc\\hosts** in a text editor with administrator privileges): `127.0.0.1 vhcalnplci vhcalnplci.dummy.nodomain`
 
 **For Mac OS X:**
 
@@ -827,9 +825,7 @@ In your host OS (Windows or Mac OS) navigate to the location where you extracted
 
     <img src="./images/w1-u6-s6/pic21--gui-mac-sys.png" alt="" width="640px" />
 
-> **Hint (optional):** The _Favorites_ links like **Launchpad** as you can see in the before opened _SAP Easy Access_ page will only work, if you add the following entry to the `hosts` file in your **host operating system**. (Mac OS: open _Terminal_ and type  **_sudo nano /etc/hosts_**):
->
-> `127.0.0.1 vhcalnplci vhcalnplci.dummy.nodomain`
+> **Hint (optional):** The _Favorites_ links like **Launchpad** as you can see in the before opened _SAP Easy Access_ page will only work, if you add the following entry to the `hosts` file in your **host operating system**. (Mac OS: open _Terminal_ and type  **_sudo nano /etc/hosts_**): `127.0.0.1 vhcalnplci vhcalnplci.dummy.nodomain`
 
 [Top](#step-6-2-top)
 
