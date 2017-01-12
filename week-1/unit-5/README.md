@@ -33,6 +33,13 @@ sidebar:
 -   Eclipse IDE
 -   Maven
 
+## Downloads
+
+| Download Link                                       | Description                   | Context                                                                                                           |
+|-----------------------------------------------------|-------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| [**settings.xml**](./imports/maven/settings.xml)    | Maven Configuration File      | [Step 6: Build and Run Maven-based Project in Eclipse](#step-6-build-and-run-maven-based-project-in-eclipse)      |
+| [**helloworld.zip**](./imports/java/helloworld.zip) | HelloWorld Java project       | [Step 6: Build and Run Maven-based Project in Eclipse](#step-6-build-and-run-maven-based-project-in-eclipse)      |
+
 ## Step 1: Installing Java 8 SDK
 
 In this tutorial Java 8 SDK is mandatory.
