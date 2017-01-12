@@ -183,6 +183,8 @@ week-4:
       url: /week-4/unit-4/
     - title: "Unit 5: Create the SAP Fiori User Interface"
       url: /week-4/unit-5/
+    - title: "Unit 6: Analytical Extensions with SAP BusinessObjects Cloud"
+      url: /week-4/unit-6/
   - title: "Troubleshooting Guide"
     url: /troubleshooting/
   - title: "Site Search"
@@ -251,6 +253,8 @@ week-6:
       url: /week-6/unit-3/
     - title: "Unit 4: IoT Extension: SAP Fiori User Interfaces"
       url: /week-6/unit-4/
+    - title: "Unit 5: Wrap-Up and Summary"
+      url: /week-6/unit-5/
   - title: "Troubleshooting Guide"
     url: /troubleshooting/
   - title: "Site Search"
