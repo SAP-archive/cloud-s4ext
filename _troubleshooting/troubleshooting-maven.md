@@ -3,8 +3,6 @@ title: "Troubleshooting: Maven"
 excerpt: "Here you can find hints why your Maven build in your Eclipse IDE isn't working"
 tags:
   - "Week 1"
-  - "Week 5"
-  - "Week 6"
 categories:
   - "Tools"
 ---
