@@ -3,6 +3,8 @@ title: "Troubleshooting: Maven"
 excerpt: "Here you can find hints why your Maven build in your Eclipse IDE isn't working"
 tags:
   - "Week 1"
+  - "Week 5"
+  - "Week 6"
 categories:
   - "Tools"
 ---
@@ -40,3 +42,31 @@ Use **Eclipse > Window > Preferences > Maven > User Settings** to find out the *
   <img src="{{base_path}}/troubleshooting/images/trbl-mvn/pic02--repopath.png" alt="" with="640px" />
 
 Before you can delete the repository folder, you have to close _Eclipse_, as Eclipse locks some of the repository files.
+
+## TRBL 3: You can't import helloworld zip due to "dependencies could not be resolved"
+
+You have import the **helloworld** as described at [week3 Unit5 Step6.4 Maven Test Build 1.-5.]({{base_path}}/week-1/unit-5/#maven-test-build)
+but you get an error saying that ```... Could not calculate build plan....Failed to read artifact descriptor...``` 
+as shown in the screen shot:
+ 
+  <img src="{{base_path}}/troubleshooting/images/trbl-mvn/pic03--helloworldimport.png" alt="" with="640px" />
+  
+Please check if your Internet access is still working.
+ If you are working behind a proxy please check if your proxy is set correctly in your **settings.xml**.  see [week1 unit5 Step 6.2]({{base_path}}/week-1/unit-5#configure-proxy-for-maven)
+
+After you have configured proxy for maven:
+
+1. Delete the **helloworld** Eclipse project, if existing. 
+2. Follow **TRBL 2** above to delete your repository.
+3. Import the **helloworld** from a freshly unzipped file location. Do **not** try to reimport form the old file location, as Eclipse might have created files breaking your import again. 
+
+
+
+
+
+
+ 
+
+
+	
+	
