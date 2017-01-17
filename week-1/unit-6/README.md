@@ -835,7 +835,7 @@ To work with the installed local _SAP NetWeaver AS ABAP_ system you have to requ
 
 ##### 6.3.1 Install License
 
-1.  Use the before opened **SAP GUI** where you logged in with the **Developer** user.
+1.  Open **SAP GUI** and login with the **SAP*** user.
 2.  Enter **SLICENSE** in the transaction field in the upper left corner.
 
     <img src="./images/w1-u6-s6/pic22--license.png" alt="" width="640px" />
