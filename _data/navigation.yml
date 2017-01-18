@@ -2,8 +2,8 @@
 main:
   - title: "Week 1"
     url: /week-1/
-#  - title: "Week 2"
-#    url: /week-2/
+  - title: "Week 2"
+    url: /week-2/
 #  - title: "Week 3"
 #    url: /week-3/
 #  - title: "Week 4"
@@ -36,8 +36,8 @@ home:
     children:
     - title: "Week 1: Getting Started"
       url: /week-1/
-#    - title: "Week 2: UX Extension"
-#      url: /week-2/
+    - title: "Week 2: UX Extension"
+      url: /week-2/
 #    - title: "Week 3: Collaborative Extension"
 #      url: /week-3/
 #    - title: "Week 4: Analytical Extension using SAP HANA on HCP and the Data Replication Pattern"

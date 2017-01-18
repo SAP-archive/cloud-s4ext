@@ -3,6 +3,7 @@ title: "Troubleshooting: openSUSE Linux and VirtualBox VM"
 excerpt: "Here you can find troubleshooting information on issues with your openSUSE Linux guest operating system and on issues with Oracle VirtualBox virtual machine container."
 tags:
   - "Week 1"
+  - "Week 2"
 categories:
   - "SAP S/4HANA NetWeaver Backend"
 ---

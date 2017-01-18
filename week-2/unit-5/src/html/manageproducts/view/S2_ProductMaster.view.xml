@@ -1,0 +1,89 @@
+<mvc:View
+    xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+    controllerName="nw.epm.refapps.ext.prod.manage.controller.S2_ProductMaster"
+    busy="{= ${appProperties>/isListLoading}  &amp;&amp; !${appProperties>/isBusy} }"
+    busyIndicatorDelay="{appProperties>/masterBusyIndicatorDelay}" >
+
+	<Page id="masterPage" title="{viewProperties>/title}" showNavButton="true" navButtonPress="onNavButtonPress">
+        <headerContent>
+            <Button id="multiSelectButton" icon="{= ${appProperties>/isMultiSelect} ? 'sap-icon://sys-cancel' : 'sap-icon://multi-select' }"
+                press="onMultiSelectPressed"
+                enabled="{= ${appProperties>/noEditMode} &amp;&amp; ${appProperties>/lostDraftReadState} === 1 }"/>
+        </headerContent>
+
+		<subHeader>
+			<Toolbar id="searchToolbar">
+			    <!--Search field which triggers a (filtered) backend search.
+			        On desktop this control also provides an option to refresh the list.
+			        On non desktop devices the pull to refresh control (see below) is used for that -->
+				<SearchField id="SearchField" showRefreshButton="{= !${device>/support/touch} }"
+					search="onSearch" width="100%"/>
+			</Toolbar>
+		</subHeader>
+
+		<content>
+		    <!-- On non desktop devices the user triggers the list refresh by pulling down the list (pull to refresh) -->
+		    <PullToRefresh id="pullToRefresh" visible="{device>/support/touch}" refresh="onPullToRefresh" />
+
+		    <!--List of purchase orders that need to be approved. The list entries contain the information supplier name, total value, requester, change date and number of items-->
+		    <!-- Note that the select defined for the list items ensures, that all attributes that are required on S3 view are loaded already here -->
+
+			<!--                                                                                -->
+			<!-- Extending S/4HANA with HCP                                                     -->
+			<!-- * UX Extension: Adding filtering/sorting/grouping for AverageRating property   -->
+			<!-- changed code: added ',AverageRating' to select of items of List                -->
+			<List
+				id="list" selectionChange="onItemSelect" modeAnimationOn="false" includeItemInSelection="true"
+				mode="{= ${appProperties>/isMultiSelect} ? 'MultiSelect' : (${device>/system/phone} ? 'None' : 'SingleSelectMaster') }"
+				growing="true" growingScrollToLoad="true" updateFinished="onUpdateFinished" updateStarted="onUpdateStarted"
+				noDataText="{appProperties>/listNoDataText}" swipe="onSwipe"
+				enableBusyIndicator="false"
+                items="{path: '/Products',
+						sorter: {path: 'Name', ascending: true},
+						groupHeaderFactory: '.createGroupHeader',
+						parameters: {countMode: 'Inline',
+						select: 'Id,ImageUrl,Name,Price,CurrencyCode,SubCategoryName,MainCategoryName,QuantityUnit,StockQuantity,AverageRating'}}">
+				<ObjectListItem
+					id="objectListItem" type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}" press="onItemSelect"
+					icon="{ImageUrl}" iconDensityAware="false" title="{Name}" numberUnit="{CurrencyCode}"
+					number="{path:'Price', formatter: '.formatter.formatAmount'}" >
+					<attributes>
+						<ObjectAttribute id="mainCategoryAttribute" text="{MainCategoryName}" />
+						<ObjectAttribute id="subCategoryAttribute" text="{SubCategoryName}" />
+						<!--                                                                                -->
+						<!-- Extending S/4HANA with HCP                                                     -->
+						<!-- * UX Extension: Adding filtering/sorting/grouping for AverageRating property   -->
+						<!-- begin                                                                          -->
+						<ObjectAttribute text="Avg. Rating: {AverageRating}" />
+						<!-- end                                                                            -->
+					</attributes>
+				</ObjectListItem>
+				<infoToolbar>
+					<Toolbar id="filterToolbar" visible="{viewProperties>/filterToolbarVisible}">
+						<Label id="filterInfoLabel" text="{viewProperties>/filterInfoText}" />
+					</Toolbar>
+				</infoToolbar>
+				<swipeContent>
+					<Button id="swipeButton" text="{i18n>xbut.delete}" type="Reject" press="onSwipeDeleteItem" />
+				</swipeContent>
+			</List>
+		</content>
+
+		<!--Empty footer bar to align with the footer bar of the detail view-->
+		<footer>
+			<OverflowToolbar id="footerToolbar">
+				<ToolbarSpacer id="footerBeginSpacer"/>
+				<Button id="deleteButton" text="{i18n>xbut.delete}" visible ="{appProperties>/isMultiSelect}" enabled ="{viewProperties>/markExists}" press="onDeletePressed" />
+				<OverflowToolbarButton id="sortButton" icon="sap-icon://sort" text="{i18n>xbut.sort}" tooltip="{i18n>xbut.sort}"
+					    enabled ="{= ${appProperties>/noEditMode} &amp;&amp; ${appProperties>/metaDataLoadState} === 1}" press="onSortPressed" />
+				<OverflowToolbarButton id="filterButton" icon="sap-icon://filter" text="{i18n>xbut.filter}" tooltip="{i18n>xbut.filter}"
+					    enabled ="{= ${appProperties>/noEditMode} &amp;&amp; ${appProperties>/metaDataLoadState} === 1}" press="onFilterPressed" />
+				<OverflowToolbarButton id="groupButton" icon="sap-icon://group-2" text="{i18n>xbut.group}"  tooltip="{i18n>xbut.group}"
+					    enabled ="{= ${appProperties>/noEditMode} &amp;&amp; ${appProperties>/metaDataLoadState} === 1}" press="onGroupPressed" />
+				<OverflowToolbarButton id="addButton" icon="sap-icon://add" text="{i18n>xbut.add}" visible ="{= !${appProperties>/isMultiSelect}}"
+						tooltip="{i18n>xbut.add}" enabled ="{= ${appProperties>/noEditMode} &amp;&amp; ${appProperties>/lostDraftReadState} === 1}" press="onAddPressed" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+
+</mvc:View>

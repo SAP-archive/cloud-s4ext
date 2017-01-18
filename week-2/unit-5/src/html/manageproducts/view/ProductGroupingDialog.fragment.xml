@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog id="groupingSettingsDialog" confirm="onGroupingDialogConfirmed">
+		<groupItems>
+			<ViewSettingsItem id="mainCategoryGroupItem" text="{/#Product/MainCategoryName/@sap:label}" key="MainCategoryName" />
+			<ViewSettingsItem id="subCategoryGroupItem" text="{/#Product/SubCategoryName/@sap:label}" key="SubCategoryName" />
+			<ViewSettingsItem id="availibilityGroupItem"  text="{i18n>xfld.availability}" key="StockQuantity" />
+			<ViewSettingsItem id="priceGroupItem"  text="{/#Product/Price/@sap:label}" key="Price" />
+			<!--                                                                                -->
+			<!-- Extending S/4HANA with HCP                                                     -->
+			<!-- * UX Extension: Adding filtering/sorting/grouping for AverageRating property   -->
+			<!-- begin                                                                          -->
+			<ViewSettingsItem id="avgRatingGroupItem"  text="{/#Product/AverageRating/@sap:label}" key="AverageRating" />
+			<!-- end                                                                            -->
+		</groupItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

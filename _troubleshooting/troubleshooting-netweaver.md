@@ -1,8 +1,9 @@
 ---
 title: "Troubleshooting: SAP S/4HANA NetWeaver Backend"
-excerpt: "Here you can find information on how to troubleshoot errors with your SAP NetWeaver AS HANA backend installation."
+excerpt: "Here you can find information on how to troubleshoot errors with your SAP NetWeaver AS HANA backend system and its installation."
 tags:
   - "Week 1"
+  - "Week 2"
 categories:
   - "SAP S/4HANA NetWeaver Backend"
 ---
