@@ -62,17 +62,16 @@ The Linux installer for SAP HANA Cloud connector is stored in a download folder 
 2.  In the Linux VM window, logon to the Linux desktop, open the command shell (**XTerm** on Gnome, **Konsole** on KDE) and enter **sapcontrol -nr 00 -function GetProcessList** to check that the processes are running and are all GREEN. When SAP NetWeaver AS ABAP 7.50 is successfully running the command returns an **OK** message.
 
 3.  In the VirtualBox Manager on your host OS:
-4.  Select the Linux VM instance.
-5.  Click **Settings** and select the **Shared Folders** entry in the Settings dialog.
-6.  Click on **+** to add a new shared folder.
-7.  Select the **Folder Path** to the folder containing the SAP HANA Cloud Connector for Linux installer, e.g. **week2ux/unit3/downloads/**.
-8.  In **Folder Name** enter **scc** and click **OK**.
-9.  Click **OK**.
+    -   Select the Linux VM instance.
+    -   Click **Settings** and select the **Shared Folders** entry in the Settings dialog.
+    -   Click on **+** to add a new shared folder.
+    -   Select the **Folder Path** to the folder containing the SAP HANA Cloud Connector for Linux installer.
+    -   In **Folder Name** enter **scc** and click **OK**.
+    -   Click **OK**.
 
-    <img src="./images/w2-u3-s1/pic03-virtualbox-settings-sharedfolder.png" alt="" width="640px" />
+        <img src="./images/w2-u3-s1/pic03-virtualbox-settings-sharedfolder.png" alt="" width="640px" />
 
-10. In the Linux VM window (guest OS):
-
+4.  In the Linux VM window (guest OS):
     -   Open the command shell via start menu (enter **Konsole** in KDE desktop or **Xterm** in GNU desktop). By default the command shell opens the admin user's home directory `<admin user name>@vhcalnplci`.
 
         <img src="./images/w2-u3-s1/pic04-virtualbox-konsole-open.png" alt="" width="640px" />
@@ -86,7 +85,7 @@ The Linux installer for SAP HANA Cloud connector is stored in a download folder 
 #### 1.2 Run Installer for SAP HANA Cloud Connector in Linux VM
 
 1.  Enter command **sudo unzip sapcc-XXX-linux-x64.zip** (replace placeholder **XXX** with the given release version, e.g. **2.9.0.2**).
-2.  Enter command **sudo rpm -i com.sap.scc-ui-XXX.x86_64.rpm** (replace **XXX** with the given version number e.g. **1.5.1-4**).
+2.  Enter command **sudo rpm -i com.sap.scc-ui-XXX.x86_64.rpm** (replace **XXX** with the given version number e.g. **2.9.0-7**).
 
     > **Note:** you can autocomplete the package name with the **Tab** key while entering the command **sudo rpm -i com.**.
 
@@ -204,13 +203,14 @@ To allow your HANA Cloud Platform applications to access SAP S/4HANA back-end sy
 Expose the SAP back-end system host to your HCP trial account with the following entry in the access control list:
 
 1.  In Google Chrome browser open the tab with **SAP HANA Cloud Connector Administrator** or use the browser bookmark **SCC** you added in [Step 2.1](#set-up-initial-configuration).
-2.  Choose **Access Control** in the navigation menu to add corporate network hosts that can be accessed from your HCP account.
-3.  Download the file [s4h-http-access-control.zip](./imports/connector/s4h-http-access-control.zip?raw=true).
-4.  Click **Import** button in the toolbar under **Mapping Virtual To Internal System** and choose the previously downloaded ZIP-file **s4h-http-access-control.zip**.
+2.  In the navigation pane select item **Account: My Trial Account > Cloud To On-Premise**.
+3.  Choose tab **Access Control** to add corporate network hosts that can be accessed from your HCP account.
+4.  Download the file [s4h-http-access-control.zip](./imports/connector/s4h-http-access-control.zip?raw=true).
+5.  Click **Import** button in the toolbar under **Mapping Virtual To Internal System** and choose the previously downloaded ZIP-file **s4h-http-access-control.zip**.
 
     <img src="./images/w2-u3-s3/pic01-chrome-sccadmin-accctrl-import.png" alt="" width="640px" />
 
-     <img src="./images/w2-u3-s3/pic02-chrome-sccadmin-accctrl-importfile.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s3/pic02-chrome-sccadmin-accctrl-importfile.png" alt="" width="640px" />
 
 > **Result:** A new access control entry is added with the following definition:
 >
