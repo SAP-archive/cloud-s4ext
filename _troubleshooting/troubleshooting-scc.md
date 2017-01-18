@@ -18,20 +18,21 @@ categories:
 Check Network Adapter and port forwarding rule settings in VirtualBox Manager, for more details see [week 1 - unit 6 - step 4.1 Enable Network Access to Linux VM]({{base_path}}/week-1/unit-6/#enable-network-access-to-linux-vm):
 
 
-## TRBL 2: Destination not working
+## TRBL 2: "Check Connection" of the destination "s4h-onpremise-http" in Cloud Cockpit is not successful
 
-If you have imported a destination in Cloud Cockpit but the destination is not working.
-In the Cloud Cockpit, you can try to test your destination by clicking "Check Connection". If you get an error like the following :
+You have imported the destination "s4h-onpremise-http" in Cloud Cockpit following the steps described in [Week 2 - Unit 3 - Create HTTP Destination]({{base_path}}/week-2/unit-3/#step-4-create-http-destination-in-hcp-trial-account). You can try to test your destination by clicking "Check Connection" but the destination gives the error like the following :
 
-    <img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic01--firewall.png" alt="" width="640px" />
+<img src="{{base_path}}/troubleshooting/images/trbl-scc/pic01--dest-not-working.png" alt="" width="640px" />
 
 1.  Check if you have mistyped your password while importing the destination. Try to **Edit** and **Save** the destination with the correct password.
 
 2.  Check if your Cloud Cockpit has connection to the Cloud connector by following the steps as described in [Week 2 - Unit 3 - Check Connection]({{base_path}}/week-2/unit-3/#check-connection-in-hcp-trial-account).
 
-3.  If there is no connection to your Cloud connector, verify your SAP HANA Cloud Connector is running as described in [Week 2 - Unit 5]({{base_path}}/week-2/unit-5/#start-your-sap-cloud-connector).
+3.  Open [https://localhost:8443](https://localhost:8443) in your browser and verify if your SAP HANA Cloud Connector is running. If not, start the cloud connector as described in [Week 2 - Unit 5]({{base_path}}/week-2/unit-5/#start-your-sap-cloud-connector).
 
-4.  Check if in your Cloud Connector, if you have exposed Access to S/4 HANA backend system as described in [Week 2 - Unit 3 - Add Access to S/4HANA Back-End System]({{base_path}}/week-2/unit-3/#step-3-add-access-to-s4hana-back-end-system). See your exposed back-end resources in your Cloud Cockpit as shown in step 3.3.
+4.  You should have exposed Access to S/4 HANA backend system in your SAP HANA Cloud Connector as described in [Week 2 - Unit 3 - Add Access to S/4HANA Back-End System]({{base_path}}/week-2/unit-3/#step-3-add-access-to-s4hana-back-end-system). See your exposed back-end resources in your Cloud Cockpit as shown in step 3.3.
+
+5.   Check if your backend SAP Netweaver AS ABAP system is running. If not start  the ABAP system by following the steps in [Week 1 - Unit 6]({{base_path}}/week-1/unit-6/#starting-vm-with-netweaver-as-abap).
 
 ## TRBL 3: Destinations not visible in SAP Web IDE
 

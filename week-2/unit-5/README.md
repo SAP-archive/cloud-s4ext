@@ -39,7 +39,28 @@ sidebar:
 
 ## Step 1: Import Extension UI to SAP HANA Cloud Platform
 
-#### 1.1 Import Fiori App from ABAP Repository into SAP Web IDE
+#### 1.1 Start your SAP Cloud Connector
+
+Check if the _SAP Cloud Connector_ (SCC) is up and running.
+
+1.  In the running **Oracle VM VirtualBox** open a **Konsole** (KDE **Application Menu > System > Konsole**)
+2.  Check _SCC_ status:
+3.  Execute **sudo service scc_daemon status** (will ask for root password) to get the SCC status output.
+4.  If status output is:
+
+    -   **Active: active** then Cloud Connector is up and running.
+
+        ![](images/w2-u5-s1/pic012--prep-steps.png)
+
+    -   **Active: inactive** then start Cloud Connector: **sudo service scc_daemon start**
+
+        -   Then **Check _SCC_ status** again.
+
+        ![](images/w2-u5-s1/pic011--prep-steps.png)
+
+> **Result:** Your SAP HANA Cloud Connector is up and running.
+
+#### 1.2 Import Fiori App from ABAP Repository into SAP Web IDE
 
 1.  In Google Chrome browser start **SAP Web IDE** in a new tab by using the bookmark you added in [Week 1, Unit 5](../../week-1/unit-5/#create-sap-web-ide-bookmark).
 
@@ -70,7 +91,7 @@ sidebar:
 
 > **Note:** The so-called [SAP Fiori Reference Apps](http://scn.sap.com/docs/DOC-59963) _Shop_ and _Manage Products_ used in this tutorial are sample applications for learning purposes. They do not access _real_ product master data from the S/4HANA backend but are connected to the _Enterprise Procurement Model_.
 
-#### 1.2 Test Imported Fiori App in SAP Web IDE
+#### 1.3 Test Imported Fiori App in SAP Web IDE
 
 In SAP Web IDE you can explore the newly imported Fiori application **manageapplication**.
 
