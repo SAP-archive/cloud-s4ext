@@ -58,7 +58,7 @@ sidebar:
 
 The Linux installer for SAP HANA Cloud connector is stored in a download folder of your host OS. To run it from within the Linux VM (guest OS) you need to mount a shared download folder from your local operating system:
 
-1.  First test the system status of SAP NetWeaver AS ABAP 7.50 as described in [section 6.5](../../week-1/unit-6/#starting-vm-with-netweaver-as-abap) of unit 6 in week 1):
+1.  First test the system status of SAP NetWeaver AS ABAP 7.50 as described in [section 6.5](../../week-1/unit-6/#starting-vm-with-netweaver-as-abap) of unit 6 in week 1:
 2.  In the Linux VM window, logon to the Linux desktop, open the command shell (**XTerm** on Gnome, **Konsole** on KDE) and enter **sapcontrol -nr 00 -function GetProcessList** to check that the processes are running and are all GREEN. When SAP NetWeaver AS ABAP 7.50 is successfully running the command returns an **OK** message.
 
 3.  In the VirtualBox Manager on your host OS:
@@ -145,9 +145,10 @@ Once the cloud connector has been installed and the connector daemon has been st
     | Account Name | **p19XXXtrial** (paste it from the clipboard, see step 2 in the note below) |
     | Display Name | e.g. **My Trial Account** |
     | Account User | **p194XXX** (paste it from the clipboard, see step 3 in the note below) |
-    | Password | <enter your own password> |
+    | Password | _enter your own password!_ |
+    | Location ID | **must be kept empty!** |
 
-    (keep fields _Location ID_ and _Description_ empty)
+    > **Warning:** You must keep the _Location ID_ field empty, otherwise the HTTP destination that is imported later in [step 4](#step-4-create-http-destination-in-hcp-trial-account) won't work at runtime! In order to route requests to a cloud connector with a _Location ID_ it also needs to be configured in the respective destinations what is not the case for our imported destination. For more technical details see [SAP HANA Cloud Connector Help - Initial Configuration](https://help.hana.ondemand.com/help/frameset.htm?db9170a7d97610148537d5a84bf79ba2.html).
 
     > **Note:** How to get your HCP trial account name and user:
     >

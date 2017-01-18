@@ -205,13 +205,12 @@ Now you will run from Eclipse IDE an ABAP application, the **SICF** transaction,
 
     <img src="./images/w2-u2-s2/pic01--explore-odata.png" alt="" width="640px" />
 
-2.  In the opened **Run ABAP Application** window
+2.  In the opened **Run ABAP Application** window enter search string **SICF** (Searching action will start and **can take some** time, just wait).
 
     > **Note:** The _Run ABAP Application_ action gives you access to all transaction an AS ABAP system exposes and the used _SICF_ is one of them.
 
-3.  Enter search string **SICF** (Searching action will start and **can take some** time, just wait).
-4.  Select first matching item **SICF (Transaction)**.
-5.  Click **OK**.
+3.  Select first matching item **SICF (Transaction)**.
+4.  Click **OK**.
 
     <img src="./images/w2-u2-s2/pic02--explore-odata.png" alt="" width="640px" />
 
@@ -219,18 +218,18 @@ Now you will run from Eclipse IDE an ABAP application, the **SICF** transaction,
     >
     > <img src="./images/w2-u2-s2/pic03--explore-odata.png" alt="" width="640px" />
 
-6.  Click **Minimize**  icon of the **Feature Explorer** view to get more space for the _SICF editor_
-7.  Keep the default filter (_Hierarchy Type_: **SERVICE**) of the _SICF editor_ and click the **Execute icon** on the _Define Service_ toolbar to open the hierarchy tree of available services.
+5.  Click **Minimize**  icon of the **Feature Explorer** view to get more space for the _SICF editor_
+6.  Keep the default filter (_Hierarchy Type_: **SERVICE**) of the _SICF editor_ and click the **Execute icon** on the _Define Service_ toolbar to open the hierarchy tree of available services.
 
     <img src="./images/w2-u2-s2/pic04--explore-odata.png" alt="" width="640px" />
 
-8.  In the **Virtual Hosts/Services** column expand tree item **default host > sap > opu > odata > sap**.
+7.  In the **Virtual Hosts/Services** column expand tree item **default host > sap > opu > odata > sap**.
 
     > **Note:** This location `sap/opu/odata/sap` is the location where you find OData services as delivered with any SAP NetWeaver AS ABAP. There you also find the OData services from the Reference applications of the [Enterprise Procurement Model (EPM)](http&#x3A;//www.sap.com/documents/2012/09/2a404253-5b7c-0010-82c7-eda71af511fa.html), a demonstration data model on which the business cases and challenges of this course are based on. The _Manage Products_ we use for an extension in this week 2 is one of these EPM Reference Applications and we will look in the following step for the underlying OData service of this application.
 
-9.  Select tree item **default host > sap > opu > odata > sap > epm_ref_apps_prod_man_srv**.
-10. Open **right-click context menu**.
-11. Make sure that **Activate Service** is grayed out, which means that the service is already activated.
+8.  Select tree item **default host > sap > opu > odata > sap > epm_ref_apps_prod_man_srv**.
+9. Open **right-click context menu**.
+10. Make sure that **Activate Service** is grayed out, which means that the service is already activated.
 
     > **Note:** If an OData service is not activated you can use this **Activate Service** to activate it.
 
