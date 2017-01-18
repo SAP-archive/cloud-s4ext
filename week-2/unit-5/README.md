@@ -41,11 +41,11 @@ sidebar:
 
 #### 1.1 Import Fiori App from ABAP Repository into SAP Web IDE
 
-1.  In Google Chrome browser start SAP Web IDE in a new tab by using the bookmark you added in [Week 1 - Unit 5](../week-1/unit-5/#create-sap-web-ide-bookmark).
+1.  In Google Chrome browser start **SAP Web IDE** in a new tab by using the bookmark you added in [Week 1, Unit 5](../../week-1/unit-5/#create-sap-web-ide-bookmark).
 
     <img src="./images/w2-u5-s1/pic01-chrome-open-webide.png" alt="" width="640px" />
 
-2.  Open **S/4HANA FLP** bookmark in _Chrome_ Web browser (as defined in [section 3.2](../../week-2/unit-1/#create-s4hana-flp-bookmark) of unit 1 in week 2)
+2.  Open **S/4HANA FLP** bookmark in _Google Chrome_ Web browser (as defined in [Week 2, Unit 1, Section 3.2](../../week-2/unit-1/#step-4-create-s4hana-flp-bookmark))
 
     -   Enter your user credentials **Developer**/**Appl1ance** to log in.
     -   The launchpad conains the groups **Employee (EPM)** and **Purchase (EPM)** with three applications **Shop**, **Approve Purchase Order** and **Manage Products**.
