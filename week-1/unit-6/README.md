@@ -987,4 +987,4 @@ We will describe this startup of the VM from the latest existing snapshot you cr
 
 [Top](#step-6-5-2-top)
 
-[**&lt; Previous** Unit 4](../unit-4/) | [**Up ^** Week 1 Overview](../)
+[**&lt; Previous** Unit 4](../unit-4/) | [**Up ^** Week 1 Overview](../) | [**&gt; Previous** Week 2 Overview](../../week-2/)
