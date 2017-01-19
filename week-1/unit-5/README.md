@@ -84,7 +84,7 @@ Tools like the _SAP Web IDE_ work best with _Google Chrome_, so we recommend to 
 
     > **Hint:** In this tutorial we will rely on the _default browser language_ is set to **English**.
 
-4.  Open **chrome://chrome/settings/languages** and make sure that **English** or **English (United States)** is set as default language.
+4.  Open **chrome://chrome/settings/languages** and make sure that **English** or **English (United States)** is set as default language, which means that **English** appease as the first Entry in the **Languages list**.
 
     <img src="./images/w1-u5-s2/pic01--en.png" alt="" width="640px" />
 
