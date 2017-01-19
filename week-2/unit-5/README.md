@@ -44,9 +44,8 @@ sidebar:
 Check if the _SAP Cloud Connector_ (SCC) is up and running.
 
 1.  In the running **Oracle VM VirtualBox** open a **Konsole** (KDE **Application Menu > System > Konsole**)
-2.  Check _SCC_ status:
-3.  Execute **sudo service scc_daemon status** (will ask for root password) to get the SCC status output.
-4.  If status output is:
+2.  To check the _SCC_ status execute **sudo service scc_daemon status** (will ask for root password).
+3.  If status output is:
 
     -   **Active: active** then Cloud Connector is up and running.
 
@@ -169,29 +168,30 @@ To open access to MIME resources from back-end path **sap/public/bc** you need t
 
     -   In the destination named **s4h-onpremise-http** shorten the **path** and **entrypPath** values from **/sap/opu/odata** to **/sap**.
 
-      ```javascript
-      {
-      "welcomeFile": "index.html",
-      "routes": [
+        ```javascript
         {
-          "path": "/sap",
-          "target": {
-            "type": "destination",
-            "name": "s4h-onpremise-http",
-            "entryPath": "/sap"
+        "welcomeFile": "index.html",
+        "routes": [
+          {
+            "path": "/sap",
+            "target": {
+              "type": "destination",
+              "name": "s4h-onpremise-http",
+              "entryPath": "/sap"
+            },
+            "description": "S/4HANA HTTP API"
           },
-          "description": "S/4HANA HTTP API"
-        },
-        ...
-        ]
-        }
-      ```
+          ...
+          ]
+          }
+        ```
 
     -   Save the file.
 
         <img src="./images/w2-u5-s2/pic05-webide-neoappjson-truncatepaths.png" alt="" width="640px" />
 
 2.  Click the **Manage Products** browser tab and refresh the page.
+
     > **Note:** to refresh the browser cache hold **CONTROL** key (on a mac) or use shortcut **CTRL+F5**).
 
 > **Result:** The missing image files shall now appear in the application UI:
@@ -233,7 +233,7 @@ In the next step you will extend the imported Fiori app by adding sort, filter a
 
     <img src="./images/w2-u5-s3/pic07-preview-mgprod-filterbyavrgrating-1-2-stars.png" alt="" width="640px" />
 
-> **Result:** With the new functions of the extended **Manage Products** Fiori application the procurment manager is able to easily filter by average user rating so that low-rated products can be found easily.
+> **Result:** With the new functions of the extended **Manage Products** Fiori application the procurement manager is able to easily filter by average user rating so that low-rated products can be found easily.
 >
 >  <img src="./images/w2-u5-s3/pic08-preview-mgprod-filteredbyavrgrating.png" alt="" width="640px" />
 

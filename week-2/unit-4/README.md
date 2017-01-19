@@ -180,9 +180,9 @@ Add "SAP Web IDE" as first application tile inside the _Procurement_ launchpad.
 
     <img src="./images/w2-u4-s3/pic01-fcc-site-home.png" alt="" width="640px" />
 
-2.  Go to **Settings**
+2.  Go to **Settings**.
 3.  In the header toolbar click the **globe** icon to publish the site.
-4.  Confirm the popup dialog and click **Publish**
+4.  Confirm the popup dialog and click **Publish and Open**.
 
     <img src="./images/w2-u4-s3/pic02-fcc-site-publish.png" alt="" width="640px" />
 
