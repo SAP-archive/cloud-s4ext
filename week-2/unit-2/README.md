@@ -333,7 +333,7 @@ So far you explored the back-end OData Services via NetWeaver AS ABAP transactio
 
 As example Fiori application you will use here the **Manage Products** application which you can find on the _S/4HANA Fiori launchpad (FLP)_ as follows.
 
-1.  Open **S/4HANA FLP** bookmark in _Chrome_ Web browser - [see Week 2, Unit 1, Step 4](../../week-2/unit-1/#create-s4hana-flp-bookmark)
+1.  Open **S/4HANA FLP** bookmark in _Chrome_ Web browser - [see Week 2, Unit 1, Step 4](../../week-2/unit-1/#step-4-create-s4hana-flp-bookmark)
 
     <img src="./images/w2-u2-s2/pic19--web-browser.png" alt="" width="640px" />
 

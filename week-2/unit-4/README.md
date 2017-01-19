@@ -134,7 +134,7 @@ To configure the new launchpad site _Procurement Launchpad_ You now enter the **
 
     <img src="./images/w2-u4-s2/pic12-fcc-edit-catalog-new-group.png" alt="" width="640px" />
 
-    > **Result:**  You configured the _Procurement_ launchpad site to contain two groups named _Procuement Applications_ and _Equipment Tracking_:
+    > **Result:**  You configured the _Procurement_ launchpad site to contain two groups named _Product Management_ and _Equipment Tracking_:
     >
     > <img src="./images/w2-u4-s2/pic13-fcc-edit-catalog-two-groups.png" alt="" width="640px" />
 

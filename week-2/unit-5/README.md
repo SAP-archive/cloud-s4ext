@@ -360,7 +360,7 @@ In the last step you explore the extended functions in the _Manage Products_ Fio
 
     <img src="./images/w2-u5-s5/pic03-chrome-mgprod-group-by-category.png" alt="" width="640px" />
 
-> **Result**: In the products table all products are grouped by category wherein the low-rated products are listed firs:
+> **Result**: In the products table all products are grouped by category wherein the low-rated products are listed first:
 > <img src="./images/w2-u5-s5/pic04-chrome-mgprod-grouped-by-category.png" alt="" width="640px" />
 
 [Top](#step-5-top)

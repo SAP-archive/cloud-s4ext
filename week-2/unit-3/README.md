@@ -304,7 +304,7 @@ To import a new connectivity destination of type _HTTP_ apply the following step
 
 With the HTTP destination in place you can use SAP Web IDE to browse the OData services that are exposed by the S/4HANA back-end by means of SAP HANA Cloud connector.
 
-1.  In Google Chrome browser open your **SAP Web IDE** bookmark from [Week 1 - Unit 5](../week-1/unit-5/#create-sap-web-ide-bookmark) in a new tab.
+1.  In Google Chrome browser open your **SAP Web IDE** bookmark from [Week 1 - Unit 5](../../week-1/unit-5/#create-sap-web-ide-bookmark) in a new tab.
 2.  On the **Welcome** page in section **Create a Project** click on **New Project from Template**.
 
     <img src="./images/w2-u3-s4/pic04-chrome-webide-newproj-fromtempl.png" alt="" width="640px" />
