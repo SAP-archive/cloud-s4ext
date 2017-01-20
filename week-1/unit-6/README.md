@@ -256,7 +256,7 @@ As the some of the installation files are very large (> several GB) we recommend
 
     <img src="./images/w1-u6-s2/pic28--reboot-linux.png" alt="" width="640px" />
 
-24. **For Laptop/Macbook Users:** To keep the Linux VM session alive when not connected to a power supply you must change the default _Energy Saving_ system settings.
+24. **For Laptop/Notebook/Macbook Users:** To keep the Linux VM session alive when not connected to a power supply you must change the default _Energy Saving_ system settings.
 
     > **Warning:** The default power setting is that the server will suspend your session after 10 minutes of inactivity when your laptop is running on a battery. This stops any access to the SAP system and also shuts down the network connection making the VM inaccessible.
 

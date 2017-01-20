@@ -174,15 +174,23 @@ In this tutorial we will describe how to execute the entire extensions business 
 
     <img src="./images/w1-u5-s3/pic04--register.png" alt="" width="640px" />
 
-6.  Close the "News and Announcements" (if opens) as it is not relevant for this tutorial.
+6.  The account activation gets confirmed in the new browser page _Account Successfully Activated_. Click the **Continue** button.
+
+    <img src="./images/w1-u5-s3/pic04B--register.png" alt="" width="640px" />
+
+7.  In the **Log On** dialog enter your password and click the **Log On** button.
+
+    <img src="./images/w1-u5-s3/pic04C--register.png" alt="" width="640px" />
+
+8.  Close the "News and Announcements" (if opens) as it is not relevant for this tutorial.
 
     <img src="./images/w1-u5-s3/pic05--register.png" alt="" width="640px" />
 
-7.  Click on the **p-User link** of your trial account.
+9.  Click on the **p-User link** of your trial account.
 
     <img src="./images/w1-u5-s3/pic06--register.png" alt="" width="640px" />
 
-8.  The _SAP HANA Cloud Platform Cockpit_ overview page of your Trial account will open.
+10. The _SAP HANA Cloud Platform Cockpit_ overview page of your Trial account will open.
 
     <img src="./images/w1-u5-s3/pic07--register.png" alt="" width="640px" />
 
