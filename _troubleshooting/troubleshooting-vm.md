@@ -75,3 +75,17 @@ If VirtualBox is only showing 32 bit versions in the version list make sure:
 -   The Hyper-V platform is disabled in your Windows Feature list.
 
 For more details read [this blog](http://www.fixedbyvonnie.com/2014/11/virtualbox-showing-32-bit-guest-versions-64-bit-host-os/#.WElwwX3LIT8).
+
+## TRBL 7: My VM is very slow
+
+If your host laptop is with 8GB RAM and if the Virtual Machine is very slow, you can save some resources by disabling all the graphical user interface.
+This saves some resources in the Virtual Machine. Once you have installed the SAP Netweaver AS ABAP Developer, you will not need the User Interface and can work with command line (Konsole).
+
+1.  Open your Virtual Machine instance which you created in [Week 1 - Unit 6]({{base_path}}/week-1/unit-6/).
+2.  Open the command line application **Konsole**.
+3.  Type the command **sudo init 3**. Now all graphical user interfaces will close.
+4.  You will only see a konsole / terminal and you are asked for a user/password. Enter your Linux OS user and password which you normally use for logging into OpenSUSE.
+5.  If you want to return to using graphical user interfaces (for YAST, firefox,..), in the command line application, **Konsole**, type the command 
+**sudo init 5**.
+6.  OpenSUSE reopens with the User Interface, in our case with **KDE Desktop**.
+
