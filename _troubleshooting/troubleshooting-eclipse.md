@@ -82,3 +82,11 @@ To resolve this: Disable the usage of working sets, to see all your projects:
 4.  Check if you can now find your imported project in the flattened project list.
 
 Learn more details about Eclipse working sets [on help.eclipse.org](http://help.eclipse.org/neon/topic/org.eclipse.platform.doc.user/concepts/cworkset.htm?cp=0_2_1_6)
+
+## TRBL 7: Can I use an already installed eclipse, which is an older version than **NEON**
+
+It's recommended to use **NEON**  for this course. We have tested that all the tools used in the tutorial work well together. 
+Anyway its not match you have to do. Just download the newest version of Eclipse and unzip it. That's it. 
+
+Just follow [Week1, Unit5, 5.1 Install Eclipse Neon IDE]({{base_path}}/week-1/unit-5/#install-eclipse-neon-ide)
+
