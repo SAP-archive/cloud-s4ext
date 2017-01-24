@@ -70,10 +70,10 @@ As the some of the installation files are very large (> several GB) we recommend
 
 1.  Open [https://tools.hana.ondemand.com/#abap](https://tools.hana.ondemand.com/#abap)
 2.  Scroll down to section **SAP NetWeaver AS ABAP Developer Edition**
-3.  Download all eight archive files `sap_netweaver_as_abap_750_sp02_ase_dev_edition.part<n>.rar` _(&lt;n> == 1,2,3,4,5,6,7,8)_ to your local machine.
-4.  Use any unarchiver tool (e.g. _WinRAR_ for Windows or _Unarchiver_ for OS X) to extract the NetWeaver ABAP installation files somewhere to your local machine.
+3.  Download all eight archive files **sap_netweaver_as_abap_750_sp02_ase_dev_edition.part\<n>.rar** _(&lt;n> == 1,2,3,4,5,6,7,8)_ to your local machine.
+4.  Use any unarchiver tool (e.g. _WinRAR_ or _7zip_ for Windows or _Unarchiver_ for Mac OS) to extract the NetWeaver ABAP installation files somewhere to your local machine. All files must be **stored in the same folder**. As this is a multipart archive, you only need to start the extraction process for the first file **sap_netweaver_as_abap_750_sp02_ase_dev_edition.part1.rar** -- the other files will be extracted automatically.
 
-> **Warning:** Please check the file size of all the parts what you have downloaded. The file size is listed next to part rar files in [https://tools.hana.ondemand.com/#abap](https://tools.hana.ondemand.com/#abap). Each part file is around 1.5 GB.
+> **Warning:** Please check the file size of all the parts what you have downloaded. The file size is listed next to part rar files on the [https://tools.hana.ondemand.com/#abap](https://tools.hana.ondemand.com/#abap) page. Each part file is around 1.5 GB.
 >
 > Please check that you have extracted the rar files correctly. The total size of the extracted folder of the Netweaver AS ABAP Installation files is around 12+ GB.
 > If you have partially downloaded or partially extracted the ABAP files and if you continue the installation, you will run into installation errors.
