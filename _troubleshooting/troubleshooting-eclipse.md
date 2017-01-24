@@ -90,3 +90,14 @@ Anyway its not match you have to do. Just download the newest version of Eclipse
 
 Just follow [Week1, Unit5, 5.1 Install Eclipse Neon IDE]({{base_path}}/week-1/unit-5/#install-eclipse-neon-ide)
 
+## TRBL 8: Eclipse does not behave properly
+
+Sometimes some installed plugins harm each other. So that Eclipse does not behave properly, e.g. stops when open a new installed perspective. 
+
+Just give it a try and install a fresh Eclipse and use a new fresh workspace. 
+That should not take match of your time, it is only an download and an unzip. 
+
+Just follow [Week1, Unit5, 5.1 Install Eclipse Neon IDE]({{base_path}}/week-1/unit-5/#install-eclipse-neon-ide)
+
+
+
