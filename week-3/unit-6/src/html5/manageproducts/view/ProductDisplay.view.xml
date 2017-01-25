@@ -1,0 +1,189 @@
+<!--
+
+    Copyright (C) 2009-2015 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:prod="nw.epm.refapps.ext.prod.manage.control"
+	controllerName="nw.epm.refapps.ext.prod.manage.controller.ProductDisplay"
+	busy ="{= !(${viewProperties>/dataLoaded} || ${appProperties>/isAppBusy} || ${appProperties>/metaDataLoadState} === -1) }"
+	busyIndicatorDelay="{appProperties>/detailBusyIndicatorDelay}">
+	<Page id="page" title="{i18n>xtit.product}" showNavButton="{device>/system/phone}" navButtonPress="onNavButtonPress">
+		<content>
+			<!-- Object Header -->
+			<ObjectHeader
+				id="ProductHeader" title="{Name}" icon="{ImageUrl}" iconDensityAware="false" numberUnit="{CurrencyCode}"
+				number="{path:'Price', formatter: '.formatter.formatAmount'}" responsive="true" >
+				<statuses>
+					<ObjectStatus id="availabilityStatus"
+						text="{path: 'StockQuantity', formatter: '.formatter.formatAvailabilityText'}"
+						state="{= ${StockQuantity} &lt; 1 ? 'Error' : 'Success' }" />
+				</statuses>
+				<attributes>
+					<ObjectAttribute id="categoryAttribute"
+						title="{/#Product/MainCategoryName/@sap:label}"
+						text="{MainCategoryName}" />
+					<ObjectAttribute id="subcategoryAttribute"
+						title="{/#Product/SubCategoryName/@sap:label}"
+						text="{SubCategoryName}"/>
+				</attributes>
+			</ObjectHeader>
+			
+			<!--Allow adding fields after the object header -->
+			<core:ExtensionPoint name="extensionAfterObjectHeader" />
+			
+			<!-- General Information -->
+			<f:SimpleForm id="generalInformationForm" class="sapUiForceWidthAuto sapUiResponsiveMargin"
+				minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+				emptySpanL="1" emptySpanM="1" columnsL="7" columnsM="7" title="{i18n>xtit.generalInfo}">
+				<f:content>
+					<Label id="idLabel" text="{/#Product/Id/@sap:label}" />
+					<Text id="idText" text="{Id}" />
+					<Label id="descriptionLabel" text="{/#Product/Description/@sap:label}" />
+					<Text id="descriptionText" text="{Description}" />
+					<Label id="supplierLabel" text="{/#Product/SupplierName/@sap:label}" />
+					<Link id="supplierLink" text="{SupplierName}" class="sapUiForceWidthAuto" press="onSupplierPressed" />
+					<Label id="reviewsLabel" text="{i18n>xfld.reviews}" />
+					<!-- Call Custom Control for Rating Count -->
+					<prod:RatingAndCount id="ratingValue" maxRatingValue="5"
+					value="{AverageRating}" enabled="false"
+					iconSize="0.8rem" ratingCount="{RatingCount}" verticalAdjustment="-15" verticalAlignContent="true" />
+				</f:content>
+			</f:SimpleForm>
+			<!-- Technical Information -->
+			<f:SimpleForm id="techicalInformationForm" class="sapUiForceWidthAuto sapUiResponsiveMargin"
+				minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+				emptySpanL="1" emptySpanM="1" columnsL="7" columnsM="7" title="{i18n>xtit.techData}">
+				<f:content>
+					<Label id="unitLabel" text="{/#Product/QuantityUnit/@sap:label}" />
+					<Text id="unitText" text="{MeasureUnit}"></Text>
+					<Label id="depthLabel" text="{/#Product/DimensionDepth/@sap:label}" />
+					<Text id="depthText" text="{parts:[{path: 'DimensionDepth', type: 'sap.ui.model.type.Float', formatOptions: {style: 'long'}}, {path: 'DimensionUnit'}], formatter: '.formatter.formatMeasure' }" />
+					<Label id="widthLabel" text="{/#Product/DimensionWidth/@sap:label}" />
+					<Text id="widthText" text="{parts:[{path: 'DimensionWidth', type: 'sap.ui.model.type.Float', formatOptions: {style: 'long'}}, {path: 'DimensionUnit'}], formatter: '.formatter.formatMeasure' }" />
+					<Label id="heightLabel" text="{/#Product/DimensionHeight/@sap:label}" />
+					<Text id="heightText" text="{parts:[{path: 'DimensionHeight', type: 'sap.ui.model.type.Float', formatOptions: {style: 'long'}}, {path: 'DimensionUnit'}], formatter: '.formatter.formatMeasure' }" />
+					<Label id="weightLabel" text="{/#Product/WeightMeasure/@sap:label}" />
+					<Text id="weightText" text="{parts:[{path: 'WeightMeasure', type: 'sap.ui.model.type.Float', formatOptions: {style: 'long'}}, {path: 'WeightUnit'}], formatter: '.formatter.formatMeasure' }" />
+				</f:content>
+			</f:SimpleForm>
+
+			<!--                                                                                -->
+			<!-- Extending S/4HANA with HCP                                                     -->
+			<!-- * COLLABORATIVE Extension: Creating/Diplaying SAP Jam Group(s) for products    -->
+			<!-- begin                                                                          -->
+			<!-- SAP Jam Collaboration -->
+			<f:SimpleForm
+				layout="ResponsiveGridLayout"
+				class="sapUiForceWidthAuto sapUiResponsiveMargin">
+				<f:toolbar>
+					<Toolbar>
+						<Title
+							text="Collaboration"
+							level="H4"
+							titleStyle="H4" />
+						<ToolbarSpacer />
+						<Button
+							icon="sap-icon://refresh"
+							tooltip="Refresh SAP Jam Groups Info"
+							press="triggerGetJamGroupsInfo"/>
+						<Button
+							icon="sap-icon://create"
+							tooltip="Create a new SAP Jam Group based on selected Product"
+							press="openCreateJamGroupDialog" />
+					</Toolbar>
+				</f:toolbar>
+				<f:content>
+					<VBox>
+						<!-- VBox for displaying message if no jam groups available and loading indicator -->
+						<VBox
+							id="noAvailGroups-VBox-id"
+							visible="{
+									path:'displayJamGroupsDialogModel>/availGroups/0/id',
+									formatter: '.isGroupNotAvaiableFormatter'
+								}">
+							<HBox
+								class="sapUiMediumMargin"
+								visible="{
+									path:'displayJamGroupsDialogModel>/info/isVisible',
+									formatter: '.isInfoMsgNotVisible'
+								}">
+								<BusyIndicator
+									size="0.5em"/>
+								<Text
+									text="Loading..."/>
+							</HBox>
+							<VBox
+								visible="{
+									path:'displayJamGroupsDialogModel>/info/isVisible',
+									formatter: '.isInfoMsgVisible'
+								}"
+								class="sapUiMediumMargin">
+								<MessageStrip
+									text="{displayJamGroupsDialogModel>/info/msgText}"
+									type="Information"
+									showIcon="true"/>
+							</VBox>
+						</VBox>
+						<!-- VBox for displaying the available jam groups in a list -->
+						<VBox
+							id="availGroups-VBox-id"
+							visible="{
+									path:'displayJamGroupsDialogModel>/availGroups/0/id',
+									formatter: '.isGroupAvaiableFormatter'
+								}">
+							<Text
+								text="List of available SAP Jam Groups related to selected product. Click on a name to open the group"
+								class="dialogTextClass1"/>
+							<List
+								class="mySapMListHdr"
+								items="{displayJamGroupsDialogModel>/availGroups}">
+								<CustomListItem>
+									<FlexBox
+										alignItems="Center"
+										justifyContent="Start">
+										<items>
+											<core:Icon
+												size="1.5rem"
+												src="{
+													path:'displayJamGroupsDialogModel>type',
+													formatter: '.groupTypeIconFormatter'
+												}"
+												tooltip="{
+													path:'displayJamGroupsDialogModel>type',
+													formatter: '.groupTypeIconTooltipFormatter'
+												}"
+												class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" />
+											<Link
+												class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"
+												href="{
+													path:'displayJamGroupsDialogModel>id',
+													formatter: '.groupUrlFormatter'
+												}"
+												target="_blank"
+												text="{displayJamGroupsDialogModel>name}"/>
+										</items>
+									</FlexBox>
+								</CustomListItem>
+							</List>
+						</VBox>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+			<!-- end                                                                            -->
+
+			<!--Allow adding fields at the bottom of the display screen -->
+			<core:ExtensionPoint name="extensionBottomOfScreen"/>
+		</content>
+		<footer>
+	    	<OverflowToolbar id="footerToolbar">
+				<ToolbarSpacer id="footerBeginSpacer"/>
+				<Button  id="editButton" text="{i18n>xbut.edit}" enabled ="{= !${appProperties>/isMultiSelect} &amp;&amp; ${appProperties>/lostDraftReadState} === 1 }" press="onEditPressed" type="Emphasized" />
+				<Button  id="deleteButton" text="{i18n>xbut.delete}" enabled ="{= !${appProperties>/isMultiSelect} &amp;&amp; ${appProperties>/lostDraftReadState} === 1 }" press="onDeletePressed" />
+				<Button  id="copyButton" text="{i18n>xbut.copy}" enabled ="{= !${appProperties>/isMultiSelect} &amp;&amp; ${appProperties>/lostDraftReadState} === 1 }" press="onCopyPressed" />
+				<Button id="shareButton" icon="sap-icon://action"  press="onSharePressed" enabled="{viewProperties>/dataLoaded}" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

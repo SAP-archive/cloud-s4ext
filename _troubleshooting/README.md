@@ -56,3 +56,5 @@ As some of the URLs are individualized based on your SAP HANA Cloud Platform use
 | **S/4HANA FLP**     | SAP Fiori Launchpad on your local backend | [see Week 2, Unit 1, Step 4]({{base_path}}/week-2/unit-1/#create-s4hana-flp-bookmark)
 | **SCC**             | SAP HANA Cloud Connector | [see Week 2, Unit 3, Step 2]({{base_path}}/week-2/unit-3/#set-up-initial-configuration)
 | **HCP FLP**         | SAP Fiori Launchpad in your HCP account | [see Week 2, Unit 4, Step 3]({{base_path}}/week-2/unit-4/#step-3-publish-the-launchpad-site)
+| **Shop OData**         | SAP Fiori Launchpad in your HCP account | [see Week 3, Unit 2, Step 3]({{base_path}}/week-3/unit-2/#create-shop-odata-bookmark)
+| **SAP JAM**         | SAP Jam Cockpit in your HCP account | [see Week 3, Unit 3, Step 2]({{base_path}}/week-3/unit-3/#create-jam-bookmark)

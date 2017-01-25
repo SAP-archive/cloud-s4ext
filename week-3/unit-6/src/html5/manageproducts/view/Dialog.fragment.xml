@@ -1,0 +1,147 @@
+<!--                                                                                -->
+<!-- Extending S/4HANA with HCP                                                     -->
+<!-- * COLLABORATIVE Extension: Creating/Diplaying SAP Jam Group(s) for products    -->
+<!-- begin                                                                          -->
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Dialog
+		busy="{createJamGroupDialogModel>/dialogBusy}"
+		busyIndicatorDelay="0"
+		icon="sap-icon://collaborate"
+		showHeader="true"
+		title="New SAP Jam Group"
+		class="myIcon"
+		afterOpen="afterOpenCreateJamGroupDialog">
+		<content>
+			<html:style>
+				.mySapMListHdr .sapMListHdr{
+					padding-left: 0rem;
+				}
+				.myIcon .sapMDialogIcon.sapUiIcon{
+					margin-bottom: 0.16em !important;
+					margin-right: 0.5em !important;
+				}
+				.dialogTextClass1{
+					padding-top: 0.6rem;
+					padding-left: 0.95rem;
+					padding-right: 1rem;
+					font-style: italic;
+					font-size: smaller;
+				}
+				.dialogItalicText{
+					font-style: italic;
+				}
+				.size1 {
+					font-size : 1.5rem;
+				}
+			</html:style>
+			<VBox>
+				<Text
+					text="Create a new SAP Jam Group based on selected Product {createJamGroupDialogModel>/selProductName} ({createJamGroupDialogModel>/selProductId})"
+					class="dialogTextClass1" />
+				<MessageStrip
+					visible="{createJamGroupDialogModel>/error/isVisible}"
+					text="{createJamGroupDialogModel>/error/msgText}"
+					type="Error"
+					showIcon="true"
+					showCloseButton="true"
+					class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop">
+				</MessageStrip>
+				<f:SimpleForm
+					id="SimpleFormChange354"
+					minWidth="1024"
+					maxContainerCols="2"
+					editable="true"
+					layout="ResponsiveGridLayout"
+					labelSpanL="3"
+					labelSpanM="3"
+					emptySpanL="0"
+					emptySpanM="0"
+					columnsL="1"
+					columnsM="1"
+					class="editableForm">
+					<f:content>
+						<!-- name -->
+						<Label text="Group Name" />
+						<Input
+							id="groupNameInputId"
+							valueStateText="Group name must not be empty."
+							value="{
+								path : 'createJamGroupDialogModel>/groupName'
+							}"
+							placeholder="Enter new group name ..."
+							liveChange="onLiveChangeNameInput" />
+						<!-- template -->
+						<Label text="Group Template" />
+						<Select
+							forceSelection="false"
+							selectedKey="{createJamGroupDialogModel>/selTemplateId}"
+							items="{
+								path: 'createJamGroupDialogModel>/templates',
+								sorter: { path: 'createJamGroupDialogModel>Name' }
+							}">
+							<core:Item
+								key="{createJamGroupDialogModel>Id}"
+								text="{createJamGroupDialogModel>Name}" />
+						</Select>
+						<!-- creator -->
+						<Label text="Group Creator" />
+						<List class="mySapMListHdr">
+							<StandardListItem
+								icon="sap-icon://leads"
+								title="{createJamGroupDialogModel>/memberSelf/dispName}"
+								tooltip="{createJamGroupDialogModel>/memberSelf/tooltip}" />
+						</List>
+						<!-- invited members -->
+						<Label
+							text="Invite Users"
+							tooltip="Invite selected Jam Members via e-Mail to the created Group" />
+						<VBox>
+							<MessageStrip
+								visible="{createJamGroupDialogModel>/membersWarning/isVisible}"
+								text="{createJamGroupDialogModel>/membersWarning/msgText}"
+								type="Information"
+								showIcon="true"
+								class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop">
+							</MessageStrip>
+							<List
+								id="inviteUsersListId"
+								class="mySapMListHdr"
+								includeItemInSelection="true"
+								items="{createJamGroupDialogModel>/members}"
+								mode="MultiSelect"
+								visible="{
+									path:'createJamGroupDialogModel>/membersWarning/isVisible',
+									formatter: '.isMembersInfoMsgNotVisible'
+								}">
+								<StandardListItem
+									icon="sap-icon://person-placeholder"
+									selected="true"
+									title="{createJamGroupDialogModel>dispName}"
+									tooltip="{createJamGroupDialogModel>tooltip}" />
+							</List>
+						</VBox>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button
+				id="createBtnId"
+				enabled="false"
+				text="Create"
+				type="Emphasized"
+				press="onPressCreateBtn" />
+		</beginButton>
+		<endButton>
+			<Button
+				text="Cancel"
+				press="closeJamGroupDialog" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
+<!-- end                                                                            -->

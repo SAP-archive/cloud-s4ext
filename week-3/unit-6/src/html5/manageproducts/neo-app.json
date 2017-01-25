@@ -1,0 +1,41 @@
+{
+  "routes": [
+    {
+      "path": "/jam-internet-http",
+      "target": {
+        "type": "destination",
+        "name": "jam-internet-http"
+      },
+      "description": "Access to JAM OData Services"
+    },
+    {
+      "path": "/sap",
+      "target": {
+        "type": "destination",
+        "name": "s4h-onpremise-http",
+        "entryPath": "/sap"
+      },
+      "description": "Backend OData services"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "preferLocal": true
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "preferLocal": true
+      },
+      "description": "SAPUI5 Test Resources"
+    }
+  ]
+}
