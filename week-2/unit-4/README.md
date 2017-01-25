@@ -115,6 +115,9 @@ To configure the new launchpad site _Procurement Launchpad_ You now enter the **
     <img src="./images/w2-u4-s2/pic08-fcc-edit-sample-catalog-prop.png" alt="" width="640px" />
 
 5.  Choose **Roles** tab and assign role **Everyone**.
+
+    > **Hint:** In case the **Roles** tab does not open via mouse-click press the **Return** keyboard button instead. For more details see [Troubleshooting: Miscellaneous - TRBL 4: Fiori Configuration Cockpit - Cannot select tab Roles when editing Content](../../troubleshooting/troubleshooting-misc/).
+
 6.  Click **Save**.
 
     <img src="./images/w2-u4-s2/pic09-fcc-edit-sample-catalog-role.png" alt="" width="640px" />

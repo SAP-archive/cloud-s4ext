@@ -45,3 +45,9 @@ Visit the following sections from weeks 1 and 2 that describe how to configure p
 | YaST (in VirtualBox)                | [Week 1 - Unit 6 - 3.1 Configure Internet Proxy]({{base_path}}/week-1/unit-6/#configure-internet-proxy)         | Client OS (openSUSE Linux VM) |
 | Firefox (in VirtualBox)             | [Week 1 - Unit 6 - 3.2 Test Internet Connection]({{base_path}}/week-1/unit-6/#test-internet-connection)         | Client OS (openSUSE Linux VM) |
 | SAP Cloud Connector (on VirtualBox) | [Week 2 - Unit 3 - 2.1 Set up Initial Configuration]({{base_path}}/week-2/unit-3/#set-up-initial-configuration) | Client OS (openSUSE Linux VM) |
+
+## TRBL 4: Fiori Configuration Cockpit - Cannot select tab _Roles_ when editing Content
+
+**Symptom:** In the Fiori Configuration Cockpit UI while editing Catalog content you want to navigate to another tab like _Apps_ or _Roles_ by using the mouse button. Due to a pending bug on control level the tab does not get selected via mouse button click.
+
+**Workaround:** Use keyboard buttons instead. First click the **Roles** tab so that it gets the keyboard focus (highligted with a dotted rectangle). Or move the focus to the next tab via **left arrow key**. Press the **Return** keyboard button to select the tab. You can now enter data in the _Assigned Roles_ input form.
