@@ -384,6 +384,20 @@ Now that you activated the **IWBEP** backend service and setup the _SAP HANA Clo
     <img src="./images/w3-u2-s3/pic26--odp.png" alt="" width="640px"/>
 
 > **Result:** The **OData Provisioning Administration Cockpit** opens, in which you can register OData services from your SAP NetWeaver backend system to expose them to the SAP HANA Cloud Platform.
+> 
+> **Note:** The Administration Cockpit **does not open** but a **not sufficient authorization** message opens in the newly opened browser tab?
+>
+>    <img src="./images/w3-u2-s3/pic26a--odp.png" alt="" width="640px"/>
+>
+> Then execute the following steps to open the cockpit correctly:
+>
+>  1. **Close** the newly opened browser tab.
+>  2. On the HCP Cockpit tab click **logout** icon.
+>  3. **Logon** again with your HCP Trial P-User to the HCP Cockpit to reopend the _OData provisioning - Overview_ page.
+>  4. Click **Go to Service** link and this time **OData Provisioning Administration Cockpit** should open correctly. 
+>
+>    <img src="./images/w3-u2-s3/pic26b--odp.png" alt="" width="640px"/>
+>
 
 [Top](#step-3-5-1-top)
 
