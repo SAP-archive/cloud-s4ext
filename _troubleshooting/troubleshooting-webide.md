@@ -37,8 +37,8 @@ The Trusted Identity Provider for your SAP HANA Cloud Platform trial account mus
 
 **Solution:**
 
--   Clean up the web browser cache as described in [week 3 - unit 4 - step 4.2.1: For Troubleshooting: Web IDE Clean-up]({{base_path}}/week-3/unit-4/#create-web-ide-test-project-with-jam-odata-connectivity).
--   Check SAML trusted IdP ID as described in [week 3 - unit 4 - step 4.2.2 For Troubleshooting: Check SAML trusted IdP ID]({{base_path}}/week-3/unit-4/#create-web-ide-test-project-with-jam-odata-connectivity).
+-   Clean up the web browser cache as described in [Troubleshooting - TRBL 2: Web IDE Clean-up]({{base_path}}/troubleshooting/troubleshooting-jam/#trbl-2-web-ide-clean-up).
+-   Check SAML trusted IdP ID as described in [Troubleshooting - TRBL 3: Check SAML trusted IdP ID]({{base_path}}/troubleshooting/troubleshooting-jam/#trbl-3-check-saml-trusted-idp-id).
 
 ## TRBL 5: Basic Authentication comes up when testing HCP Destination access in SAP Web IDE
 
