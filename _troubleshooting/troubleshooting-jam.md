@@ -16,7 +16,7 @@ categories:
 
 ## TRBL 1: SAP Jam cannot access backend data (403)
 
--   Test the full connection chain (from your local NetWeaver ABAP Back-End (1), via the Cloud Connector (2), via OData Provisioning HCP service (3) to an HCP application in the internet (4)) by calling the Shop OData Service. For more details see [week 3 - unit 5 - step 1.1]({{base_path}}/week-1/unit-5/#test-connection-chain-via-shop-odata-service).
+-   Test the full connection chain (from your local NetWeaver ABAP Back-End (1), via the Cloud Connector (2), via OData Provisioning HCP service (3) to an HCP application in the internet (4)) by calling the Shop OData Service. For more details see [week 3 - unit 5 - step 1.1]({{base_path}}/week-3/unit-5/#test-connection-chain-via-shop-odata-service).
 -   In the S/4HANA system the **iwbep** service node needs to be activated using transaction **SICF**.
 
 
