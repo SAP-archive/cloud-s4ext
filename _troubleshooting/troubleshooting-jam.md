@@ -95,3 +95,14 @@ Check that SAML trusted IdP ID is the same on both sides _HCP_ and _Jam service_
     > **Result:** With these steps you ensured that the SAML trusted IdP ID is the same on both sides on _HCP_ and _Jam service_ cockpit.
 
 18. Try again to access the Jam OData service as described in [Week 3 - Unit 4 - Section 4.2]({{base_path}}/week-3/unit-4/#create-web-ide-test-project-with-jam-odata-connectivity)
+
+## TRBL 4: SAP Jam is unable to add new Record Type to External Application
+
+**Symptom:** In [week 3 - unit 5 - step 2.2 Add Record Types to External Application]({{base_path}}/week-3/unit-5/#add-record-types-to-external-application) the creation of new record type _Products_ or _Reviews_ fails due to the error `Failure (i): Could not import annotations. This business record type will not be created or updated.` By clicking the title _Failure (i)_ additional details get displayed: `Unexpected error importing annotation while processing response data. Could not load metadata resource.`
+
+<img src="{{base_path}}/troubleshooting/images/trbl-jam/trbl4/pic01--sapjam-importextres-failure.png" alt="" with="640px" />
+
+**Solution:** Make sure, that you really entered the correct user credentials (i.e. your HCP trial account p-user and your password) in [week 3 - unit 4 - step 2.1 Create new External Application]({{base_path}}/week-3/unit-5/#create-new-external-application).
+
+Edit the External Application **EpmRefAppsShopSrv** and make sure that p-user and password is really valid.
+Then try again to add record type **Products** as described in [week 3 - unit 5 - step 2.2.1]({{base_path}}/week-3/unit-5/#add-record-types-to-external-application).
