@@ -3,6 +3,8 @@ title: "Troubleshooting: Miscellaneous"
 excerpt: "Here you can find miscellaneous troubleshooting tips."
 tags:
   - "Week 1"
+  - "Week 2"
+  - "Week 3"
 categories:
   - "Miscellaneous"
 ---
@@ -51,3 +53,9 @@ Visit the following sections from weeks 1 and 2 that describe how to configure p
 **Symptom:** In the Fiori Configuration Cockpit UI while editing Catalog content you want to navigate to another tab like _Apps_ or _Roles_ by using the mouse button. Due to a pending bug on control level the tab does not get selected via mouse button click.
 
 **Workaround:** Use keyboard buttons instead. First click the **Roles** tab so that it gets the keyboard focus (highligted with a dotted rectangle). Or move the focus to the next tab via **left arrow key**. Press the **Return** keyboard button to select the tab. You can now enter data in the _Assigned Roles_ input form.
+
+## TRBL 5: I have forgotten the Password of my SAP HANA Cloud Platform Trial Account - What can I do?
+
+Don't panic, just reset it using [HCP User Profile Management](https://accounts.sap.com/ui/protected/profilemanagement).
+
+<img src="{{base_path}}/troubleshooting/images/trbl-hcp/pic01--forgotpassword.png" alt="" with="640px" />
