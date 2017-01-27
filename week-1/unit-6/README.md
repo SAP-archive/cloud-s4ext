@@ -849,31 +849,28 @@ To work with the installed local _SAP NetWeaver AS ABAP_ system you have to requ
 6.  Choose **NPL - SAP NetWeaver 7.x (Sybase ASE)** from the list under **Available SAP Systems for Windows & Linux**.
 7.  Enter your Salutation, trial user first name, last name and e-mail address in the requested fields.
 8.  Enter the **Hardware key** value which you copied from _SLICENSE_ transaction before.
-9.  Read and agree the license agreement by checking the checkbox.
+9.  Read and agree to the license agreement by checking the checkbox.
 10. Click **Generate**.
 
     <img src="./images/w1-u6-s6/pic24--license.png" alt="" width="640px" />
 
-11. You will receive a mail to the provided email address with an attachment called **NPL.txt**
+11. The license file named **NPL.txt** gets generated and is downloaded to the **Downloads** folder of your browser tab. 
 
-    > **Note:** The mail might take 5-10 minutes or sometimes even longer. In this case you may revisit this at a later point in time and continue with the tutorial.
-
-12. Save the attachment **NPL.TXT** fom the e-mail to your local disk.
-13. Switch to the SAP GUI window.
-14. On the transaction _SLICENSE_ page click the button **Install**.
+12. Switch to the SAP GUI window.
+13. On the transaction _SLICENSE_ page click the button **Install**.
 
     > **Note:** If the Install button is not visible, scroll down.
 
     <img src="./images/w1-u6-s6/pic25--license.png" alt="" width="640px" />
 
-15. In the file picker, navigate to the license file **NPL.TXT** and open it.
-16. On the **SAP GUI Security** window click **Allow** to grant access to the file.
-17. Then a successfully installed window should appear on which you click the green **Continue** icon.
-18. Finally, a new **Valid License Entry** is added to the table on the _Digital Signed Licenses_ tab.
+14. In the file picker, navigate to the license file **NPL.TXT** and open it.
+15. On the **SAP GUI Security** window click **Allow** to grant access to the file.
+16. Then a successfully installed window should appear on which you click the green **Continue** icon.
+17. Finally, a new **Valid License Entry** is added to the table on the _Digital Signed Licenses_ tab.
 
     <img src="./images/w1-u6-s6/pic27--license.png" alt="" width="640px" />
 
-19. **Close** the window where the transaction _SLICENSE_ has been opened.
+18. **Close** the window where the transaction _SLICENSE_ has been opened.
 
 ##### 6.3.2 Create a new VM Snapshot
 
