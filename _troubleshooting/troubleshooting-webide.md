@@ -44,26 +44,29 @@ The Trusted Identity Provider for your SAP HANA Cloud Platform trial account mus
 
 **Symptom:** Basic Authentication dialog pops up in Web IDE
 
-1. You defined an HCP destination (e.g. s4h-onpremise-http) and when you make use of this HCP destination in the Web IDE (e.g. by opening the 'project from template' wizard and select then in the 'Data Connection' wizard step the destination) you get a window dialog which asks for user/password.
-  - The assumption is that the Basic Authentication (i.e. User/Password) of the HCP destination was defined wrongly. Either the User name was wrong or more likely the password was entered wrongly (this could happen easily as the password characters are only shown as star character when typing the password).
+1. You defined an HCP destination (e.g. `s4h-onpremise-http`) and when you make use of this HCP destination in the Web IDE (e.g. by opening the 'project from template' wizard and select then in the 'Data Connection' wizard step the destination) you get a window dialog which asks for user/password.
+  - The assumption is that the Basic Authentication (i.e. user/password) of the HCP destination was defined wrongly. Either the user name was wrong or more likely the password was entered wrongly (this could happen easily as the password characters are only shown as star character when typing the password).
 2. After the situation in 1. happened the developer will edit the HCP destination and checks that the User name is correct and the password is entered again but really carefully! And DO NOT FORGET to SAVE the changed HCP destination.
   - After this 2. step the developer is trying again to verify if the destination now works in the Web IDE again by opening the 'project from template' wizard and select then in the 'Data Connection' wizard step the destination. The most likely result is: The window dialog which asks for user/password comes up again! And this happens even when the Web IDE was restarted, even when you close the Chrome browser windows and log in to the newly started Web IDE! **That is what drives developers crazy: HCP destination has been changed and verified to be correctly defined but the Web IDE still cannot work with it!** The reason behind this is, that the Web IDE caches the HCP destinations in "its own way" so that you don't know when the tool updates a changed HCP destination.
 
 **Solution:** Step-by-step solution to overcome the symptom
 
-As you have gone through the above described symptom it might be the case that your NetWeaver backend user (here DEVELOPER) might already be locked (due to the many times the Web IDE or you via the Basic Authentication popup has tried it). After log on 5 times with the wrong password the user is locked for sure. Info: If a the user which is used in a HCP destination is locked in the backend then the Web IDE will always pop up the basic authentication window.
+As you have gone through the above described symptom it might be the case that your NetWeaver backend user (here DEVELOPER) might already be locked (due to the many times the Web IDE or you via the Basic Authentication popup has tried it). After log on 5 times with the wrong password the user is locked for sure.
+
+> **Info:** If a the user which is used in a HCP destination is locked in the backend then the Web IDE will always pop up the basic authentication window.
 
 **Step 1:** Test if the back-end user (here DEVELOPER) which is used in the HCP destination is locked already
 
 1. Open **SAP GUI** and log on with the back-end user which you use in the HCP destination (here DEVELOPER)
-  - How to do do that is described here: https://sap.github.io/cloud-s4ext/week-1/unit-6/#add-sap-netweaver-to-sap-gui-and-log-on
+  - How to do do that is described here: [week 1 - unit 6 - step 6.2.2 Add SAP NetWeaver to SAP GUI and Log On For Windows]({{base_path}}/week-1/unit-6/#add-sap-netweaver-to-sap-gui-and-log-on).
+
 2. **Check** whether back-end user can log on.
  - If **YES**, then **skip Step 2** and directly execute Step 3.
  - If **NO**, then **execute Step 2 to unlock** the back-end user (here DEVELOPER) first.
 
 **Step 2:** Unlock the locked user (here *DEVELOPER*) with another user (here SAP\*)
 
-1. Open **SAP GUI** and log on with a backend user which is not locked. You can use here **SAP\*** with password **Appl1ance**. Again how to do do that is described here: https://sap.github.io/cloud-s4ext/week-1/unit-6/#add-sap-netweaver-to-sap-gui-and-log-on
+1. Open **SAP GUI** and log on with a backend user which is not locked. You can use here **SAP\*** with password **Appl1ance**. Again how to do do that is described here: [week 1 - unit 6 - step 6.2.2 Add SAP NetWeaver to SAP GUI and Log On For Windows]({{base_path}}/week-1/unit-6/#add-sap-netweaver-to-sap-gui-and-log-on)
 2. In the opened SAP GUI window enter **SU01** in the field right to the green 'Enter' icon in the window toolbar in the upper left corner.
 3. Click green **Enter** icon to open transaction window **User Maintennance: Initial Screen**.
 4. In the _User_ field enter **DEVELOPER**.
