@@ -845,12 +845,12 @@ To work with the installed local _SAP NetWeaver AS ABAP_ system you have to requ
 
     <img src="./images/w1-u6-s6/pic23--license.png" alt="" width="640px" />
 
-5.  Open the [SAP Sneak Preview License Key Request](https://websmp130.sap-ag.de/sap/bc/bsp/spn/minisap/minisap.htm) page.
-6.  Fill in your **HCP trial User ID** as _SCN User id_ and fill in the other requested information.
-7.  Read and agree to the license terms and conditions.
-8.  Choose System ID **NPL - SAP NetWeaver 7.x (Sybase ASE)**.
-9.  Enter the **Hardware key** value which you copied from _SLICENSE_ transaction before.
-10. Click **Submit**.
+5.  Open the [SAP Sneak Preview License Key Request](http://www.sap.com/minisap) page.
+6.  Choose **NPL - SAP NetWeaver 7.x (Sybase ASE)** from the list under **Available SAP Systems for Windows & Linux**.
+7.  Enter your Salutation, trial user first name, last name and e-mail address in the requested fields.
+8.  Enter the **Hardware key** value which you copied from _SLICENSE_ transaction before.
+9.  Read and agree the license agreement by checking the checkbox.
+10. Click **Generate**.
 
     <img src="./images/w1-u6-s6/pic24--license.png" alt="" width="640px" />
 
