@@ -25,7 +25,7 @@ The Trusted Identity Provider for your SAP HANA Cloud Platform trial account mus
 -   In SAP HCP Cockpit select **Security > Trust**
 -   In view **Trust Management** select tab **Local Service Provider**
 -   Make sure that property **Configuration Type** is set to **default**
--   In tab **Trusted Identity Provider** check that SAP ID Service (name: `accounts.sap.com`) is selected.
+-   In tab **Trusted Identity Provider** check that SAP ID Service (name: _accounts.sap.com_) is selected.
 
 ## TRBL 3: Imported Application does not start in SAP Web IDE
 
@@ -44,10 +44,11 @@ The Trusted Identity Provider for your SAP HANA Cloud Platform trial account mus
 
 **Symptom:** Basic Authentication dialog pops up in Web IDE
 
-1. You defined an HCP destination (e.g. `s4h-onpremise-http`) and when you make use of this HCP destination in the Web IDE (e.g. by opening the 'project from template' wizard and select then in the 'Data Connection' wizard step the destination) you get a window dialog which asks for user/password.
+1. You defined an HCP destination (e.g. _s4h-onpremise-http_) and when you make use of this HCP destination in the Web IDE (e.g. by opening the 'project from template' wizard and select then in the 'Data Connection' wizard step the destination) you get a window dialog which asks for user/password.
   - The assumption is that the Basic Authentication (i.e. user/password) of the HCP destination was defined wrongly. Either the user name was wrong or more likely the password was entered wrongly (this could happen easily as the password characters are only shown as star character when typing the password).
-2. After the situation in 1. happened the developer will edit the HCP destination and checks that the User name is correct and the password is entered again but really carefully! And DO NOT FORGET to SAVE the changed HCP destination.
-  - After this 2. step the developer is trying again to verify if the destination now works in the Web IDE again by opening the 'project from template' wizard and select then in the 'Data Connection' wizard step the destination. The most likely result is: The window dialog which asks for user/password comes up again! And this happens even when the Web IDE was restarted, even when you close the Chrome browser windows and log in to the newly started Web IDE! **That is what drives developers crazy: HCP destination has been changed and verified to be correctly defined but the Web IDE still cannot work with it!** The reason behind this is, that the Web IDE caches the HCP destinations in "its own way" so that you don't know when the tool updates a changed HCP destination.
+2. After the situation in 1. happened the developer will edit the HCP destination and checks that the User name is correct and the password is entered again but really carefully! And do not forget to **save** the changed HCP destination.
+  - After this 2. step the developer is trying again to verify if the destination now works in the Web IDE again by opening the 'project from template' wizard and select then in the 'Data Connection' wizard step the destination. The most likely result is: The window dialog which asks for user/password comes up again! And this happens even if either the Web IDE was restarted or when you closed the browser windows and log in to the newly started Web IDE! The reason behind this is, that the Web IDE caches the HCP destinations, so that you don't know when the tool updates a changed HCP destination. 
+3. The overall problem is: The **HCP destination has been changed and verified to be correctly defined but the Web IDE still uses in many cases still the cached destination values and therefore will not work** 
 
 **Solution:** Step-by-step solution to overcome the symptom
 
