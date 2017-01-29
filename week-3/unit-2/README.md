@@ -364,6 +364,12 @@ In this step you will make sure that the **iwbep** service node in the backend i
 
     <img src="./images/w3-u2-s3/pic24--aie.png" alt="" width="640px"/>
 
+##### 3.4.3 Take another snapshot of the Linux VM in VirtualBox Manager
+
+1.  In the Linux VM window select menu item **Machine > Take snapshot**.
+2.  Enter snapshot name **NetWeaver & Cloud Connector Setup & iwbep activated** and click **OK**.
+
+
 > **Result:** With these steps you activated the **iwbep** node so the OData provisioning service can via Cloud Connector make use of the available **IWBEP** backend services.
 
 [Top](#step-3-4-2-top)
