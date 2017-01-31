@@ -47,8 +47,8 @@ The Trusted Identity Provider for your SAP HANA Cloud Platform trial account mus
 1. You defined an HCP destination (e.g. _s4h-onpremise-http_) and when you make use of this HCP destination in the Web IDE (e.g. by opening the 'project from template' wizard and select then in the 'Data Connection' wizard step the destination) you get a window dialog which asks for user/password.
   - The assumption is that the Basic Authentication (i.e. user/password) of the HCP destination was defined wrongly. Either the user name was wrong or more likely the password was entered wrongly (this could happen easily as the password characters are only shown as star character when typing the password).
 2. After the situation in 1. happened the developer will edit the HCP destination and checks that the User name is correct and the password is entered again but really carefully! And do not forget to **save** the changed HCP destination.
-  - After this 2. step the developer is trying again to verify if the destination now works in the Web IDE again by opening the 'project from template' wizard and select then in the 'Data Connection' wizard step the destination. The most likely result is: The window dialog which asks for user/password comes up again! And this happens even if either the Web IDE was restarted or when you closed the browser windows and log in to the newly started Web IDE! The reason behind this is, that the Web IDE caches the HCP destinations, so that you don't know when the tool updates a changed HCP destination. 
-3. The overall problem is: The **HCP destination has been changed and verified to be correctly defined but the Web IDE still uses in many cases still the cached destination values and therefore will not work** 
+  - After this 2. step the developer is trying again to verify if the destination now works in the Web IDE again by opening the 'project from template' wizard and select then in the 'Data Connection' wizard step the destination. The most likely result is: The window dialog which asks for user/password comes up again! And this happens even if either the Web IDE was restarted or when you closed the browser windows and log in to the newly started Web IDE! The reason behind this is, that the Web IDE caches the HCP destinations, so that you don't know when the tool updates a changed HCP destination.
+3. The overall problem is: The **HCP destination has been changed and verified to be correctly defined but the Web IDE still uses in many cases still the cached destination values and therefore will not work**
 
 **Solution:** Step-by-step solution to overcome the symptom
 
@@ -65,16 +65,9 @@ As you have gone through the above described symptom it might be the case that y
  - If **YES**, then **skip Step 2** and directly execute Step 3.
  - If **NO**, then **execute Step 2 to unlock** the back-end user (here DEVELOPER) first.
 
-**Step 2:** Unlock the locked user (here *DEVELOPER*) with another user (here SAP\*)
+ **Step 2:** Unlock the locked user (here *DEVELOPER*) with another user (here user _SAP\*_ existing by default) by following [Troubleshooting: SAP S/4HANA NetWeaver Backend - TRBL A5: How to unlock the user DEVELOPER in AS ABAP?)]({{base_path}}/troubleshooting/troubleshooting-netweaver/#trbl-a5-how-to-unlock-the-user-developer-in-as-abap).
 
-1. Open **SAP GUI** and log on with a backend user which is not locked. You can use here **SAP\*** with password **Appl1ance**. Again how to do do that is described here: [week 1 - unit 6 - step 6.2.2 Add SAP NetWeaver to SAP GUI and Log On For Windows]({{base_path}}/week-1/unit-6/#add-sap-netweaver-to-sap-gui-and-log-on)
-2. In the opened SAP GUI window enter **SU01** in the field right to the green 'Enter' icon in the window toolbar in the upper left corner.
-3. Click green **Enter** icon to open transaction window **User Maintennance: Initial Screen**.
-4. In the _User_ field enter **DEVELOPER**.
-5. Click then the **Lock/Unlock icon** from the toolbar.
-6. In the opened dialog you can read that the user DEVELOPER is locked and by clicking the Unlock icon in that window.
-7. After the DEVELOPER user is unlocked you should be able to log on also with DEVELOPER user to the backend system as described in above Step 1.
-8. After you confirmed that Step 1. works you can execute the following Step 3.
+ After you confirmed that Step 1. works you can execute the following Step 3.
 
 **Step 3:** Steps to ensure that Web IDE _really_ takes the new values of a just changed HCP Destination
 

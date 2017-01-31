@@ -66,6 +66,18 @@ In Eclipse, you could open the ABAP project in ABAP in Eclipse but when you try 
 
 <img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic02--error-open-trx.png" alt="" width="640px" />
 
+### TRBL A5: How to unlock the user DEVELOPER in AS ABAP?
+
+You can unlock the locked user *DEVELOPER* with another user named **SAP\*** that already exists by default:
+
+1. Open **SAP GUI** and log on with a backend user which is not locked. You can use here **SAP\*** with password **Appl1ance**. Again how to do do that is described here: [week 1 - unit 6 - step 6.2.2 Add SAP NetWeaver to SAP GUI and Log On For Windows]({{base_path}}/week-1/unit-6/#add-sap-netweaver-to-sap-gui-and-log-on)
+2. In the opened SAP GUI window enter **SU01** in the field right to the green _Enter_ icon in the window toolbar in the upper left corner.
+3. Click green **Enter** icon to open transaction window **User Maintennance: Initial Screen**.
+4. In the _User_ field enter **DEVELOPER**.
+5. Click the **Lock/Unlock** toobar icon.
+6. In the opened dialog you can read that the user *DEVELOPER* is locked. Click the **Unlock** icon in that window.
+7. After the *DEVELOPER* user is unlocked you should be able to log on also with *DEVELOPER* user to the backend system as described in [week 1 - unit 6 - step 6.2.2 Add SAP NetWeaver to SAP GUI and Log On For Windows]({{base_path}}/week-1/unit-6/#add-sap-netweaver-to-sap-gui-and-log-on).
+
 ## SAP NetWeaver AS ABAP / S/4HANA backend system
 
 ### TRBL B1: What is the password to access SAP NetWeaver AS ABAP?
