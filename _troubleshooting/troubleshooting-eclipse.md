@@ -115,7 +115,9 @@ Just follow [Week1, Unit5, 5.1 Install Eclipse Neon IDE]({{base_path}}/week-1/un
     -   **Check the Java SDK 8 version**: Open the console or command line of your operating system. Execute command `java -d64 -version` or `java -d32 -version` and you will get an error for the version that is not supported on your machine.
 
         <img src="{{base_path}}/troubleshooting/images/trbl-eclipse/trbl9/pic02--check-java-bit-version.png" alt="" with="640px" />
-        
+
 3.  In case the installed Eclipse Neon bit-version does not match with the usded Java SDK 8 bit-version do the following:
 
     -   Install the appropriate missing bit-version of either Eclipse Neon IDE (see [week 1 - unit 5 - step 5.1: Install Eclipse Neon IDE ]({{base_path}}/week-1/unit-5/#install-eclipse-neon-ide)) or Java SDK 8 (see [week 1 - unit 5 - step 1.2: Install Java 8 SDK]({{base_path}}/week-1/unit-5/#install-java-8-sdk)).
+
+4. In case you have multiple Java SDK versions installed on your machine you need to point the Eclipse Neon IDE to the right Java SDK 8 version by using system environment variables like **PATH** and **JAVA_HOME**. For more details see [stackoverflow - Can't start Eclipse - Java was started but returned exit code=13](http://stackoverflow.com/questions/11461607/cant-start-eclipse-java-was-started-but-returned-exit-code-13)
