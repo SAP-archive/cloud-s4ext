@@ -85,19 +85,37 @@ Learn more details about Eclipse working sets [on help.eclipse.org](http://help.
 
 ## TRBL 7: Can I use an already installed eclipse, which is an older version than **NEON**
 
-It's recommended to use **NEON**  for this course. We have tested that all the tools used in the tutorial work well together. 
-Anyway its not match you have to do. Just download the newest version of Eclipse and unzip it. That's it. 
+It's recommended to use **NEON**  for this course. We have tested that all the tools used in the tutorial work well together.
+Anyway its not match you have to do. Just download the newest version of Eclipse and unzip it. That's it.
 
 Just follow [Week1, Unit5, 5.1 Install Eclipse Neon IDE]({{base_path}}/week-1/unit-5/#install-eclipse-neon-ide)
 
 ## TRBL 8: Eclipse does not behave properly
 
-Sometimes some installed plugins harm each other. So that Eclipse does not behave properly, e.g. stops when open a new installed perspective. 
+Sometimes some installed plugins harm each other. So that Eclipse does not behave properly, e.g. stops when open a new installed perspective.
 
-Just give it a try and install a fresh Eclipse and use a new fresh workspace. 
-That should not take match of your time, it is only an download and an unzip. 
+Just give it a try and install a fresh Eclipse and use a new fresh workspace.
+That should not take match of your time, it is only an download and an unzip.
 
 Just follow [Week1, Unit5, 5.1 Install Eclipse Neon IDE]({{base_path}}/week-1/unit-5/#install-eclipse-neon-ide)
 
+## TRBL 9: Eclipse does not start with Java Exit Code 13
 
+**Symptom:** The Eclipse program startup fails with error message `Java was started but returned exit code = 13`.
 
+<img src="{{base_path}}/troubleshooting/images/trbl-eclipse/trbl9/pic01--eclipsefailure-javacode13.png" alt="" with="640px" />
+
+**Solution:** To resolve this issue make the following checks:
+
+1.  Make sure to use the Java SDK 8 but not an older version. Reiterate the steps described in [week 1 - unit 5 - step 1.1: Check if a Java 8 SDK is installed]({{base_path}}/week-1/unit-5/#check-if-a-java-8-sdk-is-installed).
+2.  **Don't mix-up 32-bit and 64-bit versions of Eclipse and Java SDK 8!** You can not mix-and-match between 32-bit and 64-bit. This is the most frequent cause of an Error 13. To double-check the bit versions of your used Eclipse and Java 8 SDK software proceed as follows:
+
+    -   **Check the Eclipse Neon bit version on Windows OS**: Open `eclipse.ini` in the installation directory and observe the line with text `--launcher.library plugins/org.eclipse.equinox.launcher.win32.win32.x86_64_...`. Look for the substring `x86_64_` indicating the Eclipse 64-bit version or for the substring `x86_32_` indicating the Eclipse 32-bit version.
+    -   **Check the Eclipse Neon bit version on Mac OS X**: Go to the _eclipse_ folder and look for the eclipse icon. Right-click on the icon and select **Show Package Contents**. Now go to _Content/MacOS/_ and open the **eclipse.ini** file. Look for the line with substring `macosx.x86_64` indicating the Eclipse 64-bit version or for the substring `macosx.x86` indicating the Eclipse 32-bit version.
+    -   **Check the Java SDK 8 version**: Open the console or command line of your operating system. Execute command `java -d64 -version` or `java -d32 -version` and you will get an error for the version that is not supported on your machine.
+
+        <img src="{{base_path}}/troubleshooting/images/trbl-eclipse/trbl9/pic02--check-java-bit-version.png" alt="" with="640px" />
+        
+3.  In case the installed Eclipse Neon bit-version does not match with the usded Java SDK 8 bit-version do the following:
+
+    -   Install the appropriate missing bit-version of either Eclipse Neon IDE (see [week 1 - unit 5 - step 5.1: Install Eclipse Neon IDE ]({{base_path}}/week-1/unit-5/#install-eclipse-neon-ide)) or Java SDK 8 (see [week 1 - unit 5 - step 1.2: Install Java 8 SDK]({{base_path}}/week-1/unit-5/#install-java-8-sdk)).
