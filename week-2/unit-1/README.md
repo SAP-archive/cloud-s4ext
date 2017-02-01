@@ -105,7 +105,7 @@ Verify with the following steps that you can log on to the _SAP NetWeaver AS ABA
       - Windows: Find and launch **SAP Logon** in Windows start menu, or by open the **\\&lt;path-to-Program-Files>/SAP/FrontEnd/SAPgui/saplogon.exe** file.
       - Mac OS: Find and launch **SAP GUI** in your app launcher or locate the app in the file path **\\&lt;path-to-Applications>/SAP Clients/SAPGUI/SAPGUI.app**.
 
-    <img src="./images/w2-u1-s/pic01--logon-abap.png" alt="" width="640px" />
+    <img src="./images/w2-u1-s/pic01--logon-abap.png"/>
 
 2.  Double-click the **Local NetWeaver** entry to open the logon screen and use the following credentials:
     -   Client: **001**
@@ -113,11 +113,11 @@ Verify with the following steps that you can log on to the _SAP NetWeaver AS ABA
     -   Password: **Appl1ance**
     -   Language: **EN**
 
-    <img src="./images/w2-u1-s/pic02--logon-abap.png" alt="" width="640px" />
+    <img src="./images/w2-u1-s/pic02--logon-abap.png"/>
 
 > **Result:** The **SAP Easy Access** default page of the _SAP NetWeaver AS ABAP_ system is now open. Your logged in user **Developer** has access to several transactions and web applications like the SAP Fiori launchpad (FLP) as you will see later.
 
-<img src="./images/w2-u1-s/pic03--logon-abap.png" alt="" width="640px" />
+<img src="./images/w2-u1-s/pic03--logon-abap.png"/>
 
 [Top](#step-2-top)
 
@@ -129,23 +129,23 @@ You have verified in above Step 2 that you can access the _SAP NetWeaver AS ABAP
 2.  Select **Favorites > Launchpad** and open context menu (using a right-click).
 3.  Click **Change Favorites** entry.
 
-    <img src="./images/w2-u1-s/pic04--flp-app.png" alt="" width="640px" />
+    <img src="./images/w2-u1-s/pic04--flp-app.png"/>
 
 4.  Select and copy the entire **Web Address** URL to your clipboard. The URL is **http://vhcalnplci.dummy.nodomain:8000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html**
 5.  **Close** the _Change Web address or path_ window.
 
-    <img src="./images/w2-u1-s/pic05--flp-app.png" alt="" width="640px" />
+    <img src="./images/w2-u1-s/pic05--flp-app.png"/>
 
 6.  Open a new _Google Chrome_ browser tab.
 7.  Paste the before copied FLP URL into the address bar.
 8.  Replace the beginning part of the URL **http://vhcalnplci.dummy.nodomain:8000** with **https://localhost:44300**.
 9.  Press **Return**.
 
-    <img src="./images/w2-u1-s/pic06--flp-app.png" alt="" width="640px" />
+    <img src="./images/w2-u1-s/pic06--flp-app.png"/>
 
     > **Result:** In Google Chrome you get informed that your connection is not secure, due to issues with the SSL certificate. (The certificate is issued to a different hostname than localhost.)
 
-    <img src="./images/w2-u1-s/pic07--flp-app.png" alt="" width="640px" />
+    <img src="./images/w2-u1-s/pic07--flp-app.png"/>
 
 10. On the _Your connection is not private_ page, click on the **Advanced** button to enable the _proceed_ link.
 12. Click the link **Proceed to localhost (unsafe)** to access the before entered localhost Fiori launchpad URL.

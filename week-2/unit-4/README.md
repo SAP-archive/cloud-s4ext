@@ -39,23 +39,23 @@ Administrators must first set up their SAP HANA Cloud Platform account prior to 
 1.  In Google Chrome browser open the HCP Trial cockpit page in a new tab. Use the bookmark you created in [Week 1 - Unit 5](../../week-1/unit-5/#create-hcp-bookmark)
 2.  Open the **Services** pane and enter query string **portal** in the search field. Click the **Portal Service** tile to enter the admin page.
 
-    <img src="./images/w2-u4-s1/pic01-hcpcockpit-find-portalservice.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s1/pic01-hcpcockpit-find-portalservice.png"/>
 
 3.  Press the **Enable** button to provide a Portal to your HCP trial account.
 
-    <img src="./images/w2-u4-s1/pic02-hcpcockpit-enable-portalservice.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s1/pic02-hcpcockpit-enable-portalservice.png"/>
 
     After few seconds a green icon indicates the enabled HCP Portal service.
 
-    <img src="./images/w2-u4-s1/pic03-hcpcockpit-portalservice-enabled.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s1/pic03-hcpcockpit-portalservice-enabled.png"/>
 
 4.  Click the link **Go to Service**.
 
-    <img src="./images/w2-u4-s1/pic04-hcpcockpit-portalservice-goto.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s1/pic04-hcpcockpit-portalservice-goto.png"/>
 
 > **Result:**  You entered the **SAP HANA Cloud Portal Site Directory**. This is where you will create your new lauchpad site.
 >
-> <img src="./images/w2-u4-s1/pic05-fiori-launchpad-config-cockpit.png" alt="" width="640px" />
+> <img src="./images/w2-u4-s1/pic05-fiori-launchpad-config-cockpit.png"/>
 
 ## Step 2: Set up a new Launchpad Site
 
@@ -67,23 +67,23 @@ To create a new _launchpad site_ in the Site Directory of SAP HANA Cloud Portal 
 
 1.  Choose **Create New Site**.
 
-    <img src="./images/w2-u4-s2/pic01-portalservice-create-new-site.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic01-portalservice-create-new-site.png"/>
 
 2.  Choose **SAP Fiori Launchpad** as template and enter **Procurement Launchpad** in input field _Site Name_.
 
-    <img src="./images/w2-u4-s2/pic02-portalservice-create-site-form.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic02-portalservice-create-site-form.png"/>
 
 3.  Choose **Create**.
 
-    <img src="./images/w2-u4-s2/pic02-portalservice-create-site-form-create.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic02-portalservice-create-site-form-create.png"/>
 
 Another browser tab gets opened with the _Fiori Configuration Cockpit_ for the new launchpad site **Procurement Launchpad**.
 
-<img src="./images/w2-u4-s2/pic03-portalservice-procurement-launchpad-fcctab.png" alt="" width="640px" />
+<img src="./images/w2-u4-s2/pic03-portalservice-procurement-launchpad-fcctab.png"/>
 
 > **Result:**  You added a new launchpad site with name **Procurement Launchpad** to the Site Directory of SAP HANA Cloud Portal. In the browser tab where you added the new launchpad site it gets displayed as a new tile.
 >
-> <img src="./images/w2-u4-s2/pic03-portalservice-procurement-launchpad.png" alt="" width="640px" />
+> <img src="./images/w2-u4-s2/pic03-portalservice-procurement-launchpad.png"/>
 >
 > **Related Resources:** For more details see SAP HANA Cloud Platform Documentation:
 >
@@ -96,23 +96,23 @@ To configure the new launchpad site _Procurement Launchpad_ You now enter the **
 
 1.  In _Site Directory_ click **Edit** at the bottom right of the _Procurement Launchpad_ tile or select the browser tab _Welcome to SAP Fiori Configuration Cockpit_ that was opened in the previous step.
 
-    <img src="./images/w2-u4-s2/pic04-portalservice-procurement-launchpad-edit.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic04-portalservice-procurement-launchpad-edit.png"/>
 
     In the **Fiori Configuration Cockpit** you will see a navigation menu on the left hand side. From here you can access the various tools, editors, and services provided by the configuration cockpit.
 
-    <img src="./images/w2-u4-s2/pic05-fcc-dashboard.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic05-fcc-dashboard.png"/>
 
 2.  To configure the launchpad catalog open menu item **Content Management > Catalogs** or click the **Catalogs** tile.
 
-    <img src="./images/w2-u4-s2/pic06-fcc-edit-catalog.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic06-fcc-edit-catalog.png"/>
 
 3.  To edit the **Sample Catalog** click the **Edit** button in the footer toolbar.
 
-    <img src="./images/w2-u4-s2/pic07-fcc-edit-catalog-form.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic07-fcc-edit-catalog-form.png"/>
 
 4.  In the **Properties** tab change name and description to **Procurement Applications**.
 
-    <img src="./images/w2-u4-s2/pic08-fcc-edit-sample-catalog-prop.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic08-fcc-edit-sample-catalog-prop.png"/>
 
 5.  Choose **Roles** tab and assign role **Everyone**.
 
@@ -120,26 +120,26 @@ To configure the new launchpad site _Procurement Launchpad_ You now enter the **
 
 6.  Click **Save**.
 
-    <img src="./images/w2-u4-s2/pic09-fcc-edit-sample-catalog-role.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic09-fcc-edit-sample-catalog-role.png"/>
 
 7.  Configure the launchpad groups:
 8.  Go to **Groups** and click on **Edit**.
 
-    <img src="./images/w2-u4-s2/pic10-fcc-edit-catalog-groups.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic10-fcc-edit-catalog-groups.png"/>
 
 9.  Edit the **Sample Group**:
     -   Rename it to **Product Management**.
     -   Click **Save**.
 
-    <img src="./images/w2-u4-s2/pic11-fcc-edit-catalog-group-rename.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic11-fcc-edit-catalog-group-rename.png"/>
 
 10. Create a new group named **Equipment Tracking** with the **+** button in the footer toolbar.
 
-    <img src="./images/w2-u4-s2/pic12-fcc-edit-catalog-new-group.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic12-fcc-edit-catalog-new-group.png"/>
 
     > **Result:**  You configured the _Procurement_ launchpad site to contain two groups named _Product Management_ and _Equipment Tracking_:
     >
-    > <img src="./images/w2-u4-s2/pic13-fcc-edit-catalog-two-groups.png" alt="" width="640px" />
+    > <img src="./images/w2-u4-s2/pic13-fcc-edit-catalog-two-groups.png"/>
 
 [Top](#step-1-top)
 
@@ -150,7 +150,7 @@ Add "SAP Web IDE" as first application tile inside the _Procurement_ launchpad.
 1.  In the left navigation sidebar expand **Content Management**and go to **Apps**.
 2.  Click **+** button in the footer toolbar to create a new app.
 
-    <img src="./images/w2-u4-s2/pic14-fcc-edit-add-app.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic14-fcc-edit-add-app.png"/>
 
 3.  In the **Properties** form enter the following values:
     -   Enter **General > App Title**: **Demo Application**.
@@ -160,16 +160,16 @@ Add "SAP Web IDE" as first application tile inside the _Procurement_ launchpad.
     -   Assign Groups: **Product Management**.
     -   Click **Save**.
 
-    <img src="./images/w2-u4-s2/pic15-fcc-edit-add-app-webide.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s2/pic15-fcc-edit-add-app-webide.png"/>
 
 4.  Preview the new launchpad:
 5.  Click on the **Site Preview** icon from the black toolbar bar in the top right corner.
 
-      <img src="./images/w2-u4-s2/pic16-fcc-site-preview.png" alt="" width="640px" />
+      <img src="./images/w2-u4-s2/pic16-fcc-site-preview.png"/>
 
 6.  Verify that your **Demo Application** tile correctly works by navigating to the SAP Web IDE that starts in a new browser tab.
 
-      <img src="./images/w2-u4-s2/pic18-fcc-site-preview-sapwebide.png" alt="" width="640px" />
+      <img src="./images/w2-u4-s2/pic18-fcc-site-preview-sapwebide.png"/>
 
 [Top](#step-2-top)
 
@@ -181,17 +181,17 @@ Add "SAP Web IDE" as first application tile inside the _Procurement_ launchpad.
     - 2 Groups
     - 2 Roles
 
-    <img src="./images/w2-u4-s3/pic01-fcc-site-home.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s3/pic01-fcc-site-home.png"/>
 
 2.  Go to **Settings**.
 3.  In the header toolbar click the **globe** icon to publish the site.
 4.  Confirm the popup dialog and click **Publish and Open**.
 
-    <img src="./images/w2-u4-s3/pic02-fcc-site-publish.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s3/pic02-fcc-site-publish.png"/>
 
 5.  Add a browser bookmark to the new site with name **HCP FLP**. See [Week 1 - Unit 5](../../week-1/unit-5/#create-hcp-bookmark) on how to add a browser bookmark for SAP Web IDE.
 
-    <img src="./images/w2-u4-s3/pic03-fcc-site-bookmark.png" alt="" width="640px" />
+    <img src="./images/w2-u4-s3/pic03-fcc-site-bookmark.png"/>
 
 [Top](#step-3-top)
 

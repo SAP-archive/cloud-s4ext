@@ -31,7 +31,7 @@ If you SAP Logon cannot reach the SAP NetWeaver AS ABAP installation, please che
 5.  Switch to the running Oracle VM VirtualBox where your Linux VM runs.
 6.  Open **YaST** and enter your root password of the Linux image.
 7.  Search for **Firewall**. You should select **Disable Firewall Automatic Starting** and **Stop Firewall Now**.
-    <img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic01--firewall.png" alt="" width="640px" />
+    <img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic01--firewall.png"/>
 8.  Click **Next** and **Finish** to save the changes.
 9.  Check if you have done the correct port forwarding configurations.
 10. Check if you have added the port forwarding from the SAP logon in your host OS, to the Guest OS as described in [Week 1 - Unit 6]({{base_path}}/week-1/unit-6/#enable-network-access-to-linux-vm).
@@ -66,7 +66,7 @@ In Eclipse, you could open the ABAP project in ABAP in Eclipse but when you try 
 -   You have installed a older version of Java GUI (SAP Logon) in your Mac OS and have **Configuration** file and **SAP UI Landscape configuration** file which was not deleted when you uninstalled old SAP Logon and installed the latest version.
 -   Remove these two settings files in the Java GUI and click **Save**.
 
-<img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic02--error-open-trx.png" alt="" width="640px" />
+<img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic02--error-open-trx.png"/>
 
 ### TRBL A5: How to unlock the user DEVELOPER in AS ABAP?
 
@@ -103,13 +103,13 @@ The installation script fails and stops with errors. The following could be reas
 4.  Check if you have enough disk space in **home** drive. If you create 2 parititions in your Linux OS, home drive has smaller space though you have allocated 80 GB.
 5.  Check if during the OpenSUSE installation, if you have unchecked the checkbox so that you have only one partition.
 
-    <img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic04--install-linux.png" alt="" width="640px" />
+    <img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic04--install-linux.png"/>
 
 6.  To check the free space available in your home drive, switch to your running virtual machine Linux instance.
 7.  Open the console application **Konsole** (KDE Application Menu and navigate to System > Konsole).
 8.  Type the command **df -h** and check how much free space is available in your home drive. The free space in your home drive should at least be 35 GB.
 
-    <img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic03--disk-usage.png" alt="" width="640px" />
+    <img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic03--disk-usage.png"/>
 
 9.  Check if _uuidd_ is installed and started as described in [Week 1 - Unit 6]({{base_path}}/week-1/unit-6/#prepare-uuidd-service).
 10. Check if _install.sh_ set to executable and if Installation started as root as described in [Week 1 - Unit 6]({{base_path}}/week-1/unit-6/#step-5-install-sap-netweaver-as-abap-on-linux-vm).
@@ -123,10 +123,10 @@ The installation script fails and stops with errors. The following could be reas
 -   As the VM is quite small: Please have some patience, second call usually will be faster. You can try to increase the RAM memory size to 6 GB and try again.
 -   You need to stop the Virtual machine instance to increase the memory size.
 
-<img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic05--change-vm.png" alt="" width="640px" />
+<img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic05--change-vm.png"/>
 
 -   Click on **Settings** and increase the memory size to 6 GB.
-    <img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic06--change-vm1.png" alt="" width="640px" />
+    <img src="{{base_path}}/troubleshooting/images/trbl-netweaver/pic06--change-vm1.png"/>
 
 ### TRBL B4: SAP NetWeaver AS ABAP does not start
 

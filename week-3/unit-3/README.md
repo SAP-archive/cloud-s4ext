@@ -61,13 +61,13 @@ Execute the following preparation steps to get the two HCP Trial users ready in 
 
 1.  Open a **normal** Chrome **browser** window.
 
-    <img src="./images/w3-u3-s1/pic01--web-browser.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s1/pic01--web-browser.png"/>
 
 2.  On the opened _normal_ browser window
 3.  Open **Customize and control Google Chrome** menu.
 4.  Choose **New incognito window** to opened a new and empty incognito browser window
 
-    <img src="./images/w3-u3-s1/pic02--web-browser.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s1/pic02--web-browser.png"/>
 
 5.  **In this incognito window** open [http://hanatrial.ondemand.com](http://hanatrial.ondemand.com) and **register** a new HCP Trial test user as described [section 3.1](../../week-1/unit-5/#register-for-a-trial-account) of unit 5 in week 1.
 
@@ -80,7 +80,7 @@ Execute the following preparation steps to get the two HCP Trial users ready in 
 
     > **Result:** Inside the **incognito** window you opened the _HCP Cockpit_ and **your new second user** is logged on.
     >
-    > <img src="./images/w3-u3-s1/pic03--web-browser.png" alt="" width="640px" />
+    > <img src="./images/w3-u3-s1/pic03--web-browser.png"/>
     >
     > In the following description and screenshots we will use our example HCP Trial account user **_Lisa TestUser02_**, with the following settings. When executing the steps adapt the user details (account names, user Ids, etc.) to yours.
     >
@@ -103,11 +103,11 @@ After you have prepared your second HCP Trial user, which is logged in the incog
 2.  Click **HCP** bookmark in _Chrome_ browser.
 3.  **Log in** with the HCP Trial User Id (P-user) and password you created first.
 
-    <img src="./images/w3-u3-s1/pic04--web-browser.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s1/pic04--web-browser.png"/>
 
     > **Result:** You opened the _HCP Cockpit_ and **your first user** is logged on.
     >
-    > <img src="./images/w3-u3-s1/pic05--web-browser.png" alt="" width="640px" />
+    > <img src="./images/w3-u3-s1/pic05--web-browser.png"/>
     >
     > In the descriptions and screenshots we will use our example HCP Trial account user **_John TestUser01_**, with the following settings.
     > **Note:** When executing the steps **adapt the user** details (account names, user Ids, etc.) to yours.
@@ -133,24 +133,24 @@ Our example HCP Trial _TestUser01 **John**_ takes the role of the _HCP Administr
 3.  Search for **Jam**
 4.  Click on **SAP Jam** tile.
 
-    <img src="./images/w3-u3-s2/pic01--jam.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic01--jam.png"/>
 
 5.  On the opened **SAP Jam - Overview** page
 6.  Click on **Enable** button to enable this service
 
     > **Result:** You enabled the HCP **SAP Jam** service.
     >
-    > <img src="./images/w3-u3-s2/pic02--jam.png" alt="" width="640px" />
+    > <img src="./images/w3-u3-s2/pic02--jam.png"/>
 
 7.  After the service is enabled click **Go to Service** link so that the **SAP Jam Cockpit** logon opens in a new browser tab.
 
-    <img src="./images/w3-u3-s2/pic03--jam.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic03--jam.png"/>
 
 8.  Log in to the **Jam Service** cockpit with your first HCP Trial user (here in the documentation HCP Trial _TestUser01 **John**_)
 
     > **Result:** The **Jam Service** cockpit opens and your first HCP Trial user is logged on and is now in the role of a _Jam administrator_.
     >
-    > <img src="./images/w3-u3-s2/pic04--jam.png" alt="" width="640px" />
+    > <img src="./images/w3-u3-s2/pic04--jam.png"/>
 
     > **Warning:** If your browser window **width is too small**, you will get a different **Jam Service** cockpit layout. Make sure that you browser width is big enough so that the **Home, Groups, Company, ...** menu bar is visible.
 
@@ -160,24 +160,24 @@ To quickly access your _Jam service cockpit_ you will create a **Jam** bookmark 
 
 1.  Create a new bookmark **Jam** in your browser as before.
 
-    <img src="./images/w3-u3-s2/pic05--jam.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic05--jam.png"/>
 
 2.  Switch to the **HCP cockpit** browser tab where the _SAP Jam - Overview_ page is still open.
 3.  **Right-click** on **Go to Service** link to open context menu.
 4.  Choose **Copy link address** to copy the _Jam service cockpit_ launch URL to your clipboard.
 
-    <img src="./images/w3-u3-s2/pic06--jam.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic06--jam.png"/>
 
 5.  **Right-click** on the before created **SAP Jam bookmark** in the browser bookmark bar to open context menu.
 6.  Choose **Edit...** to open _Edit Bookmark_ dialog.
 
-    <img src="./images/w3-u3-s2/pic07--jam.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic07--jam.png"/>
 
 7.  On opened **Edit Bookmark** dialog:
 8.  **Paste** the before copied **Go to service** URL into the URL field to replace the existing URL.
 9.  Click **Save**.
 
-    <img src="./images/w3-u3-s2/pic08--jam.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic08--jam.png"/>
 
     > **Result:** After these steps you can quickly launch the _Jam service cockpit_ by clicking the **Jam** bookmark.
 
@@ -193,7 +193,7 @@ The _Jam administrator_ creates a Jam Group as follows.
 1.  In the opened _Jam Cockpit_
 2.  Choose **Groups > Create Group** from main menu to open **Create a Group** dialog.
 
-    <img src="./images/w3-u3-s2/pic09--jam-group.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic09--jam-group.png"/>
 
 3.  On the opened **Create a Group** dialog
 4.  Enter a group name: **Testing Group**.
@@ -203,15 +203,15 @@ The _Jam administrator_ creates a Jam Group as follows.
     -   **Activate this group view** is selected
 6.  Click **Create**.
 
-    <img src="./images/w3-u3-s2/pic10--jam-group.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic10--jam-group.png"/>
 
 7.  Click **Accept** to confirm also the initial e-mail notification settings.
 
-    <img src="./images/w3-u3-s2/pic11--jam-group.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic11--jam-group.png"/>
 
 > **Result:** A new Jam Group with name _Testing Group_ opens.
 >
-> <img src="./images/w3-u3-s2/pic12--jam-group.png" alt="" width="640px" />
+> <img src="./images/w3-u3-s2/pic12--jam-group.png"/>
 
 [Top](#step-2-2-top)
 
@@ -223,23 +223,23 @@ In a _SAP Jam Groups_, there are many features that allow you to collaborate wit
 2.  Select 'Forums' on the left navigation area of the before opened testing group
 3.  In the **Forum Topics** list click on the Discussions item.
 
-    <img src="./images/w3-u3-s2/pic13--jam-discuss.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic13--jam-discuss.png"/>
 
 4.  Click **Add Discussion**.
 
-    <img src="./images/w3-u3-s2/pic14--jam-discuss.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic14--jam-discuss.png"/>
 
 5.  Enter some discussion title and contents in the opened editor.
 6.  Click **Publish**
 
-    <img src="./images/w3-u3-s2/pic15--jam-discuss.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s2/pic15--jam-discuss.png"/>
 
 > **Results:**
 >
 > -   A discussion entry is part of the testing group.
 > -   Under the created discussion entry one could reply but so far there is only one member in the group, which is the creator.
 >
->     <img src="./images/w3-u3-s2/pic16--jam-discuss.png" alt="" width="640px" />
+>     <img src="./images/w3-u3-s2/pic16--jam-discuss.png"/>
 
 [Top](#step-2-3-top)
 
@@ -261,29 +261,29 @@ The Jam administrator _John(TestUser01)_ will now allow _Lisa(TestUser02)_ to pa
     -   Click **Services** tab
     -   Search for **jam** and click on **SAP Jam** tile.
 
-        <img src="./images/w3-u3-s3/pic01--jam-invite.png" alt="" width="640px" />
+        <img src="./images/w3-u3-s3/pic01--jam-invite.png"/>
 
 2.  On the opened **SAP Jam - Overview** page:
 3.  Click **Configure SAP Jam** link to open the Jam configuration page.
 
-    <img src="./images/w3-u3-s3/pic02--jam-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic02--jam-invite.png"/>
 
 4.  On the opened **Configure SAP Jam** page:
 5.  Click **Roles** tab.
 6.  Select _SAP_JAM_USER_ role table row.
 7.  Click **Assign** link for individual users.
 
-    <img src="./images/w3-u3-s3/pic03--jam-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic03--jam-invite.png"/>
 
 8.  In the opened _Assign role to user_ dialog
     - Enter the p-User ID of your **second** HCP Trial user (ours here is _p1942320002_ for _Lisa(TestUser02)_)
     - Click **Assign**.
 
-      <img src="./images/w3-u3-s3/pic04--jam-invite.png" alt="" width="640px" />
+      <img src="./images/w3-u3-s3/pic04--jam-invite.png"/>
 
 > **Result:** The p-User ID of your second HCP Trial user has been added to individual users table of SAP_JAM_USER.
 >
-> <img src="./images/w3-u3-s3/pic05--jam-invite.png" alt="" width="640px" />
+> <img src="./images/w3-u3-s3/pic05--jam-invite.png"/>
 
 An HCP User which has been assigned the role SAP_JAM_USER can now access the Jam instance. But the user needs to accept first the invitation which the HCP administrator need to send manually as shown in the next subsection.
 
@@ -299,13 +299,13 @@ The Jam administrator _John(TestUser01)_ will now send an invitation link to joi
     -   Click **Services** tab
     -   Search for **jam** and click on **SAP Jam** tile.
 
-        <img src="./images/w3-u3-s3/pic06--jam-invite.png" alt="" width="640px" />
+        <img src="./images/w3-u3-s3/pic06--jam-invite.png"/>
 
 2.  On the opened _SAP Jam - Overview page_
 3.  Right mouse click on **Go to Service** link
 4.  Choose **Copy link address** to copy this _Jam invitation link_ to your clipboard.
 
-    <img src="./images/w3-u3-s3/pic07--jam-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic07--jam-invite.png"/>
 
 5.  The _Jam administrator_ sends this copied _Jam invitation link_ to the second HCP Trial user e.g. via e-mail.
 
@@ -326,18 +326,18 @@ We now assume that the second HCP Trial user (_Lisa_) received the invitation li
 2.  Open a new tab in the **incognito** browser.
 3.  Paste the _Jam invitation link_ that you copied above in [step 3.1.2](#john-sents-lisa-an-invitation-link-for-sap-jam) into the browser address field and open it.
     
-    <img src="./images/w3-u3-s3/pic08--jam-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic08--jam-invite.png"/>
 
 4.  In the opened logon screen:
     - The User field should be pre-filled with the **e-mail of your second HCP Trial user** (in our case it is _Lisas_ e-mail)
     - Enter **password** of your second User
     - Click **Continue** to enter the Jam instance.
 
-    <img src="./images/w3-u3-s3/pic09--jam-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic09--jam-invite.png"/>
 
   > **Result:** The second HCP Trial user _Lisa_ has now opened a Jam cockpit, which is a SAP Jam tenant from the Jam instance, which the first HCP Trial user created in [Step 2](#step-2-enable-and-open-jam-service).
   >
-  > <img src="./images/w3-u3-s3/pic10--jam-invite.png" alt="" width="640px" />
+  > <img src="./images/w3-u3-s3/pic10--jam-invite.png"/>
 
 > **Note:** Keep all tabs open in the **incognito** browser session. You will continue to use it in one of the next steps.
 
@@ -356,32 +356,32 @@ As the _Jam administrator_ (_John_) has already created the **Testing Group** in
 
         -   Log on with your first _HCP Trial P-user_ password (here _John_) so that the **Jam service cockpit** opens.
 
-        <img src="./images/w3-u3-s3/pic11--group-invite.png" alt="" width="640px" />
+        <img src="./images/w3-u3-s3/pic11--group-invite.png"/>
 
 2.  In the **Jam service cockpit**:
 3.  Choose **Groups** > **Testing Group** from the main menu of Jam cockpit so that the testing group opens.
 
-    <img src="./images/w3-u3-s3/pic12--group-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic12--group-invite.png"/>
 
 4.  On the **Testing Group** page:
 5.  Click **+ Invite** button.
 
-    <img src="./images/w3-u3-s3/pic13--group-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic13--group-invite.png"/>
 
 6.  Enter the user details (first or last name or e-mail) of the user you would like to invite to this Jam group to the _Add people_ field, e.g. _Lisa_.
 7.  As a result you will see a **list of users** matching your search string.
 8.  Select the **second HCP Trial P-User** (_Lisa_) from the result list.
 
-    <img src="./images/w3-u3-s3/pic14--group-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic14--group-invite.png"/>
 
 9.  Enter an optional invitation message, which _User 2_ would see in the invitation email.
 10. Click **Send**.
 
-    <img src="./images/w3-u3-s3/pic15--group-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic15--group-invite.png"/>
 
   > **Result:** The invitation for the **Testing Group** has been sent as e-mail to the e-mail address of the **second User** (_Lisa_). If _Lisa_ still has opened the _Jam cockpit_ in the **incognito session**, she will also see a notification there. This is shown in the next section.
   >
-  > <img src="./images/w3-u3-s3/pic16--group-invite.png" alt="" width="640px" />
+  > <img src="./images/w3-u3-s3/pic16--group-invite.png"/>
 
 > **Results:**
 >
@@ -400,18 +400,18 @@ To round off this unit, you will see that the second user (_Lisa_) gets a notifi
 2.  On the opened _Jam Cockpit_ tab:
 3.  Click on the **notification icon**, where a red **1** notification has appeared.
 
-    <img src="./images/w3-u3-s3/pic17--group-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic17--group-invite.png"/>
 
     > **Result:** See to see message that _User 1_ has invited _User 2_ to **My First Jam Group**
 
 4.  Click **group** icon to get the **Join** button.
 
-    <img src="./images/w3-u3-s3/pic18--group-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic18--group-invite.png"/>
 
 5.  Click **Join** button to accept the group invitation.
 6.  Click **Accept** to accept the _Email Notification_ settings dialog for the now joined group.
 
-    <img src="./images/w3-u3-s3/pic19--group-invite.png" alt="" width="640px" />
+    <img src="./images/w3-u3-s3/pic19--group-invite.png"/>
 
     > **Result:** The second user (**Lisa**) has now joined the SAP Jam _Testing Group_. You can now see that the Testing Group tile on the left shows **2 Members**. If you click on the corresponding link, _User 1_ and _User 2_ are now both members of this SAP Jam group. As a result, _Lisa_ can now see any existing discussion threads in the **Forum Topics** section. This way John and Lisa would be able to collaborate, discuss and engage with each other.
 

@@ -60,11 +60,11 @@ categories:
 1.  The Linux VM locks the screen every 5 minutes by default.
 2.  To change this default setting, switch to your Linux Virtual Machine. Type **lock** in the search.
 
-    <img src="{{base_path}}/troubleshooting/images/trbl-vm/pic01--screen-lock.png" alt="" width="640px" />
+    <img src="{{base_path}}/troubleshooting/images/trbl-vm/pic01--screen-lock.png"/>
 
 3.  Change the setting so that the VM does not lock after every 5 minutes.
 
-    <img src="{{base_path}}/troubleshooting/images/trbl-vm/pic02--screen-lock.png" alt="" width="640px" />
+    <img src="{{base_path}}/troubleshooting/images/trbl-vm/pic02--screen-lock.png"/>
 
 ## TRBL 6: Why is VirtualBox only showing 32 bit guest versions on my 64 bit host OS?
 

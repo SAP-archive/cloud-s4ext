@@ -46,11 +46,11 @@ sidebar:
 1.  Open the Google Chrome web browser on your host OS and open page [SAP Development Tools](http://tools.hana.ondemand.com).
 2.  Go to **Cloud** and scroll to section **SAP HANA Cloud Connector**.
 
-    <img src="./images/w2-u3-s1/pic01-scc-download.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s1/pic01-scc-download.png"/>
 
 3.  Download the **Linux** installer with link **sapcc-XXX-linux-x64.zip** and read and agree to the following End User License Agreement. Click button **I Have Read And Agree** to start the download.
 
-    <img src="./images/w2-u3-s1/pic02-scc-agree-license.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s1/pic02-scc-agree-license.png"/>
 
 > **Result:** The Linux installer for SAP HANA Cloud connector is now available on your host OS.
 
@@ -69,18 +69,18 @@ The Linux installer for SAP HANA Cloud connector is stored in a download folder 
     -   In **Folder Name** enter **scc** and click **OK**.
     -   Click **OK**.
 
-        <img src="./images/w2-u3-s1/pic03-virtualbox-settings-sharedfolder.png" alt="" width="640px" />
+        <img src="./images/w2-u3-s1/pic03-virtualbox-settings-sharedfolder.png"/>
 
 4.  In the Linux VM window (guest OS):
     -   Open the command shell via start menu (enter **Konsole** in KDE desktop or **Xterm** in GNU desktop). By default the command shell opens the admin user's home directory `<admin user name>@vhcalnplci`.
 
-        <img src="./images/w2-u3-s1/pic04-virtualbox-konsole-open.png" alt="" width="640px" />
+        <img src="./images/w2-u3-s1/pic04-virtualbox-konsole-open.png"/>
 
     -   Enter command **mkdir scc** to create a new folder for the SAP HANA Cloud Connector installation.
     -   Enter command **sudo mount -t vboxsf scc scc** and press Return. Enter your Linux OS admin password.
     -   Enter **cd scc** and then **ls** to view the **sapcc-XXX-linux-x64.zip** installation ZIP that is shared from the host OS download folder.
 
-        <img src="./images/w2-u3-s1/pic04-virtualbox-konsole-mount-scc.png" alt="" width="640px" />
+        <img src="./images/w2-u3-s1/pic04-virtualbox-konsole-mount-scc.png"/>
 
 #### 1.2 Run Installer for SAP HANA Cloud Connector in Linux VM
 
@@ -90,13 +90,13 @@ The Linux installer for SAP HANA Cloud connector is stored in a download folder 
     > **Note:** you can autocomplete the package name with the **Tab** key while entering the command **sudo rpm -i com.**.
 
 3.  Press the **Return** key to start the installation process:
-    <img src="./images/w2-u3-s1/pic05-konsole-install-scc.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s1/pic05-konsole-install-scc.png"/>
 
 4.  Enter command **sudo service scc_daemon status**.
 
 > **Result:** SAP HANA Cloud Connector is successfully installed and the connector daemon is running on the Linux guest OS.
 >
->  <img src="./images/w2-u3-s1/pic06-konsole-status-scc.png" alt="" width="640px" />
+>  <img src="./images/w2-u3-s1/pic06-konsole-status-scc.png"/>
 
 #### 1.3 Take a snapshot of the Linux VM in VirtualBox Manager
 
@@ -114,18 +114,18 @@ Once the cloud connector has been installed and the connector daemon has been st
 1.  Open the Google Chrome web browser on your host OS and enter URL **https://localhost:8443**.
 2.  In Google Chrome you get informed that your connection is not secure. Press the **Advanced** button and click the link **Proceed to localhost (unsafe)**.
 
-    <img src="./images/w2-u3-s2/pic00-chrome-sccadmin-unsafe-proceed.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s2/pic00-chrome-sccadmin-unsafe-proceed.png"/>
 
 3.  Add a bookmark to the SAP HANA Cloud Connector Login page, e. g. named **SCC** for _SAP Cloud Connector_ (to add a new bookmark see [Week 2 - Unit 1](../week-2/unit-1/#create-s4hana-flp-bookmark) for more details.).
 
-    <img src="./images/w2-u3-s2/pic01-chrome-sccadmin-addbookmark.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s2/pic01-chrome-sccadmin-addbookmark.png"/>
 
 4.  Enter user credentials:
 
     -   User Name: **Administrator**
     -   Password: **manage**
 
-    <img src="./images/w2-u3-s2/pic01-chrome-sccadmin-login.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s2/pic01-chrome-sccadmin-login.png"/>
 
 5.  Apply the following steps for the initial setup of the new cloud connector instance:
 
@@ -133,7 +133,7 @@ Once the cloud connector has been installed and the connector daemon has been st
     -   Keep the default installation type **Master (Primary installation)** selected.
     -   Click **Save**.
 
-    <img src="./images/w2-u3-s2/pic02-chrome-sccadmin-initial-setup.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s2/pic02-chrome-sccadmin-initial-setup.png"/>
 
 6.  Add the very first HCP account (i.e. your HCP trial account) by entering the following form fields:
 
@@ -155,29 +155,29 @@ Once the cloud connector has been installed and the connector daemon has been st
     > -   **Step 1:** In Google Chrome browser open new tab and logon to HCP Cockpit with URL **https://account.hanatrial.ondemand.com**. Enter your user credentials based on [Week 1 > Unit 5 > Step: Get SAP HANA Cloud Platform trial account](../../week-1/unit-5/).
     > -   **Step 2:** On the Overview page scroll to section **Account Information** and copy the **Account name** into the clipboard, e.g. **p1942128127trial**.
     >
-    >    <img src="./images/w2-u3-s2/pic04-chrome-hcpcockpit-accountinfo-name.png" alt="" width="640px" />
+    >    <img src="./images/w2-u3-s2/pic04-chrome-hcpcockpit-accountinfo-name.png"/>
     >
     > -   **Step 3:** In the HCP cockpit toolbar press the user icon at the right side. Copy the **ID** into the clipboard, e.g. **P1942128127**.
     >
-    >     <img src="./images/w2-u3-s2/pic05-chrome-hcpcockpit-userinfo-id.png" alt="" width="640px" />
+    >     <img src="./images/w2-u3-s2/pic05-chrome-hcpcockpit-userinfo-id.png"/>
 
     **HTTPS Proxy**
 
     Enter **Host** and **Port** fields if you are working behind a firewall with a proxy.
 
-    <img src="./images/w2-u3-s2/pic06-chrome-sccadmin-setup-define-account-input.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s2/pic06-chrome-sccadmin-setup-define-account-input.png"/>
 
 7.  Click **Save**.
 
-    <img src="./images/w2-u3-s2/pic07-chrome-sccadmin-setup-define-account-save.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s2/pic07-chrome-sccadmin-setup-define-account-save.png"/>
 
 > **Result:** After the initial configuration was successfully set up the **Connector** view displays a new dashboard entry for the newly added HCP trial account.
 >
-> <img src="./images/w2-u3-s2/pic08-chrome-sccadmin-setup-define-account-success.png" alt="" width="640px" />
+> <img src="./images/w2-u3-s2/pic08-chrome-sccadmin-setup-define-account-success.png"/>
 >
 > Click on tree item **Account: My Trial Account** to view more account details.
 >
-> <img src="./images/w2-u3-s2/pic09-chrome-sccadmin-account-mytrialaccount.png" alt="" width="640px" />
+> <img src="./images/w2-u3-s2/pic09-chrome-sccadmin-account-mytrialaccount.png"/>
 >
 > **Related Resources:** For more details see SAP HANA Cloud Platform Documentation:
 >
@@ -191,7 +191,7 @@ Check connectivity in your HCP trial account:
 1.  In Google Chrome browser select the tab with the HCP cockpit.
 2.  In HCP cockpit go to **Connectivity > Cloud Connectors**. The green _Connected_ text indicates, that your HCP trial account is successfully connected with your SAP HANA Cloud Connector installation that is running on your local Linux VM.
 
-    <img src="./images/w2-u3-s2/pic10-chrome-hcpcockpit-scc-connected.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s2/pic10-chrome-hcpcockpit-scc-connected.png"/>
 
 > **Result:** You successfully set up the initial configuration of the SAP HANA Cloud Connector that is running on your Linux VM (i.e. in your own corporate network). It is connected with Your HCP trial account hosted on the SAP HANA Cloud Platform trial landscape  **hanatrial.ondemand.com**.
 
@@ -209,9 +209,9 @@ Expose the SAP back-end system host to your HCP trial account with the following
 4.  Download the file [s4h-http-access-control.zip](./imports/connector/s4h-http-access-control.zip?raw=true).
 5.  Click **Import** button in the toolbar under **Mapping Virtual To Internal System** and choose the previously downloaded ZIP-file **s4h-http-access-control.zip**.
 
-    <img src="./images/w2-u3-s3/pic01-chrome-sccadmin-accctrl-import.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s3/pic01-chrome-sccadmin-accctrl-import.png"/>
 
-    <img src="./images/w2-u3-s3/pic02-chrome-sccadmin-accctrl-importfile.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s3/pic02-chrome-sccadmin-accctrl-importfile.png"/>
 
 > **Result:** A new access control entry is added with the following definition:
 >
@@ -227,7 +227,7 @@ Expose the SAP back-end system host to your HCP trial account with the following
 > | -------- | ------ | --------- | -------------------------- |
 > | **true** | **Ok** | **/sap/** | **Path and all sub-paths** |
 >
->  <img src="./images/w2-u3-s3/pic03-chrome-sccadmin-newvirtualmapping.png" alt="" width="640px" />
+>  <img src="./images/w2-u3-s3/pic03-chrome-sccadmin-newvirtualmapping.png"/>
 >
 > **Related Resources:** For more details see SAP HANA Cloud Platform Documentation: [Configuring Access Control](https://help.hana.ondemand.com/help/frameset.htm?e7d4927dbb571014af7ef6ebd6cc3511.html).
 
@@ -249,7 +249,7 @@ Check Cloud Connector Host in your HCP trial account:
 > | -------------- | -------- | --------------- | ------------- |
 > | **s4h:443**    | **HTTP** | **ABAP System** | **Available** |
 >
-> <img src="./images/w2-u3-s3/pic04-chrome-hcpcockpit-cloudcon-exposedbackend.png" alt="" width="640px" />
+> <img src="./images/w2-u3-s3/pic04-chrome-hcpcockpit-cloudcon-exposedbackend.png"/>
 
 ## Step 4: Create HTTP Destination in HCP Trial Account
 
@@ -279,18 +279,18 @@ To import a new connectivity destination of type _HTTP_ apply the following step
 4.  Enter the password **Appl1ance** that you assigned to your SAP NetWeaver AS ABAP 7.50 back-end user **DEVELOPER** in [Week 1 - Unit 6](../week-1/unit-6/).
 5.  Click **Save**.
 
-    <img src="./images/w2-u3-s4/pic01-chrome-hcpcockpit-cloudcon-importhttpdest.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s4/pic01-chrome-hcpcockpit-cloudcon-importhttpdest.png"/>
 
     The newly imported HTTP destination configuration is displayed in read-only mode:
 
-    <img src="./images/w2-u3-s4/pic02-chrome-hcpcockpit-cloudcon-s4hdestination.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s4/pic02-chrome-hcpcockpit-cloudcon-s4hdestination.png"/>
 
     > **Note:** The URL `https://s4h:443` points to the virtual host **s4h:443** as defined before in [Step 3.1 Expose S/4HANA Back-End System with Access Control Definition](#expose-s4hana-backend-system-with-access-control-definition).
     > The additional properties `WebIDEEnabled` and `WebIDEUsage` allow SAP Web IDE to call _design-time-specific_ OData services from the ABAP backend  (e.g. `odata_abap` for the OData functionality of SAP Gateway allows SAP Web IDE to access the OData service catalog of the ABAP backend system).
 
 6.  Click **Check Connection** to test system communication between SAP HANA Cloud Platform and the SAP back-end on network level.
 
-    <img src="./images/w2-u3-s4/pic03-chrome-hcpcockpit-cloudcon-checkcon.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s4/pic03-chrome-hcpcockpit-cloudcon-checkcon.png"/>
 
 > **Result:** You added a new HTTP destination to your HCP trial account that points to the S/4HANA back-end system and enables OData service access via virtual host `http://s4h:443`.
 >
@@ -307,25 +307,25 @@ With the HTTP destination in place you can use SAP Web IDE to browse the OData s
 1.  In Google Chrome browser open your **SAP Web IDE** bookmark from [Week 1 - Unit 5](../../week-1/unit-5/#create-sap-web-ide-bookmark) in a new tab.
 2.  On the **Welcome** page in section **Create a Project** click on **New Project from Template**.
 
-    <img src="./images/w2-u3-s4/pic04-chrome-webide-newproj-fromtempl.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s4/pic04-chrome-webide-newproj-fromtempl.png"/>
 
 3.  Click on tile **List Report Application** and click **Next**.
 
-    <img src="./images/w2-u3-s4/pic05-chrome-webide-newproj-listrepoapp.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s4/pic05-chrome-webide-newproj-listrepoapp.png"/>
 
 4.  Enter "Project Name" **Test**, "Title" **Test** and click **Next**.
 5.  In the "Data Connection" step keep the default source **Service Catalog** selected and choose the system entry **S/4HANA HTTP API** from the dropdown list to load all exposed services into the table.
 6.  In the filter field enter **PROD** to view all matching OData services including **EPM_REF_APPS_PROD_MAN_SRV**.
 
-    <img src="./images/w2-u3-s4/pic06-chrome-webide-newproj-datacon.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s4/pic06-chrome-webide-newproj-datacon.png"/>
 
 7.  Click **Show Details** to get closer information on the selected  **EPM_REF_APPS_PROD_MAN_SRV** OData service.
 
-    <img src="./images/w2-u3-s4/pic07-chrome-webide-newproj-servicedetails.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s4/pic07-chrome-webide-newproj-servicedetails.png"/>
 
 8.  Click the **Cancel** button in the upper right corner of the template creation dialog. We come back to SAP Web IDE later this week in [Unit 5](../unit-5/) on the UX extension part.
 
-    <img src="./images/w2-u3-s4/pic08-chrome-webide-newproj-cancel.png" alt="" width="640px" />
+    <img src="./images/w2-u3-s4/pic08-chrome-webide-newproj-cancel.png"/>
 
 > **Result:** The SAP HANA Cloud Connector is installed on your Linux VM with a secure connection between your HCP trial account and the SAP back-end system. The OData service **EPM_REF_APPS_PROD_MAN_SRV** can be selected in SAP Web IDE to build an application consuming it.
 

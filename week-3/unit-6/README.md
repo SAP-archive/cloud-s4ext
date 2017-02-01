@@ -298,7 +298,7 @@ Switch to the SAP Web IDE browser tab and execute the following steps.
 
 1.  Click **Workspace > manageproducts** and choose context menu item **Project Settings**.
 
-     <img src="./images/w3-u6-s2/pic26--hcp-deploy.png" alt="" width="640px" />
+     <img src="./images/w3-u6-s2/pic26--hcp-deploy.png"/>
 
 2.  On opened _Project Settings_ page:
 
@@ -307,22 +307,22 @@ Switch to the SAP Web IDE browser tab and execute the following steps.
     -   Click **Save** to save the settings.
     -   Click **Close** to close the settings page.
 
-        <img src="./images/w3-u6-s2/pic27--hcp-deploy.png" alt="" width="640px" />
+        <img src="./images/w3-u6-s2/pic27--hcp-deploy.png"/>
 
 3.  Click **Workspace > manageproducts**
 4.  Choose context menu item **Deploy > Deploy to SAP HANA Cloud Platform**.
 
-    <img src="./images/w3-u6-s2/pic28--hcp-deploy.png" alt="" width="640px" />
+    <img src="./images/w3-u6-s2/pic28--hcp-deploy.png"/>
 
 5.  On the opened **Deploy Application to SAP HANA Cloud Platform** dialog:
 6.  Keep all **default settings**.
 7.  Click **Deploy**.
 
-    <img src="./images/w3-u6-s2/pic29--hcp-deploy.png" alt="" width="640px" />
+    <img src="./images/w3-u6-s2/pic29--hcp-deploy.png"/>
 
     > **Result:** The **manageproducts** SAP Fiori app was successfully deployed to your HCP trial account.
     >
-    > <img src="./images/w3-u6-s2/pic30--hcp-deploy.png" alt="" width="640px" />
+    > <img src="./images/w3-u6-s2/pic30--hcp-deploy.png"/>
 
 8.  Keep the **Successfully Deployed** dialog open, as you will register from this dialog the deployed application to your HCP FLP.
 
@@ -336,13 +336,13 @@ Switch to the SAP Web IDE browser tab and execute the following steps.
 
 2.  Click **Register to SAP Fiori launchpad**
 
-    <img src="./images/w3-u6-s2/pic31--flp-regist.png" alt="" width="640px" />
+    <img src="./images/w3-u6-s2/pic31--flp-regist.png"/>
 
 3.  On **General Information** wizard page:
 4.  Add **-discuss** to the _Semantic Object_ name field.
 5.  Click **Next**.
 
-    <img src="./images/w3-u6-s2/pic32--flp-regist.png" alt="" width="640px" />
+    <img src="./images/w3-u6-s2/pic32--flp-regist.png"/>
 
 6.  On **Tile Configuration** wizard page:
 
@@ -350,7 +350,7 @@ Switch to the SAP Web IDE browser tab and execute the following steps.
     -   Subtitle: **Rating and Discussions**.
     -   Click **Next**.
 
-    <img src="./images/w3-u6-s2/pic33--flp-regist.png" alt="" width="640px" />
+    <img src="./images/w3-u6-s2/pic33--flp-regist.png"/>
 
 7.  On **Assignment** wizard page:
 
@@ -359,29 +359,29 @@ Switch to the SAP Web IDE browser tab and execute the following steps.
     -   Group: **Product Management**.
     -   Click **Next**.
 
-    <img src="./images/w3-u6-s2/pic34--flp-regist.png" alt="" width="640px" />
+    <img src="./images/w3-u6-s2/pic34--flp-regist.png"/>
 
 8.  On **Confirmation** wizard page click **Finish**.
 
-    <img src="./images/w3-u6-s2/pic35--flp-regist.png" alt="" width="640px" />
+    <img src="./images/w3-u6-s2/pic35--flp-regist.png"/>
 
     > **Result:** A **Successfully Registered** confirmation popup comes up.
     >
-    > <img src="./images/w3-u6-s2/pic36--flp-regist.png" alt="" width="640px" />
+    > <img src="./images/w3-u6-s2/pic36--flp-regist.png"/>
 
 9.  Click **Open SAP Fiori launchpad** link to open the SAP Fiori launchpad in a new browser tab.
 
-    <img src="./images/w3-u6-s2/pic37--flp-regist.png" alt="" width="640px" />
+    <img src="./images/w3-u6-s2/pic37--flp-regist.png"/>
 
     > **Result:** In the launchpad you will now see the new application tile **Manage Products** with **Ratings and Discussions** subtitle.
     >
-    > <img src="./images/w3-u6-s2/pic37--flp-regist.png" alt="" width="640px" />
+    > <img src="./images/w3-u6-s2/pic37--flp-regist.png"/>
 
 10. Click  **Manage Products** tile with **Ratings and Discussions** subtitle.
 
     > **Result:** You opened the _manageproducts_ application where you can now find the collaborative extension running in the SAP Fiori Launchpad in your HCP account.
     >
-    > <img src="./images/w3-u6-s2/pic38--flp-regist.png" alt="" width="640px" />
+    > <img src="./images/w3-u6-s2/pic38--flp-regist.png"/>
 
 [Top](#step-2-3-2-top)
 

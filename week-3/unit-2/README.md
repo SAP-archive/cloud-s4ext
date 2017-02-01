@@ -71,13 +71,13 @@ Make sure that the _SAP HANA Cloud Connector_ (SCC) is up and running.
 
     -   **Active: active** then Cloud Connector is up and running.
 
-        <img src="./images/w3-u2-s1/pic01--prep-steps.png" alt="" width="640px" />
+        <img src="./images/w3-u2-s1/pic01--prep-steps.png"/>
 
     -   **Active: inactive** then start Cloud Connector: **sudo service scc_daemon start**
 
         -   Then **Check _SCC_ status** again.
 
-        <img src="./images/w3-u2-s1/pic02--prep-steps.png" alt="" width="640px" />
+        <img src="./images/w3-u2-s1/pic02--prep-steps.png"/>
 
 > **Result:** Your SAP HANA Cloud Connector is up and running.
 
@@ -94,7 +94,7 @@ After you verified that your local _SAP NetWeaver AS ABAP_ backend and your _SAP
 
 > **Result:** If you can see some data in the application, you can be sure that the connectivity from your local back-end to your _SAP HANA Cloud Platform_ trial account is established and working correctly.
 >
-> <img src="./images/w3-u2-s1/pic03--prep-steps.png" alt="" width="640px" />
+> <img src="./images/w3-u2-s1/pic03--prep-steps.png"/>
 
 [Top](#step-1-3-top)
 
@@ -109,19 +109,19 @@ The _Collaborative Extension_ that you create in week 3, will be based on the _S
 1.  In Google Chrome, open the **S/4HANA FLP** bookmark, that you created in [week 2, unit 1](../../week-2/unit-1/#create-s4hana-flp-bookmark). (This is the SAP Fiori Launchpad that is running on your local SAP S/4HANA backend. This is NOT the Launchpad that you opened in the preparation steps of this unit.)
 2.  Click on **Shop** tile to open the SAP Fiori _Shop_ application.
 
-    <img src="./images/w3-u2-s2/pic01--shop-odata.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic01--shop-odata.png"/>
 
 3.  Open the Google Chrome **developer tools** as described in [week 2, unit 2](../../week-2/unit-2/#explore-odata-services-within-web-browser). (Keyboard shortcut: Windows: **Ctrl + Shift + I** / Mac OS: **Cmd + Alt + I**)
 4.  Select **Network** tab.
 5.  **Refresh** the page. This ensures that the developer tools logs the HTTP request that fetches data from your backend system.
 
-    <img src="./images/w3-u2-s2/pic02--shop-odata.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic02--shop-odata.png"/>
 
 6.  Enter **metadata** as filter and double-click on the resulting HTTP request that fetches the **metadata** document of the EPM_REF_APP_SHOP_SRV OData service.
 
 > **Result:** The metadata document of the EPM_REF_APP_SHOP_SRV OData service is now open in a new browser tab. Now that we have identified the web service that is the data source for this SAP Fiori application, we can further investigate the service using the SAP Gateway tools in your SAP NetWeaver backend system.
 >
-> <img src="./images/w3-u2-s2/pic03--shop-odata.png" alt="" width="640px" />
+> <img src="./images/w3-u2-s2/pic03--shop-odata.png"/>
 
 [Top](#step-2-1-top)
 
@@ -131,22 +131,22 @@ Using the _ABAP in Eclipse (AiE)_ tools you will open the _Maintain Services_ tr
 
 1.  In Eclipse open the **ABAP Perspective**, select the **NPL\_001\_developer\_en** ABAP project in _Project Explorer_ view, and click on the **green icon with a white triangle** (_Run ABAP Development Object as ABAP Application in SAP GUI_) in the Eclipse toolbar: .
 
-    <img src="./images/w3-u2-s2/pic04--aie-odata.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic04--aie-odata.png"/>
 
 2.  If requested, log in with password **Appl1ance** of user _DEVELOPER_.
 
-    <img src="./images/w3-u2-s2/pic05--aie-odata.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic05--aie-odata.png"/>
 
     > **Note:** In case you experience any problems to log in, try to close the ABAP project and open it again. See if the _Log in_ step works then.
 
 3.  In the opened **Run ABAP Application** dialog, enter **/IWFND/MAINT_SERVICE** as search string.
 4.  Choose item **/IWFND/MAINT_SERVICE (Transaction)** from the list and click on **OK**.
 
-    <img src="./images/w3-u2-s2/pic06--aie-odata.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic06--aie-odata.png"/>
 
 > **Result:** You have opened the _Activate and Maintain Services_ transaction in your backend using _ABAP in Eclipse_. This transaction shows all available OData services in your SAP NetWeaver backend.
 >
-> <img src="./images/w3-u2-s2/pic07--aie-odata.png" alt="" width="640px" />
+> <img src="./images/w3-u2-s2/pic07--aie-odata.png"/>
 
 [Top](#step-2-2-top)
 
@@ -154,27 +154,27 @@ Using the _ABAP in Eclipse (AiE)_ tools you will open the _Maintain Services_ tr
 
 1.  In the **Activate and Maintain Services** transaction, click om the **Filter** button, enter **\*SHOP\*** as **Technical Service Name** and click on the green accept icon.
 
-    <img src="./images/w3-u2-s2/pic08--shop-odata.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic08--shop-odata.png"/>
 
 2.  All OData services containing the **SHOP** string will be listed. We are looking for the **ZEPM_REF_APPS_SHOP_SRV** service.
 
-    <img src="./images/w3-u2-s2/pic09--shop-odata.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic09--shop-odata.png"/>
 
 3.  In the _Service Catalog_, select the line with **EPM_REF_APPS_SHOP_SRV** as _External Service Name_.
 4.  Click **SAP Gateway Client** to open the integrated OData service test client.
 
-    <img src="./images/w3-u2-s2/pic10--shop-odata.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic10--shop-odata.png"/>
 
     > **Note:** _SAP Gateway_ is the development environment in a SAP NetWeaver AS ABAP system, where OData services are created, tested and managed. In earlier releases of SAP NetWeaver, SAP Gateway had to be installed as an ABAP add-on, in newer releases (like SAP S/4HANA), the Gateway tools are included by default. You can find more information on SAP Gateway and on OData services in the SAP context in the [SAP Community](http://www.sap.com/community/topic/gateway.html).
 
 5.  On the opened **SAP Gateway Client** window, click **Execute** to get the HTTP response of the OData service in the XML format.
 
-    <img src="./images/w3-u2-s2/pic11--shop-odata.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic11--shop-odata.png"/>
 
 6.  Click **Data Explorer**. This gives you a structured view of the response body.
 7.  Take a look at the folder structure, and confirm that there are two **entity sets** called **Reviews** and **Products**.
 
-    <img src="./images/w3-u2-s2/pic12--shop-odata.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic12--shop-odata.png"/>
 
 > **Result:** You have verified that the **EPM_REF_APPS_SHOP_SRV** OData service contains the product and reviews information that you need to create the **Collaborative Extension**.
 
@@ -186,19 +186,19 @@ To see the contents of the **Reviews** entity set of the selected _EPM_REF_APPS_
 
 1.  In the **SAP Gateway Client**, click on **EntitySets** in the toolbar.
 
-    <img src="./images/w3-u2-s2/pic13--shop-details.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic13--shop-details.png"/>
 
 2.  Click on **Reviews** EntitySet Name. This results in the string **/Reviews** getting appended to the **Request URI**.
 
-    <img src="./images/w3-u2-s2/pic14--shop-details.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic14--shop-details.png"/>
 
 3.  Click on the **Execute** button, so that you get the response for this changed request.
 
-    <img src="./images/w3-u2-s2/pic15--shop-details.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic15--shop-details.png"/>
 
 4.  The data of the **Review** entities are contained in the HTTP response, and for each review entity you select, you can see the corresponding property values.
 
-    <img src="./images/w3-u2-s2/pic16--shop-details.png" alt="" width="640px" />
+    <img src="./images/w3-u2-s2/pic16--shop-details.png"/>
 
 > **Result:** You have identified the product review data you need in order to find out the products in your store that have a low user rating.
 

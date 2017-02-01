@@ -80,13 +80,13 @@ Make sure that the _SAP Cloud Connector_ (SCC) is up and running as described in
 
     -   **Active: active** then Cloud Connector is up and running.
 
-        <img src="../../week-3/unit-2/images/w3-u2-s1/pic01--prep-steps.png" alt="" width="640px" />
+        <img src="../../week-3/unit-2/images/w3-u2-s1/pic01--prep-steps.png"/>
 
     -   **Active: inactive** then start Cloud Connector: **sudo service scc_daemon start**
 
         -   Then **Check _SCC_ status** again.
 
-        <img src="../../week-3/unit-2/images/w3-u2-s1/pic02--prep-steps.png" alt="" width="640px" />
+        <img src="../../week-3/unit-2/images/w3-u2-s1/pic02--prep-steps.png"/>
 
 > **Result:** Your SAP HANA Cloud Connector is up and running.
 

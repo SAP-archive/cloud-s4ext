@@ -79,13 +79,13 @@ Make sure that the _SAP Cloud Connector_ (SCC) is up and running as described in
 
     -   **Active: active** then Cloud Connector is up and running.
 
-        <img src="../../week-3/unit-2/images/w3-u2-s1/pic01--prep-steps.png" alt="" width="640px" />
+        <img src="../../week-3/unit-2/images/w3-u2-s1/pic01--prep-steps.png"/>
 
     -   **Active: inactive** then start Cloud Connector: **sudo service scc_daemon start**
 
         -   Then **Check _SCC_ status** again.
 
-        <img src="../../week-3/unit-2/images/w3-u2-s1/pic02--prep-steps.png" alt="" width="640px" />
+        <img src="../../week-3/unit-2/images/w3-u2-s1/pic02--prep-steps.png"/>
 
 > **Result:** Your SAP HANA Cloud Connector is up and running.
 
@@ -351,7 +351,7 @@ After you have successfully replicated the tables using SAP Landscape Transforma
 
 1.  In the running Oracle VM VirtualBox window menu: **Choose Machine > Take Snapshot...**
 
-    <img src="./images/w4-u3-s8/pic01--snapshot.png" alt="" width="640px" />
+    <img src="./images/w4-u3-s8/pic01--snapshot.png"/>
 
 2.  In the opened window enter a name **ABAP with SCC and SLT Replication** and click on **OK**.
 
