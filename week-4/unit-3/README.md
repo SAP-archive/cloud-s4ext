@@ -197,7 +197,10 @@ In this step you will set up a data replication job between your SAP NetWeaver b
     -   Select the **DB Connection** radio button.
     -   Database System: **HANA**
     -   Administration User Name: **ACME**
-    -   Password: **&lt;insert the password you specified in week 4, unit 2 here>**
+    -   Password: **&lt;ACME user password>**
+
+      > **Note:** You changed the initial password of the ACME user when you first logged on to the HANA DB in Unit 2, Step 3.
+
     -   Host Name: **localhost**
     -   Instance Number: **00**
     -   Logical Port Number: **15**
