@@ -6,8 +6,8 @@ main:
     url: /week-2/
   - title: "Week 3"
     url: /week-3/
-#  - title: "Week 4"
-#    url: /week-4/
+  - title: "Week 4"
+    url: /week-4/
 #  - title: "Week 5"
 #    url: /week-5/
 #  - title: "Week 6"
@@ -40,8 +40,8 @@ home:
       url: /week-2/
     - title: "Week 3: Collaborative Extension"
       url: /week-3/
-#    - title: "Week 4: Analytical Extension using SAP HANA on HCP and the Data Replication Pattern"
-#      url: /week-4/
+    - title: "Week 4: Analytical Extension using SAP HANA on HCP and the Data Replication Pattern"
+      url: /week-4/
 #    - title: "Week 5: IoT Extension using the Hub Pattern and IoT Services"
 #      url: /week-5/
 #    - title: "Week 6: IoT Extension with the Hub Pattern and Integration in legacy Business Processes"

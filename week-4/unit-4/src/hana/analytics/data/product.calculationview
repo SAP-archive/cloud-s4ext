@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="product" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+  <descriptions defaultDescription="CV_PRODUCT_ANALYSIS"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="SNWD_SO_I" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SLT_REPLICATION" columnObjectName="SNWD_SO_I"/>
+    </DataSource>
+    <DataSource id="SNWD_SO_SL" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SLT_REPLICATION" columnObjectName="SNWD_SO_SL"/>
+    </DataSource>
+    <DataSource id="SNWD_PD" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SLT_REPLICATION" columnObjectName="SNWD_PD"/>
+    </DataSource>
+    <DataSource id="SNWD_TEXTS" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SLT_REPLICATION" columnObjectName="SNWD_TEXTS"/>
+    </DataSource>
+    <DataSource id="SNWD_REV_HEAD" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SLT_REPLICATION" columnObjectName="SNWD_REV_HEAD"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="SalesOrderItem">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="SO_I_GUID"/>
+        <viewAttribute id="PRODUCT_GUID"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#SNWD_SO_I">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SO_I_GUID" source="NODE_KEY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GUID" source="PRODUCT_GUID"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="SalesOrderItemQuantity">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_QUANTITY"/>
+        <viewAttribute id="SO_I_GUID"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#SNWD_SO_SL">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_QUANTITY" source="QUANTITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SO_I_GUID" source="PARENT_KEY"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="JoinSalesOrderItemWithQuantity" cardinality="C1_1" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_GUID"/>
+        <viewAttribute id="PRODUCT_QUANTITY"/>
+        <viewAttribute hidden="true" id="JOIN$SO_I_GUID$SO_I_GUID"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#SalesOrderItem">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GUID" source="PRODUCT_GUID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SO_I_GUID$SO_I_GUID" source="SO_I_GUID"/>
+      </input>
+      <input node="#SalesOrderItemQuantity">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_QUANTITY" source="PRODUCT_QUANTITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SO_I_GUID$SO_I_GUID" source="SO_I_GUID"/>
+      </input>
+      <joinAttribute name="JOIN$SO_I_GUID$SO_I_GUID"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Product">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_GUID"/>
+        <viewAttribute id="PRODUCT_NAME_GUID"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_CATEGORY"/>
+        <viewAttribute id="PRODUCT_PRICE"/>
+        <viewAttribute id="CURRENCY_CODE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#SNWD_PD">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GUID" source="NODE_KEY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_NAME_GUID" source="NAME_GUID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_CATEGORY" source="CATEGORY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_PRICE" source="PRICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY_CODE" source="CURRENCY_CODE"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="ProductName">
+      <descriptions defaultDescription="EPM: Textfeld fÃ¼r Namen und Beschreibungen"/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_NAME_GUID"/>
+        <viewAttribute id="LANGUAGE"/>
+        <viewAttribute id="PRODUCT_NAME"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#SNWD_TEXTS">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_NAME_GUID" source="PARENT_KEY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LANGUAGE" source="LANGUAGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_NAME" source="TEXT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="JoinProductWithName" cardinality="C1_1" joinType="textTable" languageColumn="LANGUAGE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_GUID"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_CATEGORY"/>
+        <viewAttribute id="PRODUCT_PRICE"/>
+        <viewAttribute id="CURRENCY_CODE"/>
+        <viewAttribute id="PRODUCT_NAME"/>
+        <viewAttribute hidden="true" id="JOIN$PRODUCT_NAME_GUID$PRODUCT_NAME_GUID"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Product">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GUID" source="PRODUCT_GUID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_CATEGORY" source="PRODUCT_CATEGORY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_PRICE" source="PRODUCT_PRICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY_CODE" source="CURRENCY_CODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRODUCT_NAME_GUID$PRODUCT_NAME_GUID" source="PRODUCT_NAME_GUID"/>
+      </input>
+      <input node="#ProductName">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_NAME" source="PRODUCT_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRODUCT_NAME_GUID$PRODUCT_NAME_GUID" source="PRODUCT_NAME_GUID"/>
+      </input>
+      <joinAttribute name="JOIN$PRODUCT_NAME_GUID$PRODUCT_NAME_GUID"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="JoinProductWithNameAndQuantity" cardinality="CN_1" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_GUID"/>
+        <viewAttribute id="PRODUCT_QUANTITY"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_CATEGORY"/>
+        <viewAttribute id="PRODUCT_PRICE"/>
+        <viewAttribute id="CURRENCY_CODE"/>
+        <viewAttribute id="PRODUCT_NAME"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#JoinSalesOrderItemWithQuantity">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GUID" source="PRODUCT_GUID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_QUANTITY" source="PRODUCT_QUANTITY"/>
+      </input>
+      <input node="#JoinProductWithName">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_CATEGORY" source="PRODUCT_CATEGORY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_PRICE" source="PRODUCT_PRICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY_CODE" source="CURRENCY_CODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_NAME" source="PRODUCT_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GUID" source="PRODUCT_GUID"/>
+      </input>
+      <joinAttribute name="PRODUCT_GUID"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="ProductRating">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_AVERAGE_PRODUCT_RATING"/>
+        <viewAttribute id="PRODUCT_GUID"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#SNWD_REV_HEAD">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_AVERAGE_PRODUCT_RATING" source="AVERAGE_RATING"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GUID" source="ENTITY_KEY"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="JoinProductWithNameAndQuantityAndRating" cardinality="CN_1">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_QUANTITY"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_CATEGORY"/>
+        <viewAttribute id="PRODUCT_PRICE"/>
+        <viewAttribute id="CURRENCY_CODE"/>
+        <viewAttribute id="PRODUCT_AVERAGE_PRODUCT_RATING"/>
+        <viewAttribute id="PRODUCT_NAME"/>
+        <viewAttribute id="PRODUCT_GUID"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#JoinProductWithNameAndQuantity">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_QUANTITY" source="PRODUCT_QUANTITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_CATEGORY" source="PRODUCT_CATEGORY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_PRICE" source="PRODUCT_PRICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY_CODE" source="CURRENCY_CODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_NAME" source="PRODUCT_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GUID" source="PRODUCT_GUID"/>
+      </input>
+      <input node="#ProductRating">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_AVERAGE_PRODUCT_RATING" source="PRODUCT_AVERAGE_PRODUCT_RATING"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GUID" source="PRODUCT_GUID"/>
+      </input>
+      <joinAttribute name="PRODUCT_GUID"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="JoinProductWithNameAndQuantityAndRating">
+    <descriptions/>
+    <attributes>
+      <attribute id="PRODUCT_ID" key="true" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_ID"/>
+        <keyMapping columnObjectName="JoinProductWithNameAndQuantityAndRating" columnName="PRODUCT_ID"/>
+      </attribute>
+      <attribute id="PRODUCT_CATEGORY" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_CATEGORY"/>
+        <keyMapping columnObjectName="JoinProductWithNameAndQuantityAndRating" columnName="PRODUCT_CATEGORY"/>
+      </attribute>
+      <attribute id="PRODUCT_NAME" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_NAME"/>
+        <keyMapping columnObjectName="JoinProductWithNameAndQuantityAndRating" columnName="PRODUCT_NAME"/>
+      </attribute>
+      <attribute id="PRODUCT_GUID" hidden="true" key="true" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_GUID"/>
+        <keyMapping columnObjectName="JoinProductWithNameAndQuantityAndRating" columnName="PRODUCT_GUID"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="PRODUCT_QUANTITY" order="2" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="PRODUCT_QUANTITY"/>
+        <measureMapping columnObjectName="JoinProductWithNameAndQuantityAndRating" columnName="PRODUCT_QUANTITY"/>
+      </measure>
+      <measure id="PRODUCT_PRICE" order="4" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="PRODUCT_PRICE"/>
+        <measureMapping columnObjectName="JoinProductWithNameAndQuantityAndRating" columnName="PRODUCT_PRICE"/>
+      </measure>
+      <measure id="CURRENCY_CODE" order="5" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="CURRENCY_CODE"/>
+        <measureMapping columnObjectName="JoinProductWithNameAndQuantityAndRating" columnName="CURRENCY_CODE"/>
+      </measure>
+      <measure id="PRODUCT_AVERAGE_PRODUCT_RATING" order="6" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="PRODUCT_AVERAGE_PRODUCT_RATING"/>
+        <measureMapping columnObjectName="JoinProductWithNameAndQuantityAndRating" columnName="PRODUCT_AVERAGE_PRODUCT_RATING"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="175" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="SalesOrderItem" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="453"/>
+        <rectangleSize height="30" width="140"/>
+      </shape>
+      <shape expanded="true" modelObjectName="SalesOrderItemQuantity" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="453"/>
+        <rectangleSize height="30" width="140"/>
+      </shape>
+      <shape expanded="true" modelObjectName="JoinSalesOrderItemWithQuantity" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="357"/>
+        <rectangleSize height="30" width="140"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Product" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="330" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="ProductName" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="484" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="JoinProductWithName" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="330" y="357"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="JoinProductWithNameAndQuantity" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="252" y="261"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="ProductRating" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="98" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="JoinProductWithNameAndQuantityAndRating" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="175" y="165"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

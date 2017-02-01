@@ -4,6 +4,8 @@ excerpt: "Here you can find information on how to troubleshoot errors with your 
 tags:
   - "Week 1"
   - "Week 2"
+  - "Week 3"
+  - "Week 4"
 categories:
   - "SAP S/4HANA NetWeaver Backend"
 ---

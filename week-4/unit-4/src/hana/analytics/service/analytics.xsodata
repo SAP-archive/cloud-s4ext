@@ -1,0 +1,3 @@
+﻿service namespace "com.acme.s4ext.analytics.service.analytics" {
+  "com.acme.s4ext.analytics.data/product.calculationview" as "product" keys ("PRODUCT_ID");
+}

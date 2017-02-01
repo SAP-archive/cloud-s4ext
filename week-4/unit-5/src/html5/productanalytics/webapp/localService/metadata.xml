@@ -1,0 +1,26 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+    <edmx:DataServices
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+        <Schema
+            xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="com.acme.s4ext.analytics">
+            <EntityType Name="productType">
+                <Key>
+                    <PropertyRef Name="PRODUCT_ID"/>
+                </Key>
+                <Property Name="PRODUCT_CATEGORY" Type="Edm.String" MaxLength="40"/>
+                <Property Name="PRODUCT_ID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PRODUCT_NAME" Type="Edm.String" MaxLength="255"/>
+                <Property Name="CURRENCY_CODE" Type="Edm.String" MaxLength="5"/>
+                <Property Name="PRODUCT_QUANTITY" Type="Edm.Decimal" Precision="13" Scale="3"/>
+                <Property Name="PRODUCT_PRICE" Type="Edm.Decimal" Precision="15" Scale="2"/>
+                <Property Name="PRODUCT_AVERAGE_PRODUCT_RATING" Type="Edm.Decimal" Precision="4" Scale="2"/>
+            </EntityType>
+            <EntityContainer Name="analytics" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="product" EntityType="com.acme.s4ext.analytics.service.analytics.productType"/>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

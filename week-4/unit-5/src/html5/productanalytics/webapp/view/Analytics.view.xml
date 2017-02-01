@@ -1,0 +1,303 @@
+<mvc:View
+	controllerName="com.acme.s4ext.productanalytics.controller.Analytics"
+	xmlns="sap.m"
+	xmlns:c="sap.suite.ui.commons"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+	<Page
+		title="{i18n>title}">
+		<content>
+			<Panel
+				class="panelStyle"
+				expandable="true"
+				expanded="false"
+				headerText="{i18n>panelHeaderText}"
+				width="auto">
+				<content>
+					<HBox
+						class='settingsHBox'>
+						<!--                                                                                -->
+						<!-- Extending S/4HANA with HCP                                                     -->
+						<!-- * ANALYTIC Extension: Header - Filtering products                              -->
+						<!-- begin                                                                          -->
+						<VBox
+							class='sapUiResponsiveMargin'
+							width="20%">
+							<Label
+								text="{i18n>filterLabel}" />
+							<FacetFilter
+								reset="handleReset"
+								showPersonalization="false"
+								showPopoverOKButton="true"
+								showReset="true"
+								type="Simple">
+								<lists>
+									<FacetFilterList
+										enableCaseInsensitiveSearch="true"
+										items="{
+											path:'/product',
+											sorter:[
+												{path: 'PRODUCT_CATEGORY', group:true},
+												{path: 'PRODUCT_NAME', descending: false}
+											]
+										}"
+										listClose="handleFilter"
+										title="{i18n>filter}">
+										<items>
+											<FacetFilterItem
+												key="{PRODUCT_ID}"
+												text="{path: 'PRODUCT_NAME'}"/>
+										</items>
+									</FacetFilterList>
+								</lists>
+							</FacetFilter>
+						</VBox>
+						<!-- end                                                                            -->
+
+						<!--                                                                                -->
+						<!-- Extending S/4HANA with HCP                                                     -->
+						<!-- * ANALYTIC Extension: Header - Slider to choose minimal quantity               -->
+						<!-- begin                                                                          -->
+						<VBox
+							class='sapUiResponsiveMargin'
+							visible="{viewModel>/bQuantityBoxVisible}"
+							width="40%">
+							<Label
+								text="{
+									parts: [
+										{path: 'i18n>quantitySliderLabel'},
+										{path: 'viewModel>/quantityThreshold'}
+									]
+								}"/>
+							<Slider
+								id="idQuantitySlider"
+								class="sapUiMediumMarginEnd"
+								liveChange="onQuantitySliderChange"
+								max="100"
+								min="1"
+								step="1"
+								value="{viewModel>/quantityThreshold}"
+								width="100%"/>
+						</VBox>
+						<!-- end                                                                            -->
+
+						<!--                                                                                -->
+						<!-- Extending S/4HANA with HCP                                                     -->
+						<!-- * ANALYTIC Extension: Header - Slider to choose minimal rating                 -->
+						<!-- begin                                                                          -->
+						<VBox
+							class='sapUiResponsiveMargin'
+							visible="{viewModel>/bRatingBoxVisible}"
+							width="40%">
+							<Label
+								text="{
+									parts: [
+										{path: 'i18n>ratingSliderLabel'},
+										{path: 'viewModel>/ratingThreshold'}
+									]
+								}"/>
+							<Slider
+								id="idRatingSlider"
+								liveChange="onRatingSliderChange"
+								max="5"
+								min="0.5"
+								step="0.1"
+								value="{viewModel>/ratingThreshold}"
+								width="100%"/>
+						</VBox>
+						<!-- end                                                                            -->
+
+					</HBox>
+				</content>
+			</Panel>
+			<c:ChartContainer
+				id="chartContainer"
+				autoAdjustHeight="true"
+				contentChange="onContentChange"
+				showFullScreen="true"
+				showLegend="false"
+				showPersonalization="false">
+				<c:customIcons>
+					<core:Icon
+						id="refreshIcon"
+						press="handleRefresh"
+						src="sap-icon://refresh">
+					</core:Icon>
+				</c:customIcons>
+				<c:content>
+					<!--                                                                                -->
+					<!-- Extending S/4HANA with HCP                                                     -->
+					<!-- * ANALYTIC Extension: Bar Chart - Ordered quantity per product                 -->
+					<!-- begin                                                                          -->
+					<c:ChartContainerContent
+						icon="sap-icon://cart">
+						<c:content>
+							<viz:Popover
+								id="idPopOverBarQuantity">
+							</viz:Popover>
+							<viz:VizFrame
+								id="idVizFrameBarQuantity"
+								height="100%"
+								uiConfig="{applicationSet:'fiori'}"
+								vizType="bar"
+								width="100%">
+								<viz:dataset>
+									<viz.data:FlattenedDataset
+										data="{
+											path : '/product',
+											sorter: [
+												{ path: 'PRODUCT_QUANTITY', descending: false }
+											]
+										}">
+										<viz.data:dimensions>
+											<viz.data:DimensionDefinition
+												name="Id"
+												value="{PRODUCT_ID}" />
+											<viz.data:DimensionDefinition
+												name="Name"
+												value="{PRODUCT_NAME}" />
+										</viz.data:dimensions>
+										<viz.data:measures>
+											<viz.data:MeasureDefinition
+												name="Quantity"
+												value="{PRODUCT_QUANTITY}" />
+										</viz.data:measures>
+									</viz.data:FlattenedDataset>
+								</viz:dataset>
+								<viz:feeds>
+									<viz.feeds:FeedItem
+										type="Measure"
+										uid="valueAxis"
+										values="Quantity" />
+									<viz.feeds:FeedItem
+										type="Dimension"
+										uid="categoryAxis"
+										values="Name" />
+								</viz:feeds>
+							</viz:VizFrame>
+						</c:content>
+					</c:ChartContainerContent>
+					<!-- end                                                                            -->
+
+					<!--                                                                                -->
+					<!-- Extending S/4HANA with HCP                                                     -->
+					<!-- * ANALYTIC Extension: Bar Chart - Rating per product                           -->
+					<!-- begin                                                                          -->
+					<c:ChartContainerContent
+						icon="sap-icon://favorite">
+						<c:content>
+							<viz:Popover
+								id="idPopOverBarRating">
+							</viz:Popover>
+							<viz:VizFrame
+								id="idVizFrameBarRating"
+								height="100%"
+								uiConfig="{applicationSet:'fiori'}"
+								vizType="bar"
+								width="100%">
+								<viz:dataset>
+									<viz.data:FlattenedDataset
+										data="{
+											path : '/product',
+											sorter: [
+												{ path: 'PRODUCT_AVERAGE_PRODUCT_RATING', descending: false }
+											]
+										}">
+										<viz.data:dimensions>
+											<viz.data:DimensionDefinition
+												name="Id"
+												value="{PRODUCT_ID}" />
+											<viz.data:DimensionDefinition
+												name="Name"
+												value="{PRODUCT_NAME}" />
+										</viz.data:dimensions>
+										<viz.data:measures>
+											<viz.data:MeasureDefinition
+												name="Rating"
+												value="{PRODUCT_AVERAGE_PRODUCT_RATING}" />
+										</viz.data:measures>
+									</viz.data:FlattenedDataset>
+								</viz:dataset>
+								<viz:feeds>
+									<viz.feeds:FeedItem
+										type="Measure"
+										uid="valueAxis"
+										values="Rating" />
+									<viz.feeds:FeedItem
+										type="Dimension"
+										uid="categoryAxis"
+										values="Name" />
+								</viz:feeds>
+							</viz:VizFrame>
+						</c:content>
+					</c:ChartContainerContent>
+					<!-- end                                                                            -->
+
+					<!--                                                                                -->
+					<!-- Extending S/4HANA with HCP                                                     -->
+					<!-- * ANALYTIC Extension: Bubble Chart - Quantity and rating per product           -->
+					<!-- begin                                                                          -->
+					<c:ChartContainerContent
+						icon="sap-icon://bubble-chart">
+						<c:content>
+							<viz:Popover
+								id="idPopOverBubble">
+							</viz:Popover>
+							<viz:VizFrame
+								id="idVizFrameBubble"
+								height="100%"
+								uiConfig="{applicationSet:'fiori'}"
+								vizType="bubble"
+								width="100%">
+								<viz:dataset>
+									<viz.data:FlattenedDataset
+										data="{/product}">
+										<viz.data:dimensions>
+											<viz.data:DimensionDefinition
+												name="Id"
+												value="{PRODUCT_ID}" />
+											<viz.data:DimensionDefinition
+												name="Name"
+												value="{PRODUCT_NAME}" />
+										</viz.data:dimensions>
+										<viz.data:measures>
+											<viz.data:MeasureDefinition
+												name="Quantity"
+												value="{PRODUCT_QUANTITY}" />
+											<viz.data:MeasureDefinition
+												name="Rating"
+												value="{PRODUCT_AVERAGE_PRODUCT_RATING}" />
+											<viz.data:MeasureDefinition
+												name="Price"
+												value="{PRODUCT_PRICE}" />
+										</viz.data:measures>
+									</viz.data:FlattenedDataset>
+								</viz:dataset>
+								<viz:feeds>
+									<viz.feeds:FeedItem
+										type="Measure"
+										uid="valueAxis"
+										values="Quantity" />
+									<viz.feeds:FeedItem
+										type="Measure"
+										uid="valueAxis2"
+										values="Rating" />
+									<viz.feeds:FeedItem
+										type="Measure"
+										uid="bubbleWidth"
+										values="Price" />
+								</viz:feeds>
+							</viz:VizFrame>
+						</c:content>
+					</c:ChartContainerContent>
+					<!-- end                                                                            -->
+
+				</c:content>
+			</c:ChartContainer>
+		</content>
+	</Page>
+</mvc:View>
