@@ -89,8 +89,7 @@ sap.ui.define([
 			<!-- begin                                                                          -->
 			*/
 			// SAP Jam ODataModel
-			var componentName = "manageproducts";
-			var modulePath = (window.location.host.indexOf("flpportal-") === -1) ? "" : "/sap/fiori/" + componentName;
+			var modulePath = jQuery.sap.getModulePath("nw.epm.refapps.ext.prod.manage");
 			var oSapJamModel = models.createODataModel({
 				url: modulePath + "/jam-internet-http/api/v1/OData",
 				config: {
