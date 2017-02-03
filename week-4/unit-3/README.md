@@ -62,7 +62,7 @@ In this step you will ensure that the SAP HANA database operating in your SAP HA
 To make sure that your SAP S/4HANA backend system is in a defined, up and running state do the following **VM Stop/Start cycle**:
 
 1.  **Stop** SAP NetWeaver AS ABAP and **Close** VM as described in [week 1, unit 6, section 6.4](../../week-1/unit-6/#shutdown-vm-with-netweaver-as-abap).
-2.  **Start** first latest VM Snapshot **NetWeaver & Cloud Connector Setup (End of Week 2)** and then NetWeaver ABAP as described in [week 1, unit 6, section 6.5](../../week-1/unit-6/#starting-vm-with-netweaver-as-abap).
+2.  **Start** first latest VM Snapshot **NetWeaver & Cloud Connector Setup & iwbep activated (week 3, unit 2)** and then NetWeaver ABAP as described in [week 1, unit 6, section 6.5](../../week-1/unit-6/#starting-vm-with-netweaver-as-abap).
 
 > **Result:** Your _SAP NetWeaver AS ABAP 7.50 SP02_ system is now up and running with its processes on a Linux VM.
 
@@ -169,15 +169,15 @@ In this step you will set up a data replication job between your SAP NetWeaver b
 7.  Click on the **Create Configuration** button.
 
     ![](images/w4-u3-s4/pic04--creat-config.jpg)
-    
-     > **Hint:** In Eclipse installations in MacOS, the button **Create Configuration** does not respond with the first click. The work-around for this bug is to click on some other button in the toolbar first, for example, the button **i** and then now click on the button **Create Configuration**. Now it opens a new wizard.
+
+    > **Hint:** In Eclipse installations in MacOS, the button **Create Configuration** does not respond with the first click. The work-around for this bug is to click on some other button in the toolbar first, for example, the button **i** and then now click on the button **Create Configuration**. Now it opens a new wizard.
 
 8.  In the wizard, enter the following data, and leave the remaining settings as default:
 
     -   **Specify General Data** > **General Data**:
     -   Configuration Name: **SLT_REPLICATION**
 
-      > **Hint:** If at a later point in time you run into trouble, and you have to set up the SLT replication again, please use the name **SLT_REPLICATION** again, as you would run into issues in later exercises otherwise. In order to use this same name again, you would first need to cleanup procedure. This is described in our [troubleshooting guide for SLT](../../troubleshooting/troubleshooting-slt/#trbl-2-how-to-reset-the-sap-hana-database).
+        > **Hint:** If at a later point in time you run into trouble, and you have to set up the SLT replication again, please use the name **SLT_REPLICATION** again, as you would run into issues in later exercises otherwise. In order to use this same name again, you would first need to cleanup procedure. This is described in our [troubleshooting guide for SLT](../../troubleshooting/troubleshooting-slt/#trbl-2-how-to-reset-the-sap-hana-database).
 
     -   Click **Next**
 
