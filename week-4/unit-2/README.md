@@ -174,6 +174,8 @@ In the [first week of this course](../../week-1/unit-5/), you have added some ad
 
 9.  Change the _initial password_ for the **ACME** user:
 
+    > **Warning:** Due to a current ABAP tool bug your **permanent password must not start with '!'** as character.
+
     -   Old password: **&lt;initial ACME password>**
     -   Password: **&lt;set a permanent password for the ACME user>**
     -   Repeat: **&lt;repeat permanent password>**
