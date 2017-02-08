@@ -6,6 +6,7 @@ tags:
   - "Week 2"
   - "Week 3"
   - "Week 4"
+  - "Week 5"
 categories:
   - "SAP S/4HANA NetWeaver Backend"
 ---

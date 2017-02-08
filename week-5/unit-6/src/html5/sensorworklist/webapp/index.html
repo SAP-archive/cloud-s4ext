@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta 
+			http-equiv="X-UA-Compatible" 
+			content="IE=edge" />
+		<meta 
+			http-equiv="Content-Type" 
+			content="text/html;charset=UTF-8"/>
+		<meta 
+			name="viewport" 
+			content="width=device-width, initial-scale=1.0" />
+		<title>
+			Sensor Worklist
+		</title>
+
+		<!-- Bootstrapping UI5 -->
+		<script id="sap-ui-bootstrap"
+				src="resources/sap-ui-core.js"
+				data-sap-ui-compatVersion="edge"
+				data-sap-ui-frameOptions="trusted"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-resourceroots='{"com.acme.s4ext.sensorworklist": "."}'
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<script>
+			sap.ui.getCore().attachInit(function () {
+				sap.ui.require([
+					"sap/m/Shell",
+					"sap/ui/core/ComponentContainer"
+				], function (Shell, ComponentContainer) {
+					// initialize the UI component
+					new Shell({
+						app: new ComponentContainer({
+							height : "100%",
+							name : "com.acme.s4ext.sensorworklist"
+						})
+					}).placeAt("content");
+				});
+			});
+		</script>
+
+	</head>
+
+	<!-- UI Content -->
+	<body 
+		id="content"
+		class="sapUiBody">
+	</body>
+
+</html>

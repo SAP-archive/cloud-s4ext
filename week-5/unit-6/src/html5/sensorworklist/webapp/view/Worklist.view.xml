@@ -1,0 +1,123 @@
+<mvc:View
+	controllerName="com.acme.s4ext.sensorworklist.controller.Worklist"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic">
+
+	<semantic:FullscreenPage
+		id="page"
+		title="{i18n>worklistViewTitle}">
+		<semantic:content>
+		<!--                                                                                  -->
+		<!-- Extending S/4HANA with HCP                                                       -->
+		<!-- * IOT Extension: Sensor worklist - Equipment registered to sensor devices        -->
+		<!--                                                                                  -->
+			<Table
+				id="table-id"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+				class="sapUiResponsiveMargin"
+				growing="true"
+				growingScrollToLoad="true"
+				items="{
+					path: '/Equipments',
+					sorter: {
+						path: 'GDeviceName',
+						descending: false
+					},
+					filters: [{
+						path: 'IsRegistered',
+						operator: 'EQ',
+						value1: '1'
+					}]
+				}"
+				noDataText="{worklistView>/tableNoDataText}"
+				updateFinished="onUpdateFinished"
+				width="auto">
+
+				<!-- Header with search field and refresh -->
+				<headerToolbar>
+					<Toolbar>
+						<Title 
+							id="tableHeader" 
+							text="Registered Sensor Devices"/>
+						<ToolbarSpacer/>
+						<SearchField
+							id="searchField"
+							search="onSearch"
+							tooltip="{i18n>worklistSearchTooltip}"
+							width="auto">
+						</SearchField>
+						<Button
+							icon="sap-icon://refresh"
+							press="onPressRefreshBtn"
+							tooltip="Refresh worklist data"/>
+					</Toolbar>
+				</headerToolbar>
+
+				<!-- Column header -->
+				<columns>
+					<Column>
+						<Text text="Device Name"/>
+					</Column>
+					<Column>
+						<Text text="Product Name (ID)"/>
+					</Column>
+					<Column>
+						<Text text="Equipment ID"/>
+					</Column>
+					<Column	width="10%">
+						<Text text="SalesOrder ID"/>
+					</Column>
+					<Column	hAlign="Center"	width="10%">
+						<Text text="Registered Damages"/>
+					</Column>
+				</columns>
+				<!-- Content -->
+				<items>
+					<ColumnListItem
+						press="onPressColumnListItem"
+						type="Navigation">
+						<cells>
+							<ObjectIdentifier 
+								title="{GDeviceName}"
+								titleActive="true"
+								titlePress="onTitlePressOpenQRCodePopover"
+								tooltip="ID: {GDevice}"/>
+						</cells>
+						<cells>
+							<Text text="{ProductName} ({ProductId})"/>
+						</cells>
+						<cells>
+							<Text text="{EquipmentKey}"/>
+						</cells>
+						<cells>
+							<Text text="{SoId}"/>
+						</cells>
+						<cells>
+							<ObjectStatus
+								text="{CountDamage}"
+								icon="{
+									path: 'CountDamage',
+									formatter: '.formatter.getDamageIconUrl'
+								}"
+								state="{
+									path: 'CountDamage',
+									formatter: '.formatter.getDamageStatusState'
+								}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+
+		</semantic:content>
+		
+		<!-- Button to register new equipment --> 
+		<semantic:positiveAction>
+			<semantic:PositiveAction 
+				press="onAddDeviceSensorRegistration"
+				text="Register" 
+				tooltip="Open a wizard to register products of a sales order to a new sensor device"/>
+		</semantic:positiveAction>
+	</semantic:FullscreenPage>
+	
+</mvc:View>

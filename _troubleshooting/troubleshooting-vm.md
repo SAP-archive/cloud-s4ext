@@ -4,6 +4,8 @@ excerpt: "Here you can find troubleshooting information on issues with your open
 tags:
   - "Week 1"
   - "Week 2"
+  - "Week 3"
+  - "Week 4"
 categories:
   - "SAP S/4HANA NetWeaver Backend"
 ---
@@ -85,7 +87,6 @@ This saves some resources in the Virtual Machine. Once you have installed the SA
 2.  Open the command line application **Konsole**.
 3.  Type the command **sudo init 3**. Now all graphical user interfaces will close.
 4.  You will only see a konsole / terminal and you are asked for a user/password. Enter your Linux OS user and password which you normally use for logging into OpenSUSE.
-5.  If you want to return to using graphical user interfaces (for YAST, firefox,..), in the command line application, **Konsole**, type the command 
+5.  If you want to return to using graphical user interfaces (for YAST, firefox,..), in the command line application, **Konsole**, type the command
 **sudo init 5**.
 6.  OpenSUSE reopens with the User Interface, in our case with **KDE Desktop**.
-

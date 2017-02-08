@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Hub</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- Reference to SAP HANA provided by SAP HANA Cloud platform persistence service -->
+	<resource-ref>
+		<res-ref-name>jdbc/DefaultDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+	</resource-ref>
+
+	<!-- Reference to destinations provided by SAP HANA Cloud Platform connectivity service -->
+	<resource-ref>
+		<res-ref-name>connectivityConfiguration</res-ref-name>
+		<res-type>com.sap.core.connectivity.api.configuration.ConnectivityConfiguration</res-type>
+	</resource-ref>
+
+	<!-- OnStartListener will be started on application start and will trigger the setup
+		 of required tables and views if they are not yet existing.-->
+	<listener>
+		<listener-class>com.acme.s4ext.jpa.dbsetup.DatabaseEntitySetupOnStartListener</listener-class>
+	</listener>
+
+	<!-- DeviceSynchronizationWebListener will be started on application start and will trigger
+	     a scheduled job to fetch and persist registered sensor devices from the SAP HCP IoT service. -->
+	<listener>
+		<listener-class>com.acme.s4ext.iot.sync.DeviceSynchronizationOnStartListener</listener-class>
+	</listener>
+
+	<!-- The servlet providing the OData services will be provided by the Apache CXF framework. 
+		 For this, the framework consumes a standard implementations of the Apache Olingo 
+		 framework and a custom implementation of an OData service factory as input. -->
+	<servlet>
+		<servlet-name>ODataServlet</servlet-name>
+		<servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>org.apache.olingo.odata2.core.rest.app.ODataApplication</param-value>
+		</init-param>
+		<init-param>
+			<param-name>org.apache.olingo.odata2.service.factory</param-name>
+			<param-value>com.acme.s4ext.odata.EntitiesODataJPAServiceFactory</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ODataServlet</servlet-name>
+		<url-pattern>/odata.svc/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- Enable authentication for the hub to protect it from unauthorized access.
+	     To keep it simply, everyone with an SAP ID service login can access the hub.-->
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Protected Area</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Everyone</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-role>
+		<description>All SAP ID users</description>
+		<role-name>Everyone</role-name>
+	</security-role>
+</web-app>

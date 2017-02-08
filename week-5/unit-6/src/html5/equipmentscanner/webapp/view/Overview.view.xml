@@ -1,0 +1,129 @@
+<mvc:View 
+	controllerName="com.acme.s4ext.equipmentscanner.controller.Overview" 
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:mvc="sap.ui.core.mvc">
+	<App>
+		<pages>
+			<Page 
+				title="Equipment Scanner">
+				<content>
+					<Panel
+						height="100%">
+						<!-- Scanner Mode -->
+						<VBox 
+							height="100%"
+							visible="{jsonViewModel>/scanModeIsActive}">
+							<FlexBox height="100%"
+								alignItems="Baseline"
+								justifyContent="Center">
+								<items>
+									<Title 
+										titleStyle="H5"
+										text="{jsonViewModel>/panelTitle}"/>
+								</items>
+							</FlexBox>
+							<core:Icon 
+								class="sapUiTinyMarginTopBottom"
+								color="#AAC7DE"
+								press="onPressScanBtn"
+								size="600%" 
+								src="sap-icon://overlay"
+								tooltip="Click here to scan">
+								<core:layoutData>
+									<FlexItemData alignSelf="Center" />
+								</core:layoutData>
+							</core:Icon>
+							<FlexBox
+								alignItems="Center"
+								class="sapUiLargeMarginBottom"
+								justifyContent="Center">
+								<items>
+									<Text 
+										text="Click circle to scan"/>
+								</items>
+							</FlexBox>
+						</VBox>
+						<!-- Manual Mode -->
+						<VBox 
+							height="100%"
+							visible="{= ${jsonViewModel>/scanModeIsActive} === false}">
+							<FlexBox
+								alignItems="Baseline"
+								justifyContent="Center">
+								<items>
+									<Title 
+										titleStyle="H5"
+										text="{jsonViewModel>/panelTitle}"/>
+								</items>
+							</FlexBox>
+							<FlexBox
+								alignItems="Baseline"
+								justifyContent="Center">
+								<items>
+									<MessageStrip
+										class="sapUiSmallMarginTop"
+										showIcon="true" 
+										text="The currently entered value is not a valid Equipment ID. Choose one from suggestion list to continue."
+										type="Error"
+										visible="{jsonViewModel>/searchFieldState/displayErrorMsg}"/>
+								</items>
+							</FlexBox>
+							<FlexBox
+								alignItems="Center"
+								class="sapUiLargeMarginTop"
+								justifyContent="Center">
+								<items>
+									<SearchField
+										id="search-field-id"
+										width="100%"
+										placeholder="Search for Equipment ID ..."
+										enableSuggestions="true"
+										liveChange="onSearchLiveChange"
+										search="onSearch"
+										showSearchButton="false"
+										suggest="onSearchSuggest"
+										suggestionItems="{
+											path: '/Equipments',
+											sorter: { 
+												path: 'EquipmentKey' 
+											},
+											filters: [{
+												path: 'IsRegistered',
+												operator: 'EQ',
+												value1: '1'
+											}]
+										}"
+										tooltip="Enter a search string to find an Equipment ID"
+										value="">
+										<suggestionItems>
+											<SuggestionItem 
+												key="{EquipmentKey}"
+												text="{EquipmentKey}"/>
+										</suggestionItems>
+									</SearchField>
+									<Button
+										class="sapUiTinyMarginBegin"
+										enabled="{= ${jsonViewModel>/searchFieldState/selSoNodeKeyValue}!==''}"
+										press="onPressCheckBtn"
+										text="Check"/>
+								</items>
+							</FlexBox>
+						</VBox>
+					</Panel>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button
+							icon="sap-icon://drop-down-list"
+							press="onPressActionSheetBtn">
+						</Button>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

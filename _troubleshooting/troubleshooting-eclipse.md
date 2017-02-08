@@ -4,6 +4,8 @@ excerpt: "Here you can find hints why your Eclipse setup isn't working"
 tags:
   - "Week 1"
   - "Week 2"
+  - "Week 4"
+  - "Week 5"
 categories:
   - "Tools"
 ---

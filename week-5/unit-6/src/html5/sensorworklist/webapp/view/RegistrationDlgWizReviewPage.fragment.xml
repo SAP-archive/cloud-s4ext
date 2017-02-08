@@ -1,0 +1,96 @@
+<core:FragmentDefinition
+	height="100%"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout">
+	<Page id="wizardReviewPage">
+		
+	<!--                                                                                   -->
+	<!-- Extending S/4HANA with HCP                                                        -->
+	<!-- * IOT Extension: Sensor worklist - Dialog to review sensor device registration    -->
+	<!-- begin  																		   -->
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button
+						icon="sap-icon://nav-back"
+						press="backToWizardPage"
+						tooltip="Navigate back to wizard page">
+					</Button>
+				</contentLeft>
+				<contentMiddle>
+					<Title text="Summary" />
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+			<!-- Review Step 1            -->
+			<!-- The selected sales order -->  
+			<form:SimpleForm
+				editable="false"
+				layout="ResponsiveGridLayout"
+				minWidth="1024"
+				title="1. Selected Sales Order">
+				<form:content>
+					<Label text="ID"/>
+					<Text text="{wizardViewJsonModel>/wizStep1/selSoIdValue}" />
+					<FlexBox
+						alignItems="Start"
+						justifyContent="End">
+						<items>
+							<Link
+								press="editWizardStep1"
+								text="Edit" />
+						</items>
+					</FlexBox>
+				</form:content>
+			</form:SimpleForm>
+			<!-- Review Step 2                                   -->
+			<!-- The selected equipment that shall be registered -->
+			<form:SimpleForm
+				editable="false"
+				layout="ResponsiveGridLayout"
+				minWidth="1024"
+				title="2. Selected Product of Sales Order">
+				<form:content>
+					<Label text="Name (ID)"/>
+					<Text text="{wizardViewJsonModel>/wizStep2/selProductName} ({wizardViewJsonModel>/wizStep2/selProductId})" />
+					<Label text="Equipment ID"/>
+					<Text text="{wizardViewJsonModel>/wizStep2/selProductEquipmentKey}" />
+					<FlexBox
+						alignItems="Start"
+						justifyContent="End">
+						<items>
+							<Link
+								press="editWizardStep2"
+								text="Edit" />
+						</items>
+					</FlexBox>
+				</form:content>
+			</form:SimpleForm>
+			<!-- Review Step 3                                -->
+			<!-- The device sensor selected for registrationt -->
+			<form:SimpleForm
+				editable="false"
+				layout="ResponsiveGridLayout"
+				minWidth="1024"
+				title="3. Selected Sensor">
+				<form:content>
+					<Label text="Name"/>
+					<Text text="{wizardViewJsonModel>/wizStep3/selSensorName}" />
+					<FlexBox
+						alignItems="Start"
+						justifyContent="End">
+						<items>
+							<Link
+								press="editWizardStep3"
+								text="Edit" />
+						</items>
+					</FlexBox>
+				</form:content>
+			</form:SimpleForm>
+		</content>
+	<!-- end    																		   -->
+	</Page>
+</core:FragmentDefinition>

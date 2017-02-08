@@ -3,6 +3,7 @@ title: "Troubleshooting: SAP HANA database on SAP HANA Cloud Platform"
 excerpt: "Here you can find..."
 tags:
   - "Week 4"
+  - "Week 5"
 categories:
   - "SAP HANA Cloud Platform: Services"
 ---

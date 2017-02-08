@@ -1,0 +1,115 @@
+<mvc:View
+	controllerName="com.acme.s4ext.equipmentscanner.controller.Detail"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		navButtonPress="onPressNavBackBtn"
+		showNavButton="true"
+		title="Details">
+		<VBox
+			class="sapUiMediumMargin">
+			<Title
+				text="Equipment"
+				titleStyle="H4"/>
+			<Text
+				text="ID: {EquipmentKey}"/>
+			<Title
+				class="sapUiTinyMarginTop"
+				text="SalesOrder"
+				titleStyle="H4"/>
+			<Text
+				text="ID: {SoId}"/>
+			<Title
+				class="sapUiTinyMarginTop"
+				titleStyle="H4"
+				text="Product"/>
+			<Text
+				text="ID: {ProductId}"/>
+			<Text
+				text="Name: {ProductName}"/>
+			<Title 
+				class="sapUiMediumMarginTop"
+				text="Damage Info"
+ 				titleStyle="H4"/>
+			<HBox
+				class="sapUiTinyMarginTop"
+				visible="{= ${jsonViewModel>/damageDataCount}===0}">
+				<FlexBox 
+					alignItems="Center"
+					justifyContent="Start">
+					<items>
+						<core:Icon
+							color="#2B7D2B"
+							size="200%" 
+							src="sap-icon://accept"/>
+						<Title 
+							class="sapUiSmallMarginBegin"
+							text="No damages found!"
+		 					titleStyle="H5"/>
+					</items>
+				</FlexBox>
+			</HBox>
+			<HBox
+				class="sapUiTinyMarginTop"
+				visible="{= ${jsonViewModel>/damageDataCount}>0}">
+				<FlexBox 
+					alignItems="Center"
+					justifyContent="Start">
+					<items>
+						<core:Icon
+							color="#BB0000"
+							size="200%" 
+							src="sap-icon://error"/>
+						<Title 
+							class="sapUiSmallMarginBegin"
+							text="{jsonViewModel>/damageDataCount} damages found!"
+		 					titleStyle="H5"/>
+					</items>
+				</FlexBox>
+			</HBox>
+			<Title
+				class="sapUiMediumMarginTop"
+				text="Damage Incidences"
+ 				titleStyle="H4"
+				visible="{= ${jsonViewModel>/damageDataCount}>0}"/>
+			<HBox
+				visible="{= ${jsonViewModel>/damageDataCount}>0}">
+				<Table
+					id="table-id"
+					items="{
+						path: '/DamageDatas'
+					}"
+					visible="false">
+
+					<columns>
+						<Column>
+							<Text text="Date"/>
+						</Column>
+						<Column	width="35%">
+							<Text text="Damage size"/>
+						</Column>
+					</columns>
+
+					<items>
+						<ColumnListItem
+							type="Inactive">
+							<cells>
+								<Text
+									text="{
+										path: 'CTimestamp',
+										formatter: '.formatter.formatDate'
+									}"/>
+								<Text
+									text="{
+										path: 'AccMagnitude',
+										formatter: '.formatter.decimal2Digit'
+									}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</HBox>
+		</VBox>
+	</Page>
+</mvc:View>

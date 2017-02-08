@@ -1,0 +1,114 @@
+<mvc:View 
+	controllerName="com.acme.s4ext.sensorworklist.controller.Object" 
+	xmlns="sap.m" 
+	xmlns:c="sap.suite.ui.commons"
+	xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:semantic="sap.m.semantic" 
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.data="sap.viz.ui5.data" 
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+	
+	<semantic:FullscreenPage id="page" busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}" navButtonPress="onNavBack"
+		showNavButton="true" title="{i18n>objectTitle}">
+		<semantic:content>
+			<!--                                                                                  -->
+			<!-- Extending S/4HANA with HCP                                                       -->
+			<!-- * IOT Extension: Sensor Worklist - Object page header with equipment information -->
+			<!-- begin                                                                            -->
+			<VBox class="sapUiMediumMargin">
+				<Title text="Sensor Device" titleStyle="H4"/>
+				<Text text="Name: {GDeviceName}"/>
+				<Title class="sapUiTinyMarginTop" titleStyle="H4" text="Equipment"/>
+				<Text text="ID: {EquipmentKey}"/>
+				
+				<!-- If no damage has been recorded then show this output -->
+				<HBox class="sapUiTinyMarginTop" visible="{path: 'CountDamage', formatter: '.formatter.isNotDamaged'}">
+					<FlexBox alignItems="Center" justifyContent="Start">
+						<items>
+							<core:Icon color="#2B7D2B" size="200%" src="sap-icon://accept"/>
+							<Title class="sapUiSmallMarginBegin" text="No damages found!" titleStyle="H5"/>
+						</items>
+					</FlexBox>
+				</HBox>
+			</VBox>
+			<!-- end                                                                              -->
+			
+			<!-- Extending S/4HANA with HCP                                                       -->
+			<!-- * IOT Extension: Sensor Worklist - Chart with damage information                 -->
+			<!-- begin                                                                            -->
+			<layout:FixFlex id="chartFixFlex" class="sapUiSmallMargin" minFlexSize="250"
+				visible="{ path: 'CountDamage', formatter: '.formatter.isDamaged'}">
+				<layout:flexContent> 
+					<c:ChartContainer
+						id="chartContainer"
+						autoAdjustHeight="true"
+						showFullScreen="true"
+						showLegend="false"
+						showPersonalization="false">
+						<c:customIcons>
+							<core:Icon
+								id="refreshIcon"
+								press="onPressRefreshBtn"
+								src="sap-icon://refresh">
+							</core:Icon>
+						</c:customIcons>
+						<c:content>
+							<c:ChartContainerContent>
+								<c:content>
+									<viz:VizFrame 
+										id="viz-frame-id" 
+										uiConfig="{ 
+											applicationSet:'fiori' 
+										}"
+										vizProperties="{ 
+											plotArea: { 
+												dataLabel: { visible : true }, 
+												referenceLine:{ 
+													line:{ 
+														valueAxis:[ 
+															{ 
+																value: 3, 
+																visible: true, 
+																size:2, 
+																type: 'dotted', 
+																label: { 
+																	text : 'Damage reference line', 
+																	visible: true 
+																} 
+															}
+														] 
+													}
+												}
+											}
+										}"
+										vizType="stacked_column" width="100%">
+										<viz:dataset>
+											<viz.data:FlattenedDataset id="viz-dataset-id" data="{ path: '/DamageDatas' }">
+												<viz.data:dimensions>
+													<viz.data:DimensionDefinition name="{viewSettingsJsonModel>/i18n/vizFrameXaxisTitle}"
+														value="{ 
+															path: 'CTimestamp', 
+															formatter: '.formatter.formatDate' 
+														}"/>
+												</viz.data:dimensions>
+												<viz.data:measures>
+													<viz.data:MeasureDefinition name="{viewSettingsJsonModel>/i18n/vizFrameYaxisTitle}" value="{AccMagnitude}"/>
+												</viz.data:measures>
+											</viz.data:FlattenedDataset>
+										</viz:dataset>
+										<viz:feeds>
+											<viz.feeds:FeedItem type="Dimension" uid="categoryAxis" values="{viewSettingsJsonModel>/i18n/vizFrameXaxisTitle}"/>
+											<viz.feeds:FeedItem type="Measure" uid="valueAxis" values="{viewSettingsJsonModel>/i18n/vizFrameYaxisTitle}"/>
+										</viz:feeds>
+									</viz:VizFrame>
+								</c:content>
+							</c:ChartContainerContent>
+						</c:content>
+					</c:ChartContainer>
+				</layout:flexContent>
+			</layout:FixFlex>
+		</semantic:content>
+	</semantic:FullscreenPage>
+</mvc:View>

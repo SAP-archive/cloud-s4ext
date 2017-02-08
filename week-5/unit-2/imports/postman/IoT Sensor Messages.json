@@ -1,0 +1,61 @@
+{
+	"variables": [],
+	"info": {
+		"name": "IoT Sensor Messages",
+		"_postman_id": "dd36a9e4-ab18-dfa3-18fa-449c398879c2",
+		"description": "Send accelerometer sensor readings as AccelerationMessageType via HTTPS POST request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Message: Low acceleration - No damage",
+			"request": {
+				"url": "https://iotmms{{hcpTrialUserId}}trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/{{deviceId}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{deviceOAuthAccessToken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"mode\":\"sync\",\r\n   \"messageType\":\"{{messageTypeId}}\",\r\n   \"messages\":[\r\n      {\r\n         \"timestamp\":{{$timestamp}},\r\n         \"accX\": 0.4151,\r\n         \"accY\": -0.3861,\r\n         \"accZ\": -0.1825\r\n      }\r\n   ]\r\n}"
+				},
+				"description": "Send accelerometer sensor data with low acceleration values to simulate that the sensor was moved around slowely. These values will not be considered as damage."
+			},
+			"response": []
+		},
+		{
+			"name": "Message: High acceleration - Damage",
+			"request": {
+				"url": "https://iotmms{{hcpTrialUserId}}trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/{{deviceId}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{deviceOAuthAccessToken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"mode\":\"sync\",\r\n   \"messageType\":\"{{messageTypeId}}\",\r\n   \"messages\":[\r\n      {\r\n         \"timestamp\":{{$timestamp}},\r\n         \"accX\": 4.0291,\r\n         \"accY\": 0.5061,\r\n         \"accZ\": -0.1409\r\n      }\r\n   ]\r\n}\r\n\r\n"
+				},
+				"description": "Send accelerometer sensor data with high acceleration values to simulate that the sensor was dropped. These values will be considered as damage."
+			},
+			"response": []
+		}
+	]
+}
