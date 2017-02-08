@@ -167,7 +167,7 @@ In this step you will import and run the _Equipment Scanner_ application. This a
 
 7.  Change to **Manual Mode**. This mode allows you to manually enter an _Equipment ID_ and check for potential damages that were registered with the attached sensor.
 
-    ![](<images/w5-u6-s4/pic04--manual mode.jpg>)
+    ![](<images/w5-u6-s4/pic04--manual-mode.jpg>)
 
 8.  Enter an **Equipment ID** using the value help and press **Check**.
 
