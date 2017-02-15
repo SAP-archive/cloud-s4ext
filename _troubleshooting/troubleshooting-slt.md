@@ -3,6 +3,7 @@ title: "Troubleshooting: SAP Landscape Transformation Replication Server (SLT)"
 excerpt: "Here you can find information on how to troubleshoot issues with the **SAP Landscape Transformation Replication Server (SLT)**"
 tags:
   - "Week 4"
+  - "Week 6"
 categories:
   - "SAP S/4HANA NetWeaver Backend"
 ---

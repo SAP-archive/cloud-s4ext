@@ -59,3 +59,5 @@ As some of the URLs are individualized based on your SAP HANA Cloud Platform use
 | **Shop OData**         | SAP Fiori Launchpad in your HCP account | [see Week 3, Unit 2, Step 3]({{base_path}}/week-3/unit-2/#create-shop-odata-bookmark)
 | **SAP JAM**         | SAP Jam Cockpit in your HCP account | [see Week 3, Unit 3, Step 2]({{base_path}}/week-3/unit-3/#create-jam-bookmark)
 | **Product Analytic OData** | Analytical OData service exposed from the HANA DB in your HCP account | [see Week 4, Unit 4, Step 4]({{base_path}}/week-4/unit-4/#step-4-understanding-the-analytics-odata-service)
+| **IoT Service Cockpit** | IoT Service Cockpit | [see Week 5, Unit 2, Step 1]({{base_path}}/week-5/unit-2#iot-service-cockpit-bookmark)
+| **Message Management Service Cockpit** | IoT Message Management Service Cockpit | [see Week 5, Unit 2, Step 2]({{base_path}}/week-5/unit-2#message-management-service-cockpit-bookmark)

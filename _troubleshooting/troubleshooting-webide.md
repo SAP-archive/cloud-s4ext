@@ -1,11 +1,12 @@
 ---
 title: "Troubleshooting: SAP Web IDE"
-excerpt: "Here you can find..."
+excerpt: "Here you can find information on how to troubleshoot issues with your SAP Web IDE."
 tags:
   - "Week 2"
   - "Week 3"
   - "Week 4"
   - "Week 5"
+  - "Week 6"
 categories:
   - "Tools"
 ---
@@ -54,22 +55,22 @@ The Trusted Identity Provider for your SAP HANA Cloud Platform trial account mus
 
 **Solution:** Step-by-step solution to overcome the symptom
 
-As you have gone through the above described symptom it might be the case that your NetWeaver backend user (here DEVELOPER) might already be locked (due to the many times the Web IDE or you via the Basic Authentication popup has tried it). After log on 5 times with the wrong password the user is locked for sure.
+As you have gone through the above described symptom it might be the case that your NetWeaver backend user (here *DEVELOPER*) might already be locked (due to the many times the Web IDE or you via the Basic Authentication popup has tried it). After log on 5 times with the wrong password the user is locked for sure.
 
 > **Info:** If a the user which is used in a HCP destination is locked in the backend then the Web IDE will always pop up the basic authentication window.
 
-**Step 1:** Test if the back-end user (here DEVELOPER) which is used in the HCP destination is locked already
+**Step 1:** Test if the back-end user (here *DEVELOPER*) which is used in the HCP destination is locked already
 
-1. Open **SAP GUI** and log on with the back-end user which you use in the HCP destination (here DEVELOPER)
+1. Open **SAP GUI** and log on with the back-end user which you use in the HCP destination (here *DEVELOPER*)
   - How to do do that is described here: [week 1 - unit 6 - step 6.2.2 Add SAP NetWeaver to SAP GUI and Log On For Windows]({{base_path}}/week-1/unit-6/#add-sap-netweaver-to-sap-gui-and-log-on).
 
 2. **Check** whether back-end user can log on.
  - If **YES**, then **skip Step 2** and directly execute Step 3.
  - If **NO**, then **execute Step 2 to unlock** the back-end user (here DEVELOPER) first.
 
- **Step 2:** Unlock the locked user (here *DEVELOPER*) with another user (here user _SAP\*_ existing by default) by following [Troubleshooting: SAP S/4HANA NetWeaver Backend - TRBL A5: How to unlock the user DEVELOPER in AS ABAP?)]({{base_path}}/troubleshooting/troubleshooting-netweaver/#trbl-a5-how-to-unlock-the-user-developer-in-as-abap).
+**Step 2:** Unlock the locked user (here *DEVELOPER*) with another user (here user _SAP\*_ existing by default) by following [Troubleshooting: SAP S/4HANA NetWeaver Backend - TRBL A5: How to unlock the user DEVELOPER in AS ABAP?)]({{base_path}}/troubleshooting/troubleshooting-netweaver/#trbl-a5-how-to-unlock-the-user-developer-in-as-abap).
 
- After you confirmed that Step 1. works you can execute the following Step 3.
+After you confirmed that Step 1. works you can execute the following Step 3.
 
 **Step 3:** Steps to ensure that Web IDE _really_ takes the new values of a just changed HCP Destination
 

@@ -1,0 +1,94 @@
+<mvc:View
+	controllerName="com.acme.s4ext.salesorderworklist.controller.Object"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic">
+
+	<semantic:FullscreenPage
+		id="page"
+		busy="{objectView>/busy}"
+		busyIndicatorDelay="{objectView>/delay}"
+		navButtonPress="onNavBack"
+		showNavButton="true"
+		title="SalesOrder Details">
+
+		<semantic:content>
+			<!--                                                                                  -->
+			<!-- Extending S/4HANA with HCP                                                       -->
+			<!-- * IOT Extension: Sales order worklist - Object page header                       -->
+			<!-- begin  																		  -->
+			<VBox
+				class="sapUiSmallMargin">
+				<Title
+					text="SalesOrder"
+					titleStyle="H2"/>
+				<Text
+					text="ID: {SoId}"/>
+				<Title
+					class="sapUiSmallMarginTop"
+					titleStyle="H4"
+					text="SalesOrder Items List"/>
+			<!-- end                                                                              -->
+
+			<!--                                                                                  -->
+			<!-- Extending S/4HANA with HCP                                                       -->
+			<!-- * IOT Extension: Sales order worklist - Equipment ordered with this sales order  -->
+			<!-- begin  																		  -->
+				<Table
+					id="so-items-table-id"
+					class="sapUiTinyMarginTop"
+					items="{
+						path: '/Equipments',
+						filters : {
+							path : 'SoNodeKey',
+							operator : 'EQ',
+							value1: ''
+					}
+				}">
+					<!-- Column Header -->
+					<columns>
+						<Column
+							hAlign="Center"
+							width="8%">
+							<Text text="Tracked"/>
+						</Column>
+						<Column>
+							<Text text="Equipment Key"/>
+						</Column>
+						<Column
+							width="10%">
+							<Text text="Product ID"/>
+						</Column>
+						<Column
+							hAlign="Begin"
+							width="50%">
+							<Text text="Product Name"/>
+						</Column>
+					</columns>
+					<!-- Content -->
+					<items>
+						<ColumnListItem
+							type="Inactive">
+							<cells>
+								<core:Icon
+									color="#2B7D2B"
+									size="100%" 
+									src="sap-icon://accept"
+									visible="{=${IsRegistered}===1}"/>
+								<ObjectIdentifier 
+									title="{EquipmentKey}" 
+									titleActive="{=${IsRegistered}===1}" 
+									titlePress="onTitlePressQRCodePopover"/>
+								<Text text="{ProductId}"/>
+								<Text text="{ProductName}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			<!-- end                                                                              -->
+			</VBox>
+ 		</semantic:content>
+	</semantic:FullscreenPage>
+
+</mvc:View>

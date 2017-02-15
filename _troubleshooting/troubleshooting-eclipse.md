@@ -6,6 +6,7 @@ tags:
   - "Week 2"
   - "Week 4"
   - "Week 5"
+  - "Week 6"
 categories:
   - "Tools"
 ---
@@ -76,7 +77,7 @@ In this tutorial we are using Eclipse working sets. You might have added the pro
 To resolve this: Disable the usage of working sets, to see all your projects:
 
 1.  In Eclipse open the **View Menue** in the right upper corner of the Projects tab.
-2.  Select **Select Working Set...\***
+2.  Select **Select Working Set...**
 3.  Select **No Working Sets** and press **OK**
 
     <img src="{{base_path}}/troubleshooting/images/trbl-eclipse/trbl6/pic01--noworkingset.png" alt="" with="640px" />

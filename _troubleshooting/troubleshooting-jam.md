@@ -3,6 +3,7 @@ title: "Troubleshooting: SAP Jam"
 excerpt: "Here you can find information on how to troubleshoot issues with the SAP Jam service running on SAP HANA Cloud Platform."
 tags:
   - "Week 3"
+
 categories:
   - "SAP HANA Cloud Platform: Services"
 ---

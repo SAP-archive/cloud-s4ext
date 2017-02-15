@@ -1,0 +1,167 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	
+	<!--                                                                                        -->
+	<!-- Extending S/4HANA with HCP                                                             -->
+	<!-- * IOT Extension: Sales order worklist - Dialog to register sensor devices to equipment -->
+	<!--																		                -->
+	<Dialog
+		afterClose="afterCloseRegDlg"
+		afterOpen="afterOpenRegDlg"
+		beforeOpen="beforeOpenRegDlg"
+		contentHeight="100%"
+		title="{i18n>regDlgTitle}">
+		<content>
+			<NavContainer 
+				id="wiz-nav-container-id">
+				<pages>
+					<Page
+						id="wiz-page-id"
+						showHeader="false">
+						<content>
+							<Wizard
+								id="wiz-id"
+								complete="wizardCompletedHandler">
+								<!-- Step 1: Choose a sales order -->
+								<WizardStep
+									id="wiz-step1-id"
+									title="Sales Order"
+									validated="false">
+									<Text
+										class="sapUiSmallMarginBottom"
+										text="Search for the Sales Order ID and select it"/>
+									<VBox
+										class="sapUiMediumMargin">
+										<Label
+											design="Bold"
+											required="true" 
+											text="Selected Sales Order ID"
+											width="100%"/>
+										<SearchField
+											id="searchField"
+											width="100%"
+											placeholder="Search for an ID..."
+											enableSuggestions="true"
+											liveChange="onSearchLiveChangeWizStep1"
+											search="onSearchWizStep1"
+											showSearchButton="false"
+											suggest="onSearchSuggestWizStep1"
+											suggestionItems="{
+												path: '/SalesOrders',
+												sorter: { 
+													path: 'SoId' 
+												}
+											}"
+											tooltip="Enter a search string to find your sales order and select it to continue the wizard"
+											value="{wizardViewJsonModel>/wizStep1/selSoIdValue}">
+											<suggestionItems>
+												<SuggestionItem 
+													key="{NodeKey}"
+													text="{SoId}" 
+													tooltip="NodeKey:{NodeKey}"/>
+											</suggestionItems>
+										</SearchField>
+										<MessageStrip
+											showIcon="true" 
+											text="The currently entered value is not a valid sales order ID. Choose a sales order from suggestion list to continue."
+											type="Error"
+											visible="{wizardViewJsonModel>/wizStep1/displayErrorMsg}"/>
+									</VBox>
+								</WizardStep>
+								<!-- Step 2: Choose a product -->
+								<WizardStep
+									id="wiz-step2-id"
+									activate="validateWizStep2"
+									title="Products of Sales Order"
+									validated="false">
+									<Text
+										text="Select a product from list to register it to a new device sensor" />
+									<VBox
+										class="sapUiMediumMargin">
+										<Label
+											required="true" 
+											text="Products List of selected Sales Order"/>
+										<Select
+											id="so-item-select-wiz-step2-id"
+											class="sapUiSmallMarginEnd">
+										</Select>
+									</VBox>
+								</WizardStep>
+								<!-- Step 3: Choose a device sensor -->
+								<WizardStep
+									id="wiz-step3-id"
+									title="Available Device Sensors"
+									validated="true">
+									<Text
+										text="Select a Device Sensor which you want to register and attach to the selected product" />
+									<VBox
+										class="sapUiMediumMarginBeginEnd sapUiMediumMarginTop">
+										<Label
+											required="true" 
+											text="Available Device Sensors"/>
+										<HBox>
+											<Select
+												id="devices-select-wiz-step3-id"
+												class="sapUiSmallMarginEnd"
+												items="{
+													path: '/FreeDevices',
+													sorter: { 
+														path: 'DeviceName' 
+													}
+												}"
+												change="onChangeRegDialogSelect"
+												selectedItemId="{wizardViewJsonModel>/wizStep3/selItemId}">
+												<core:Item 
+													key="{G_device}" 
+													text="{DeviceName}"/>
+											</Select>
+											<Button
+												icon="sap-icon://refresh"
+												press="onDevicesListRefresh"
+												tooltip="Click here to refresh the list of available device sensors.">
+											</Button>
+										</HBox>
+										<MessageStrip
+											showIcon="true" 
+											text="No available Device Sensors found."
+											type="Error"
+											visible="{= ${wizardViewJsonModel>/wizStep3/selItemId} === ''}"/>
+									</VBox>
+									<VBox
+										class="sapUiMediumMarginBegin sapUiTinyMarginTop">
+										<Text
+											text="Create new device sensors?"/>
+										<HBox>
+											<Text
+												class="sapUiTinyMarginEnd sapUiMediumMarginBottom"
+												text="Open"/>
+											<Link
+												class="verticalAlignAdjustment"
+												text="IoT Service Cockpit"
+												target="_blank"
+												href="https://iotcockpitiotservices{wizardViewJsonModel>/html5AppHost}/com.sap.iotservices.cockpit/#/devices" />
+										</HBox>
+									</VBox>
+								</WizardStep>
+							</Wizard>
+						</content>
+					</Page>
+				</pages>
+			</NavContainer>
+
+		</content>
+		<beginButton>
+			<Button
+				press="onCancelRegDlg"
+				text="{i18n>regDlgCancelButtonText}"/>
+		</beginButton>
+		<endButton>
+			<Button
+				enabled="{wizardViewJsonModel>/wizReview/isReviewPageDisplayed}"
+				press="onSubmitRegistrationRegDgl"
+				text="{i18n>regDlgRegisterButtonText}"
+				type="Emphasized"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

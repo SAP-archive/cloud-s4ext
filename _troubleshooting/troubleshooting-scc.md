@@ -3,6 +3,9 @@ title: "Troubleshooting: SAP HANA Cloud Connector"
 excerpt: "Here you can find information how to resolve issues with your SAP HANA Cloud Connector - the tool that connects your on-premises SAP NetWeaver system to your SAP HANA Cloud Platform account."
 tags:
   - "Week 2"
+  - "Week 3"
+  - "Week 4"
+  - "Week 6"
 categories:
   - "SAP S/4HANA NetWeaver Backend"
 ---
@@ -30,13 +33,14 @@ You have imported the destination "s4h-onpremise-http" in Cloud Cockpit followin
 
 3.  Check if you kept the field **_Location ID_ empty** in [Week 2 - Unit 3 - Step 2.1 Set up Initial Configuration]({{base_path}}/week-2/unit-3/#set-up-initial-configuration). As the additional property `CloudConnectorLocationId` **is not set** in the imported HTTP destination **s4h-onpremise-http** like described in [Week 2 - Unit 3 - Step 4.1 Add a new Connectivity Destination in HCP Trial Account]({{base_path}}/week-2/unit-3/#add-a-new-connectivity-destination-in-hcp-trial-account) it must be kept empty in the account definition on SAP HANA Cloud Connector administration side (see [Week 2 - Unit 3 - Step 2.1]({{base_path}}/week-2/unit-3/#set-up-initial-configuration)). Otherwise the _Check Connection_ test fails.
 
-    > **Note:** In case you added your HCP trial account to SAP HANA Cloud Connector with an explicitly defined (i.e. non-empty) _Location ID_ like _localhostSCC_ you would also need to define this _Location ID_ in the HTTP Destination Configuration of your HCP trial account with _additional property_ `CloudConnectorLocationId = localhostSCC`.  
+    > **Note:** In case you added your HCP trial account to SAP HANA Cloud Connector with an explicitly defined (i.e. non-empty) _Location ID_ like _localhostSCC_ you would also need to define this _Location ID_ in the HTTP Destination Configuration of your HCP trial account with _additional property_ `CloudConnectorLocationId = localhostSCC`.
 
 4.  Open [https://localhost:8443](https://localhost:8443) in your browser and verify if your SAP HANA Cloud Connector is running. If not, start the cloud connector as described in [Week 2 - Unit 5]({{base_path}}/week-2/unit-5/#start-your-sap-cloud-connector).
 
 5.  You should have exposed Access to S/4 HANA backend system in your SAP HANA Cloud Connector as described in [Week 2 - Unit 3 - Add Access to S/4HANA Back-End System]({{base_path}}/week-2/unit-3/#step-3-add-access-to-s4hana-back-end-system). See your exposed back-end resources in your Cloud Cockpit as shown in step 3.3.
 
 6.   Check if your backend SAP Netweaver AS ABAP system is running. If not start  the ABAP system by following the steps in [Week 1 - Unit 6]({{base_path}}/week-1/unit-6/#starting-vm-with-netweaver-as-abap).
+
 
 ## TRBL 3: Destinations not visible in SAP Web IDE
 

@@ -1,8 +1,9 @@
 ---
 title: "Troubleshooting: SAP HANA Cloud Platform IoT Service"
-excerpt: "Here you can find..."
+excerpt: "Here you can find information on how to troubleshoot issues with SAP HANA Cloud Platform, IoT Services."
 tags:
   - "Week 5"
+  - "Week 6"
 categories:
   - "SAP HANA Cloud Platform: Services"
 ---
@@ -37,7 +38,7 @@ In [Week5 Unit3]({{base_path}}/week-5/unit-3), you changed the data soure bindin
 3.  Also check if have you restarted the application **iotmms**, so that the new datasource binding is used by the **iotmms** application.
 4.  Check if you have configured the SQL mapping (Process service mapping) as shown in [Week 5 - Step 2.3](../../week-5/unit-3/#store-iot-messages-in-table-tiotmessage).
 5.  Check if you copied the wrong ID of **Device** and not of **DeviceType** instead or mistyped the **MessageID** when configuring the SQL mapping.
-6.  If yes, then delete the old **Process service mapping** and re-do the steps as shown in [Week 5 - Step 2.3](../../week-5/unit-3/#store-iot-messages-in-table-tiotmessage). 
+6.  If yes, then delete the old **Process service mapping** and re-do the steps as shown in [Week 5 - Step 2.3](../../week-5/unit-3/#store-iot-messages-in-table-tiotmessage).
 7.  Send some acceleration messages as described in [week 5, unit 2, step 6](../../week-5/unit-2/#step-6-send-data-to-hcp-iot-services) and check if the IoT messages are now visible in T_IOT_MESSAGE of the schema **ACME** user.
 
 

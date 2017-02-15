@@ -1,8 +1,9 @@
 ---
 title: "Troubleshooting: Java Hub Application"
-excerpt: "Here you can find..."
+excerpt: "Here you can find information on how to troubleshoot issues with the Java Hub application."
 tags:
   - "Week 5"
+  - "Week 6"
 categories:
   - "Extension Apps"
 ---

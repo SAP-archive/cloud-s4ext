@@ -1,0 +1,11 @@
+.insideTextLnk{
+	margin-top: 1px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+.verticalAlignAdjustment {
+	overflow: visible;
+}
+.boldText {
+  font-weight: bold;
+}

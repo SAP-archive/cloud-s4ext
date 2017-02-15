@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+	<!--                                                                                  -->
+	<!-- Extending S/4HANA with HCP                                                       -->
+	<!-- * IOT Extension: Sales order worklist - Dialog to configure        sorting,      -->
+	<!--                                                                                  -->
+	<ViewSettingsDialog
+		confirm="onConfirmSortViewSettingsDlg"
+		sortDescending="false">
+		<sortItems>
+			<ViewSettingsItem
+				key="SoId"
+				selected="true"
+				text="SalesOrder ID"/>
+			<ViewSettingsItem
+				key="CreatedAt"
+				text="Created On"/>
+			<ViewSettingsItem
+				key="ChangedAt"
+				text="Changed On"/>
+			<ViewSettingsItem
+				key="NumberOfRegisteredEquipment"
+				text="Tracked SalesOrder Items"/>
+		</sortItems>
+	</ViewSettingsDialog>
+
+</core:FragmentDefinition>

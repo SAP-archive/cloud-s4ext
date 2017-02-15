@@ -1,0 +1,155 @@
+FUNCTION Z_ACME_S4EXT_SET_SO_STATUS
+  IMPORTING
+    VALUE(IV_NODE_KEY) TYPE SNWD_NODE_KEY
+    VALUE(IV_SET_SO_IN_PROCESS) TYPE XSDBOOLEAN OPTIONAL
+    VALUE(IV_SET_SO_DELIVERED) TYPE XSDBOOLEAN OPTIONAL
+    VALUE(IV_TEST_MODE) TYPE XSDBOOLEAN OPTIONAL
+  EXPORTING
+    VALUE(EV_ERROR_OCCURRED) TYPE XSDBOOLEAN
+    VALUE(EV_ERROR_MESSAGE) TYPE STRING
+  EXCEPTIONS
+    EPM_EXCEPTION.
+
+  DATA lx_epm_exception TYPE REF TO cx_epm_exception.
+
+  TRY.
+
+      DATA(lo_epm_so) = CAST if_epm_so( cl_epm_service_facade=>get_bo( iv_bo_name = if_epm_so=>gc_bo_name ) ).
+
+    CATCH cx_epm_api_exception INTO lx_epm_exception.
+
+      RAISE epm_exception.
+
+  ENDTRY.
+
+  DATA(lo_epm_so_message) = cl_epm_service_facade=>get_message_buffer( ).
+
+
+
+  TRY.
+
+      IF iv_set_so_in_process = abap_true.
+
+        lo_epm_so->if_epm_so_header~action_confirm(
+          EXPORTING it_node_keys      = VALUE #( ( iv_node_key ) )
+                    ii_message_buffer = lo_epm_so_message
+          IMPORTING et_node_key_info  = DATA(lt_node_key_info_confirm)
+        ).
+
+        ASSIGN lt_node_key_info_confirm[ node_key = iv_node_key ] TO FIELD-SYMBOL(<confirmed>).
+
+        IF sy-subrc IS NOT INITIAL
+        OR <confirmed>-operation_success <> abap_true
+        OR <confirmed>-error_info IS NOT INITIAL.
+
+          lo_epm_so->if_epm_so_header~retrieve(
+            EXPORTING it_node_keys      = VALUE #( ( iv_node_key ) )
+                      ii_message_buffer = lo_epm_so_message
+            IMPORTING et_data           = DATA(lt_so_root)
+                      et_failed_keys    = DATA(lt_failed_keys)
+          ).
+          ev_error_occurred = abap_true.
+          ev_error_message  = |{ <confirmed>-error_info }, |
+                           && | Setting lifecycle status of sales order with node key "{ iv_node_key }" to "P" (In Process) failed. Current lifecycle status = "{ lt_so_root[ 1 ]-lifecycle_status }" |
+                           && | (Status legend : N - New, P - In Process, C - Closed, X - Cancelled) |.
+
+          EXIT.
+
+        ENDIF.
+
+      ENDIF.
+
+      IF iv_set_so_delivered = abap_true.
+
+        lo_epm_so->if_epm_so_header~action_goods_issue_created(
+          EXPORTING it_node_keys      = VALUE #( ( iv_node_key ) )
+                    ii_message_buffer = lo_epm_so_message
+          IMPORTING et_node_key_info  = DATA(lt_node_key_info_delivered)
+        ).
+
+        ASSIGN lt_node_key_info_delivered[ node_key = iv_node_key ] TO FIELD-SYMBOL(<delivered>).
+
+        IF sy-subrc IS NOT INITIAL
+        OR <delivered>-operation_success <> abap_true
+        OR <delivered>-error_info IS NOT INITIAL.
+
+          lo_epm_so->if_epm_so_header~retrieve(
+            EXPORTING it_node_keys      = VALUE #( ( iv_node_key ) )
+                      ii_message_buffer = lo_epm_so_message
+            IMPORTING et_data           = lt_so_root
+                      et_failed_keys    = lt_failed_keys
+          ).
+          ev_error_occurred = abap_true.
+          ev_error_message  = |{ <delivered>-error_info }, |
+                           && | Setting delivery status of sales order with node key "{ iv_node_key }" to "D"(Delivered) failed. Current delivery status = "{ lt_so_root[ 1 ]-delivery_status }"|
+                           && | (Status legend: Empty or no value - Initial, D - Delivered)|.
+          EXIT.
+
+        ENDIF.
+
+        lo_epm_so->if_epm_so_header~action_invoice_created(
+          EXPORTING it_node_keys      = VALUE #( ( iv_node_key ) )
+                    ii_message_buffer = lo_epm_so_message
+          IMPORTING et_node_key_info  = DATA(lt_node_key_info_invoice)
+        ).
+
+        ASSIGN lt_node_key_info_invoice[ node_key = iv_node_key ] TO FIELD-SYMBOL(<invoice>).
+
+        IF sy-subrc IS NOT INITIAL
+        OR <invoice>-operation_success <> abap_true
+        OR <invoice>-error_info IS NOT INITIAL.
+
+          lo_epm_so->if_epm_so_header~retrieve(
+            EXPORTING it_node_keys      = VALUE #( ( iv_node_key ) )
+                      ii_message_buffer = lo_epm_so_message
+            IMPORTING et_data           = lt_so_root
+                      et_failed_keys    = lt_failed_keys
+          ).
+          ev_error_occurred = abap_true.
+          ev_error_message  = |{ <invoice>-error_info }, |
+                           && | Setting Billing status of Sales Order with Node Key "{ iv_node_key }" to "P"(Paid) failed in backend. Current Lifecycle Status = "{ lt_so_root[ 1 ]-lifecycle_status }", |
+                           && | Current Delivery Status = "{ lt_so_root[ 1 ]-delivery_status }"|.
+          EXIT.
+
+        ENDIF.
+
+      ENDIF.
+
+    CATCH cx_epm_api_exception INTO lx_epm_exception.
+
+      RAISE epm_exception.
+
+    CATCH  cx_epm_system_exception INTO lx_epm_exception.
+
+      RAISE epm_exception.
+
+  ENDTRY.
+
+  DATA(lv_saved) =
+  cl_epm_service_facade=>save( iv_cleanup         = abap_false       " If true, do a cleanup after saving
+                               iv_suppress_commit = iv_test_mode     " If true, let consumer handle commit and rollback
+                               ii_message_buffer  = lo_epm_so_message
+                              ).
+  IF lv_saved <> abap_true.
+
+    TRY.
+
+        DATA(lt_msg) = lo_epm_so_message->get_messages( ).
+
+      CATCH  cx_epm_api_exception INTO lx_epm_exception.
+
+        RAISE epm_exception.
+
+    ENDTRY.
+
+    LOOP AT lt_msg ASSIGNING FIELD-SYMBOL(<msg>).
+      DATA(lv_msg) = <msg>->get_text( ).
+    ENDLOOP.
+
+    RAISE epm_exception.
+
+  ENDIF.
+
+
+
+ENDFUNCTION.

@@ -1,0 +1,35 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+	<!--                                                                                        -->
+	<!-- Extending S/4HANA with HCP                                                             -->
+	<!-- * IOT Extension: Sales order worklist - Dialog to configure a filter                   -->
+	<!--																						-->
+	<ViewSettingsDialog
+		confirm="onConfirmViewSettingsDlg"
+		resetFilters="onResetFiltersViewSettingsDlg">
+		<filterItems>
+			<ViewSettingsFilterItem
+				key="CreatedAt"
+				multiSelect="false"
+				text="Created On">
+				<items>
+					<ViewSettingsItem
+						id="view-filter-1-id"
+						key="today-key"
+						text="Today only"/>
+					<ViewSettingsItem
+						id="view-filter-2-id"
+						key="week-key"
+						text="Last week"/>
+					<ViewSettingsItem
+						id="view-filter-3-id"
+						key="year-key"
+						text="Last year"/>
+				</items>
+			</ViewSettingsFilterItem>
+		</filterItems>
+	</ViewSettingsDialog>
+
+</core:FragmentDefinition>

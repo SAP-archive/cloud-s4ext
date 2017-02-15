@@ -1,0 +1,239 @@
+<mvc:View
+	controllerName="com.acme.s4ext.salesorderworklist.controller.Worklist"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic">
+
+	<semantic:FullscreenPage
+		id="page"
+		title="{i18n>worklistViewTitle}">
+		<semantic:content>
+		<!--                                                                                  -->
+		<!-- Extending S/4HANA with HCP                                                       -->
+		<!-- * IOT Extension: Sales order worklist - Icons to set filters for all, new,,      -->
+		<!--                                         pending and delivered                    -->
+		<!-- begin  																		  -->
+			<IconTabBar
+				id="icon-tab-bar-id"
+				select="onSelectIconTabQuickFilter"
+				expandable="false"
+				applyContentPadding="false">
+				<items>
+					<!-- Filter for all sales orders -->
+					<IconTabFilter
+						key="all"
+						showAll="true"
+						count="{worklistView>/countAll}"
+						text="All"
+						tooltip="Quickfilter: All - Click here to get all SalesOrder items"/>
+					<IconTabSeparator/>
+					<!-- Filter for new orders -->
+					<IconTabFilter
+						key="new_"
+						icon="sap-icon://inbox"
+						iconColor="Negative"
+						count="{worklistView>/countNew}"
+						text="New"
+						tooltip="Quickfilter: New - Click here to get all SalesOrder items with Lifecycle Status 'New'"/>
+					<!-- Filter for orders in In Process-->
+					<IconTabFilter
+						key="inProcess"
+						icon="sap-icon://begin"
+						iconColor="Critical"
+						count="{worklistView>/countinProcess}"
+						text="In Process"
+						tooltip="Quickfilter: In Process - Click here to get all SalesOrder items with Lifecycle Status 'In Process'"/>
+					<!-- Filter for closed and delivered orders -->
+					<IconTabFilter
+						key="delivered"
+						icon="sap-icon://shipping-status"
+						iconColor="Positive"
+						count="{worklistView>/countDelivered}"
+						text="Delivered"
+						tooltip="Quickfilter: Delivered - Click here to get all SalesOrder items with Lifecycle Status 'Delivered'"/>
+				</items>
+			</IconTabBar>
+		<!-- end    																		  -->
+
+			<MessageStrip
+				class="sapUiResponsiveMargin"
+				showCloseButton="true"
+				showIcon="true"
+				text="Additional filter 'Created On' is active."
+				type="Information"
+				visible="{worklistView>/isAdditionalFilterActive}">
+			</MessageStrip>
+
+		<!--                                                                                  -->
+		<!-- Extending S/4HANA with HCP                                                       -->
+		<!-- * IOT Extension: Sales order worklist - Table for sales orders					  -->
+		<!-- begin  																		  -->
+			<Table
+				id="table-id"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+				class="sapUiResponsiveMargin"
+				growing="true"
+				growingScrollToLoad="true"
+				items="{
+					path: '/SalesOrders',
+					sorter: {
+						path: 'SoId',
+						descending: false
+					}
+				}"
+				noDataText="{worklistView>/tableNoDataText}"
+				updateFinished="onUpdateFinished"
+				width="auto">
+				<!-- Header with search field, filter, sort and refresh -->
+				<headerToolbar>
+					<Toolbar>
+						<Title 
+							id="tableHeader" 
+							text="{worklistView>/worklistTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField
+							id="searchField"
+							search="onSearch"
+							tooltip="{i18n>worklistSearchTooltip}"
+							width="auto"/>
+						<Button
+							icon="sap-icon://filter"
+							press="onPressFilterBtn"
+							tooltip="Use additional filters beside the quickfilters of icon tab bar"/>
+						<Button
+							icon="sap-icon://sort"
+							press="onPressSortBtn"
+							tooltip="Sort worklist"/>
+						<Button
+							icon="sap-icon://refresh"
+							press="onPressRefreshBtn"
+							tooltip="Refresh worklist data"/>
+					</Toolbar>
+				</headerToolbar>
+				<!-- Column header -->
+				<columns>
+					<Column>
+						<Text text="SalesOrder ID"/>
+					</Column>
+					<Column>
+						<Text text="Created On"/>
+					</Column>
+					<Column>
+						<Text text="Changed On"/>
+					</Column>
+					<Column>
+						<Text text="Sales Order Items\n ( tracked / all )"/>
+					</Column>
+					<Column>
+						<Text text="Lifecycle Status"/>
+					</Column>
+					<Column>
+						<Text text="Actions"/>
+					</Column>
+				</columns>
+				<!-- Content -->
+				<items>
+					<ColumnListItem
+						type="Navigation"
+						press="onPressColumnListItem">
+						<cells>
+							<Text text="{SoId}"/>
+							<Text text="{
+									path: 'CreatedAt',
+									formatter: '.formatter.getDateString'
+								}"/>
+							<Text text="{
+									path: 'ChangedAt',
+									formatter: '.formatter.getDateString'
+								}"/>
+							<Text text="( {NumberOfRegisteredEquipment} / {NumberOfOrderedEquipment} )"/>
+							<ObjectStatus
+								text="{
+									parts: ['LifecycleStatus','DeliveryStatus'],
+									formatter: '.formatter.getLifecycleStatusText'
+								}"
+								state="{
+									parts: ['LifecycleStatus','DeliveryStatus'],
+									formatter: '.formatter.getLifecycleStatusState'
+								}"/>
+							<HBox>
+								<!-- Show a set of actions. Enable these depending on the status of the sales order -->
+								<!-- Action-1: setSoInProcessAction:												-->
+								<!--            Is it allowed to set the sales order to "In Process"                  -->
+								<!-- yes: enabled -->
+								<core:Icon
+									class="sapUiSmallMarginEnd"
+									color="#666666"
+									src="sap-icon://begin"
+									press="setSoInProcessAction"
+									tooltip="Set in Process"
+									visible="{
+										parts: ['LifecycleStatus','DeliveryStatus'],
+										formatter: '.formatter.isinProcessActionActive'
+									}"/>
+								<!-- No: disabled -->
+								<core:Icon
+									class="sapUiSmallMarginEnd"
+									color="#B2B2B2"
+									src="sap-icon://begin"
+									tooltip="Inactive: 'Set in Process' is only active if 1) Lifecyle status is 'New' and 2) Delivery Status is 'Initial'"
+									visible="{
+										parts: ['LifecycleStatus','DeliveryStatus'],
+										formatter: '.formatter.isinProcessActionNotActive'
+									}"/>
+								<!-- Action-2: registerSensorDeviceAction                                                   -->
+								<!--           Is it llowd to register a sensor device for an equipment of the sales order? -->
+								<!-- Yes: enabled -->
+								<core:Icon
+									class="sapUiSmallMarginEnd"
+									color="#666666"
+									src="sap-icon://electronic-medical-record"
+									press="registerSensorDeviceAction"
+									tooltip="Register new Device Sensor"
+									visible="{
+										parts: ['LifecycleStatus','DeliveryStatus','NumberOfRegisteredEquipment','NumberOfOrderedEquipment'],
+										formatter: '.formatter.isRegisterActionActive'
+									}"/>
+								<!-- No: disabled -->
+								<core:Icon
+									class="sapUiSmallMarginEnd"
+									color="#B2B2B2"
+									src="sap-icon://electronic-medical-record"
+									tooltip="Inactive: 'Register new Device Sensor' is only active if 1) Lifecyle status is 'In Process', 2) Delivery Status is 'Initial' and 3) not all Sales Order items are already tracked"
+									visible="{
+										parts: ['LifecycleStatus','DeliveryStatus','NumberOfRegisteredEquipment','NumberOfOrderedEquipment'],
+										formatter: '.formatter.isRegisterActionNotActive'
+									}"/>
+								<!-- Action-3:  setSoDeliveredAction								 -->
+								<!--			Is it allowed to set the sales order to "delivered"? -->
+								<!-- Yes: enabled -->
+								<core:Icon
+									class="sapUiSmallMarginEnd"
+									color="#666666"
+									src="sap-icon://shipping-status"
+									press="setSoDeliveredAction"
+									tooltip="Set Delivered"
+									visible="{
+										parts: ['LifecycleStatus','DeliveryStatus','NumberOfRegisteredEquipment'],
+										formatter: '.formatter.isDeliveredActionActive'
+									}"/>
+								<!-- No: disabled -->
+								<core:Icon
+									class="sapUiSmallMarginEnd"
+									color="#B2B2B2"
+									src="sap-icon://shipping-status"
+									tooltip="Inactive: 'Set Delivered' is only active if 1) Lifecyle status is 'In Process', 2) Delivery Status is 'Initial' and 3) at least one tracked Sales Order item exists"
+									visible="{
+										parts: ['LifecycleStatus','DeliveryStatus','NumberOfRegisteredEquipment'],
+										formatter: '.formatter.isDeliveredActionNotActive'
+									}"/>
+							</HBox>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+	</semantic:FullscreenPage>
+	
+</mvc:View>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Hub</title>
+</head>
+
+<body>
+
+	<h1>Hub V3: JPA, OData Service and OData Function Imports</h1>
+	<p>
+		This hub combines replicated data from the S/4HANA backend and
+		from registered sensor devices. The app creates several helper tables
+		and views that are used to provide an OData API.
+	<p>
+
+	<h2>HelloWorld Servlet</h2>
+	<ul>
+		<li>
+			Open <a href="./HelloWorldServlet" target="_blank">HelloWorldServlet</a> to show that the hub is up and running.
+		</li>
+	</ul>
+
+	<h2>JPA Data Preview Servlet</h2>
+	<ul>
+		<li>
+			Open <a href="./jpaPreview" target="_blank">jpaPreview</a> to show some data that the hub is reading using JPA.
+		</li>
+	</ul>
+
+	<h2>OData Service Servlet</h2>
+	<h3>Information about the OData Service</h3>
+	<ul>
+		<li>
+			GET <a href="./odata.svc/" target="_blank">odata.svc/</a>
+			<p>
+				A list of all Entity Sets that are exposed by the OData Service
+			</p>
+		</li>
+		<li>
+			GET <a href="./odata.svc/$metadata" target="_blank">odata.svc/$metadata</a>
+			<p>
+				The metadata document for the OData service with information about provided Entity Sets, data types and data model.
+			</p>
+		</li>
+		<li>
+	</ul>
+	<h3>OData Services</h3>
+	<ul>
+		<li>
+			GET <a href="./odata.svc/IoTDevices" target="_blank">odata.svc/IoTDevices</a>
+			<p>
+				 OData service that will hold a synchronized copy of all sensor devices that are registered at the SAP HCP IoT service.
+				 As long there are no sensor devices registered in the SAP HCP IoT service this service will return no values.
+			</p>
+		</li>
+		<li>
+			GET <a href="./odata.svc/FreeDevices" target="_blank">odata.svc/FreeDevices</a>
+			<p>
+				OData service that will return all sensor devices registered at the SAP HCP IoT Service and that are not yet
+ 				registered to an equipment.
+				<br>
+ 				If all available sensor devices are already registered to an equipment then this service will return no values.
+ 			</p>
+		</li>
+		<li>
+			GET <a href="./odata.svc/DamageDatas" target="_blank">odata.svc/DamageDatas</a>
+			<p>
+ 				OData service that will calculate and return equipment that have acceleration sensor values recorded with
+ 				values higher than +3g or smaller -3g along the X, Y or Z axis. Such values are considered as damage so
+ 				that the returned data is the list of all equipment with a potential damage.
+				<br>
+ 				If there is no sensor device registered to an equipment and if no sensor acceleration values >3 are recorded,
+ 				then this view will return no values.
+			</p>
+		</li>
+		<li>
+			GET <a href="./odata.svc/SalesOrders" target="_blank">odata.svc/SalesOrders</a>
+			<p>
+				OData service returning all sales orders including the number of ordered equipment and the number of equipment that
+				is registered to a sensor device.
+				<br>
+				You can navigate with this service:
+				<ul>
+					<li>
+						GET <a
+						href="./odata.svc/SalesOrders('<valid Sales Order NodeKey>')/EquipmentDetails"
+						target="_blank">odata.svc/SalesOrders('NodeKey')/EquipmentDetails</a>
+						<p>
+							Get the details for all equipment ordered with the specified sales order.
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			GET <a href="./odata.svc/Equipment2Devices" target="_blank">odata.svc/Equipment2Devices</a>
+			<p>
+				OData service linking equipment to device sensors to indicate that the sensor is registered for the equipment.
+ 				If a sensor device is registered for an equipment this indicates that there might be acceleration data and
+ 				with this also damage data recorded for the equipment. As long no sensor device is registered to any device this table will be empty.
+ 				<br>
+ 				You can navigate with this service:
+				<ul>
+					<li>
+						GET <a
+						href="./odata.svc/Equipment2Devices'<valid EquipmentKey>')/EquipmentDetails"
+						target="_blank">odata.svc/Equipment2Devices('EquipmentKey')/EquipmentDetails</a>
+						<p>
+							Get the details for an equipment that has a registered sensor device.
+						</p>
+					</li>
+					<li>
+						POST <a href="./odata.svc/Equipment2Devices" target="_blank">odata.svc/Equipment2Devices</a>
+
+						using payload by with Conent-type=application/json: <code>
+						{ "GDevice":"your DeviceId", "GDeviceName":"your Device Name",
+						"EquipmentKey": "your Equipment" } </code>
+						<p>
+							Create new entries to relate an equipment to a sensor device. You can test this service <body>
+								sending a POST request with Content-Type=application/json and payload:<BR>
+								<code>
+										{ <BR>
+											"GDevice":"your DeviceId", <BR>
+											"GDeviceName":"your Device Name", <BR>
+											"EquipmentKey": "your Equipment"<BR>
+										}
+								</code>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			GET <a href="./odata.svc/Equipments" target="_blank">odata.svc/Equipments</a>
+			<p>
+				OData service that will return all ordered equipment along with some master data, information if there are
+ 				sensor devices registered for the equipment and some master date for the sensor device.
+ 				If no sensor device is registered the respective columns will be empty.
+ 				<br>
+ 				You can navigate with this service:
+ 				<ul>
+ 					<li>
+						GET <a
+						href="./odata.svc/Equipments('<valid EquipmentKey>')/SalesOrderDetails"
+						target="_blank">odata.svc/Equipments('EquipmentKey')/SalesOrderDetails</a>
+					</li>
+					<p>
+						Get the details for the sales order with which this equipment was ordered.
+					</p>
+				</ul>
+			</p>
+		</li>
+	</ul>
+	<h3>OData Function Imports</h3>
+	<ul>
+		<li>
+			PUT
+			<a
+				href="./odata.svc/setSalesOrderInProcess?SO_NODE_KEY='....'"
+				target="_blank">odata.svc/setSalesOrderInProcess?SO_NODE_KEY='.....'
+			</a>
+			<p>
+				Function import to set a sales order "In Process". This is only possible if the sales order is in status "New".
+				<br>
+				The state transition is done via a remote function call to the function module Z_ACME_S4EXT_SET_SO_STATUS.<BR>
+				You can test this service by sending a PUT message with <code>Content-Type=application/json</code> and a Basic Authorization Header.
+			</p>
+		</li>
+		<li>
+			PUT
+			<a
+				href="./odata.svc/setSalesOrderDelivered?SO_NODE_KEY='....'"
+				target="_blank">odata.svc/setSalesOrderDelivered?SO_NODE_KEY='....'
+			</a>
+			<p>
+				Function import to set a sales order to "Delivered" and "Closed". This is only possible if the sales order is in status "in progress".
+				<br>
+				The state transition is done via a remote function call to the function module Z_ACME_S4EXT_SET_SO_STATUS.<BR>
+				You can test this service by sending a PUT message with <code>Content-Type=application/json</code> and a Basic Authorization Header.
+			</p>
+
+		</li>
+	</ul>
+
+</body>
+</html>
