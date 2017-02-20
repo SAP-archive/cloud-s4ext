@@ -22,10 +22,19 @@ import com.sap.security.um.user.UnsupportedUserAttributeException;
  */
 public class DeviceSynchronizationTask extends TimerTask {
 	private static final Logger LOGGER = LoggerFactory.getLogger(DeviceSynchronizationTask.class);
+	
+	private static int failingReadDevicesAttempts=0;
 
 	@Override
 	public void run() {
 		LOGGER.info(this.getClass().getSimpleName() + " method run() start....");
+		if (failingReadDevicesAttempts > 0)
+		{	
+			// Stop the Device Synchronization after a failed attempt so that the user provided in Destination "iot-internet-http" will not be locked.
+			LOGGER.error(this.getClass().getSimpleName() + " method run() stopped as last run failed. Devices are not synchronised. Please restart the application to reset the failed attempts.");
+			return; 
+		}
+	
 		try {
 			
 			// Get the devices
@@ -33,6 +42,7 @@ public class DeviceSynchronizationTask extends TimerTask {
 			try {
 				devices = DeviceSynchronizationIoTApiRestClient.getDevices();
 			} catch (IoTApiRestClientException e) {
+				failingReadDevicesAttempts++;
 				LOGGER.error("Could not get devices from IotServices: " + e.getMessage(), e);
 				return;
 			}

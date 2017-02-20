@@ -112,7 +112,7 @@ The Destination _iot-internet-http_ needs to be configured. A wrong _Password_ m
 4.  If destination does not exist, import the destination following  [Week5 Unit2 STEP8: Import Destination _iot-internet-http_]({{base_path}}/week-5/unit-2/imports/destinations/iot-internet-http.properties?raw=true)).
 5.  If the Destination exists, compare all its values with [Week5 Unit2 /imports/destinations/iot-internet-http.properties]({{base_path}}/week-5/unit-2/imports/destinations/iot-internet-http.properties) and in case of errors update the destination.
 
-    > **Hint:** Due to the fact that Destniatins are cached, wait some minits to get the change active.
+    > **Hint:** Due to the fact that Destniatins are cached, wait some minits before you restart the hub application.
 
 #### Restart _hub_
 

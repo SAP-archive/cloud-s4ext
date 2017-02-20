@@ -561,7 +561,7 @@ In this step you will add a new destination, pointing to the IoT Services to you
 5.  In the **Destination Configuration** edit the following properties:
 
     -   **URL**: replace the place holder **&lt;YOUR_TRIAL_USER_ID>**  with your **HCP trial User ID**
-    -   **User**: replace the place holder **&lt;YOUR_TRIAL_USER_ID>**  with your **HCP trial User ID**
+    -   **User**: replace the place holder **&lt;YOUR_TRIAL_USER_ID>**  with your **HCP trial User ID**. Hint: In a productive environment you should use a technical user here and not your user. 
     -   **Password**: fill in the password of your HCP user
     -   don't change the other properties
 
