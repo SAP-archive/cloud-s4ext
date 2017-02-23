@@ -69,7 +69,7 @@ Here is an sql with which you can create the table "ACME"."T_IOT_MESSAGE":
 
 As you also have to create the according Device:
 
-1.  As DD User **ACME** execute the [T_IOT_DEVICE.sql](/../week-5/unit-5/src/java/hub-v2/src/main/resources/sqlscripts/T_IOT_DEVICE.sql?raw=true)
+1.  As DB User **ACME** execute the [T_IOT_DEVICE.sql]({{base_path}}/week-5/unit-5/src/java/hub-v2/src/main/resources/sqlscripts/T_IOT_DEVICE.sql?raw=true)
 2.  Insert data via sql:
 
         insert into "ACME"."T_IOT_DEVICE" values('5e878f2d-666e-4a07-b0d2-cd8bd739a6aa','Sensor01')
