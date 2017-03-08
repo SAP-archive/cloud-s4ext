@@ -17,6 +17,9 @@ sidebar:
 
 Optionally, as a part of the openSAP course, students may take exams at the end of each week and in a final exam at the end of the course. If you pass the exams, you will be awarded an [**openSAP Certificate**](https://open.sap.com/pages/roa_guidelines) that may even be added to your LinkedIn profile.
 
+**Note:** Even though the course is now closed, you can still access the videos and PDFs in self-paced mode. If you didn’t get the opportunity to earn a record of achievement during the scheduled course time and would like to do so, you can reactivate the assignments and final exam by purchasing a reactivation code at [SAP Store](https://www.sapstore.com/cart/add/checkoutV2/99048v) for €39. Find out more about openSAP [reactivation codes](https://open.sap.com/pages/course_reactivation).
+{: .notice--warning}
+
 # Course Timeline
 - Starting from: January 11, 2017, 09:00 [UTC](https://open.sap.com/pages/faq#what-does-starting-from-9-00-utc-mean)
 - Duration: 6 weeks (4 - 6 hours per week)
