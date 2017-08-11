@@ -619,6 +619,9 @@ Now you have prepared everything for the _SAP NetWeaver_ installation.
 In the previous steps you have downloaded, extracted and mounted the installation files for a _SAP NetWeaver_ system to the openSUSE Linux running inside of your local machine. You will now install the system in this Linux OS. Please note that this is a specially prepared and simplified installation of a _SAP NetWeaver_ backend, and that the installation process of a live and productive instance requires more expertise on how to best tweak the system settings.
 Please also be aware that the RAM settings we allocated in the VM are very minimalistic, so the system might react slower that you would expect it to run, if it were installed properly on a dedicated server.
 
+**Note:** Since the course was released, it seems like the Sybase ASE Database license has expired. You can obtain a new version of the Sybase License file [here](https://mdocs.sap.com/mcm/public/v1/open?shr=dRhHsVYVLc5c1UDveogwtXBdL9m82JccRlvvBXO6K5Q). Please follow the instructions in the `How to update ASE License.pdf` document to update the license.
+{: .notice--warning}
+
 1.  Use the already opened **Konsole** terminal window, or open a new one (KDE **Application Menu** and navigate to **System > Konsole**).
 2.  Inside the mounted **netweaver** folder execute command **ls -l** to see that amongst other files and folders the **install.sh** is available. This is the installation script to start the installation of the _SAP NetWeaver_ system.
 3.  Execute **chmod +x install.sh** to enable the execution of the installer.
@@ -872,12 +875,7 @@ To work with the installed local _SAP NetWeaver AS ABAP_ system you have to requ
 
 18. **Close** the window where the transaction _SLICENSE_ has been opened.
 
-##### 6.3.2 Update Sybase ASE License
-
-**Note:** Since the course was released, it seems like the Sybase ASE Database license has expired. You can obtain a new version of the Sybase License file [here](https://mdocs.sap.com/mcm/public/v1/open?shr=dRhHsVYVLc5c1UDveogwtXBdL9m82JccRlvvBXO6K5Q). Please follow the instructions in the `How to update ASE License.pdf` document.
-{: .notice--warning}
-
-##### 6.3.3 Create a new VM Snapshot
+##### 6.3.2 Create a new VM Snapshot
 
 After you added the license to your _SAP NetWeaver AS ABAP_, you should again create a **VM Snapshot** in order to preserve this state.
 
