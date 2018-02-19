@@ -68,9 +68,9 @@ As the some of the installation files are very large (> several GB) we recommend
 
 #### 1.3 Download NetWeaver AS ABAP
 
-1.  Open [https://store.sap.com/sap/cp/ui/resources/store/html/SolutionDetails.html?pid=0000014492&catID=&pcntry=DE&sap-language=EN&_cp_id=id-1518433336565-0](https://store.sap.com/sap/cp/ui/resources/store/html/SolutionDetails.html?pid=0000014492&catID=&pcntry=DE&sap-language=EN&_cp_id=id-1518433336565-0)
+1.  Open the download page for SAP NetWeaver 7.50 SP02 in the  [SAP Store](https://store.sap.com/sap/cp/ui/resources/store/html/SolutionDetails.html?pid=0000014492&catID=&pcntry=DE&sap-language=EN&_cp_id=id-1518433336565-0)
 2.  Click on the orange button **Trial Version**. Fill out the form. You will then receive an email with a download link.
-3.  Download all eight archive files **sap_netweaver_as_abap_750_sp02_ase_dev_edition.part\<n>.rar** _(&lt;n> == 1,2,3,4,5,6,7,8)_ to your local machine.
+3.  Download all eight archive files **sap_netweaver_as_abap_750_sp02_ase_dev_edition.part\<n>.rar** _&lt;n> == 1,2,3,4,5,6,7,8_ to your local machine.
 4.  Use any unarchiver tool (e.g. _WinRAR_ or _7zip_ for Windows or _Unarchiver_ for Mac OS) to extract the NetWeaver ABAP installation files somewhere to your local machine. All files must be **stored in the same folder**. As this is a multipart archive, you only need to start the extraction process for the first file **sap_netweaver_as_abap_750_sp02_ase_dev_edition.part1.rar** -- the other files will be extracted automatically.
 
 > **Warning:** Please check the file size of all the parts what you have downloaded. Each part file is around 1.5 GB (except for the last part).
