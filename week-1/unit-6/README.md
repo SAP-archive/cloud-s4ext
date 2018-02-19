@@ -68,17 +68,29 @@ As the some of the installation files are very large (> several GB) we recommend
 
 #### 1.3 Download NetWeaver AS ABAP
 
-1.  Open [https://tools.hana.ondemand.com/#abap](https://tools.hana.ondemand.com/#abap)
-2.  Scroll down to section **SAP NetWeaver AS ABAP Developer Edition**
+1.  Open [https://store.sap.com/sap/cp/ui/resources/store/html/SolutionDetails.html?pid=0000014492&catID=&pcntry=DE&sap-language=EN&_cp_id=id-1518433336565-0](https://store.sap.com/sap/cp/ui/resources/store/html/SolutionDetails.html?pid=0000014492&catID=&pcntry=DE&sap-language=EN&_cp_id=id-1518433336565-0)
+2.  Click on the orange button **Trial Version**. Fill out the form. You will then receive an email with a download link.
 3.  Download all eight archive files **sap_netweaver_as_abap_750_sp02_ase_dev_edition.part\<n>.rar** _(&lt;n> == 1,2,3,4,5,6,7,8)_ to your local machine.
 4.  Use any unarchiver tool (e.g. _WinRAR_ or _7zip_ for Windows or _Unarchiver_ for Mac OS) to extract the NetWeaver ABAP installation files somewhere to your local machine. All files must be **stored in the same folder**. As this is a multipart archive, you only need to start the extraction process for the first file **sap_netweaver_as_abap_750_sp02_ase_dev_edition.part1.rar** -- the other files will be extracted automatically.
 
-> **Warning:** Please check the file size of all the parts what you have downloaded. The file size is listed next to part rar files on the [https://tools.hana.ondemand.com/#abap](https://tools.hana.ondemand.com/#abap) page. Each part file is around 1.5 GB.
+> **Warning:** Please check the file size of all the parts what you have downloaded. Each part file is around 1.5 GB (except for the last part).
 >
 > Please check that you have extracted the rar files correctly. The total size of the extracted folder of the Netweaver AS ABAP Installation files is around 12+ GB.
 > If you have partially downloaded or partially extracted the ABAP files and if you continue the installation, you will run into installation errors.
 
 [Top](#step-1-3-top)
+
+#### 1.4 Replace the license file for the Sybase ASE Database
+
+> **Hint:** Since the release of this course, the license for the ASE database that comes with the SAP NetWeaver AS ABAP 7.50 SP02 has expired. Before you start the installation, it is therefore important that you exchange a file in the NetWeaver installation folder.
+
+1.  Go to [SAP Document Center](https://mdocs.sap.com/mcm/public/v1/open?shr=dRhHsVYVLc5c1UDveogwtXBdL9m82JccRlvvBXO6K5Q).
+2.  Open the folder `750 test license`.
+3.  Download the file `dbexe.tgz.aa`.
+4.  In your file explorer, go to the location where you extracted the SAP NetWeaver installation files. Now navigate to the folder `\server\TAR\x86_64`.
+5.  Here you will find a file `dbexe.tgz.aa`. This file should be replaced with the file you just downloaded from SAP Document Center.
+
+[Top](#step-1-4-top)
 
 ## Step 2: Install Linux VM in VirtualBox
 
@@ -619,8 +631,7 @@ Now you have prepared everything for the _SAP NetWeaver_ installation.
 In the previous steps you have downloaded, extracted and mounted the installation files for a _SAP NetWeaver_ system to the openSUSE Linux running inside of your local machine. You will now install the system in this Linux OS. Please note that this is a specially prepared and simplified installation of a _SAP NetWeaver_ backend, and that the installation process of a live and productive instance requires more expertise on how to best tweak the system settings.
 Please also be aware that the RAM settings we allocated in the VM are very minimalistic, so the system might react slower that you would expect it to run, if it were installed properly on a dedicated server.
 
-**Note:** Since the course was released, it seems like the Sybase ASE Database license has expired. You can obtain a new version of the Sybase License file [here](https://mdocs.sap.com/mcm/public/v1/open?shr=dRhHsVYVLc5c1UDveogwtXBdL9m82JccRlvvBXO6K5Q). Please follow the instructions in the `How to update ASE License.pdf` document to update the license.
-{: .notice--warning}
+**Note:** Since the course was released, the Sybase ASE Database license has expired. Please follow the steps described in step 1.4 of this tutorial to replace the license file before you start the installation of SAP NetWeaver.
 
 1.  Use the already opened **Konsole** terminal window, or open a new one (KDE **Application Menu** and navigate to **System > Konsole**).
 2.  Inside the mounted **netweaver** folder execute command **ls -l** to see that amongst other files and folders the **install.sh** is available. This is the installation script to start the installation of the _SAP NetWeaver_ system.
@@ -875,12 +886,7 @@ To work with the installed local _SAP NetWeaver AS ABAP_ system you have to requ
 
 18. **Close** the window where the transaction _SLICENSE_ has been opened.
 
-##### 6.3.2 Update Sybase ASE License
-
-**Note:** Since the course was released, it seems like the Sybase ASE Database license has expired. You can obtain a new version of the Sybase License file [here](https://mdocs.sap.com/mcm/public/v1/open?shr=dRhHsVYVLc5c1UDveogwtXBdL9m82JccRlvvBXO6K5Q). Please follow the instructions in the `How to update ASE License.pdf` document.
-{: .notice--warning}
-
-##### 6.3.3 Create a new VM Snapshot
+##### 6.3.2 Create a new VM Snapshot
 
 After you added the license to your _SAP NetWeaver AS ABAP_, you should again create a **VM Snapshot** in order to preserve this state.
 

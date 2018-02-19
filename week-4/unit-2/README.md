@@ -50,7 +50,7 @@ You want to replicate data from your on-premises SAP NetWeaver backend system in
 
     -   Schema ID:  **hana**
     -   Database System: **HANA MDC (&lt;trial>)**
-    -   SYSTEM User Password: **&lt;enter a password and remember it>**
+    -   SYSTEM User Password: **&lt;enter a password and remember it>** (min 15 characters)
     -   Repeat Password: **&lt;repeat password>**
     -   Keep the default values of the other parameters.
     -   Click on **Save**.
