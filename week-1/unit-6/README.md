@@ -631,7 +631,7 @@ Now you have prepared everything for the _SAP NetWeaver_ installation.
 In the previous steps you have downloaded, extracted and mounted the installation files for a _SAP NetWeaver_ system to the openSUSE Linux running inside of your local machine. You will now install the system in this Linux OS. Please note that this is a specially prepared and simplified installation of a _SAP NetWeaver_ backend, and that the installation process of a live and productive instance requires more expertise on how to best tweak the system settings.
 Please also be aware that the RAM settings we allocated in the VM are very minimalistic, so the system might react slower that you would expect it to run, if it were installed properly on a dedicated server.
 
-**Note:** Since the course was released, the Sybase ASE Database license has expired. Please follow the steps described in step 1.4 of this tutorial to replace the license file before you start the installation of SAP NetWeaver.
+**Note:** Since the course was released, the Sybase ASE Database license has expired. Please follow the steps described in [step 1.4](#14-replace-the-license-file-for-the-sybase-ase-database) of this tutorial to replace the license file before you start the installation of SAP NetWeaver.
 
 1.  Use the already opened **Konsole** terminal window, or open a new one (KDE **Application Menu** and navigate to **System > Konsole**).
 2.  Inside the mounted **netweaver** folder execute command **ls -l** to see that amongst other files and folders the **install.sh** is available. This is the installation script to start the installation of the _SAP NetWeaver_ system.
