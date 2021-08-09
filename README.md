@@ -1,4 +1,10 @@
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
+
+# Important Notice
+This public repository is read-only and no longer maintained.
+
 ---
+
 title: ""
 permalink: /
 excerpt: "This tutorial is a part of the openSAP course on [Extending SAP S/4HANA with SAP HANA Cloud Platform](https://open.sap.com/courses/hcp3a1/). The course provides you with essential _technical knowledge_, _typical extension patterns_ and _business scenarios_ for extending SAP NetWeaver-based backend systems using SAP HANA Cloud Platform. This GitHub page provides **supplementary step-by-step tutorials, tips and tricks** that assist you in completing the technical hands-on exercises."
@@ -10,6 +16,7 @@ header:
 layout: single
 sidebar:
   nav: "home"
+
 ---
 
 # What is an openSAP course?
